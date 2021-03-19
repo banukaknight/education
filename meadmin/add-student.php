@@ -48,7 +48,7 @@
 			<h2 align="center"><?php echo strtoupper($_GET['ravi']); ?></h2>
 			<form method="post">
 					<div class="col-md-12 form-group1 group-mail">
-					<label class="control-label">FullName</label>
+					<label class="control-label">FullName:</label>
 					<input type="text" placeholder="Full Name" required="" name="std_fullname">
 				</div>
 				<div class="vali-form">

@@ -9,11 +9,11 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-<title>Scholarly an Education Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>E-App - Yudaganawa Vidyalaya</title>
 <!-- Meta tag Keywords -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Scholarly web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="keywords" content="Mo/Yudaganawa Vidyalaya School web application capstone project" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--// Meta tag Keywords -->
@@ -41,7 +41,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-			<h1><a class="navbar-brand" href="index.html"><i class="fa fa-leanpub" aria-hidden="true"></i> scholarly</a></h1>
+			<h1><a class="navbar-brand" href="index.html"><i class="fa fa-book" aria-hidden="true"></i> Mo/Yudaganawa Vidyalaya</a></h1>
 
 			</div>
 			<div class="w3layouts_header_right">
@@ -51,7 +51,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</form>
 			</div>
 			<ul class="agile_forms">
-				<li><a class="active" href="students/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In now</a> </li>
+			<li><a class="active" href="students/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Student LOGIN</a> </li>
+			<li><a class="active" href="meadmin/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Admin LOGIN</a> </li>
+				
 			<!--	<li><a href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up</a> </li> -->
 			</ul>
 			
@@ -59,8 +61,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 				<nav class="link-effect-2" id="link-effect-2">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.html" class="effect-3">Home</a></li>
-						<li><a href="#about" class="effect-3 scroll">About Us</a></li>
+						<li class="active"><a href="index.html" class="effect-3">About Us</a></li>
 						<li><a href="#services" class="effect-3 scroll">Services</a></li>
 						<li><a href="#team" class="effect-3 scroll">Team</a></li>
 						<li><a href="#gallery" class="effect-3 scroll">Gallery</a></li>
@@ -73,55 +74,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="clearfix"> </div> 
 	</div>
 </div>
-<!-- banner -->
-<div class="about-bottom">
-	<div class="col-md-6 w3l_about_bottom_left">
-		<div class="video-grid-single-page-agileits">
-			<div data-video="E91gAjunqOM" id="video"> <img src="images/banner2.jpg" alt="" class="img-responsive" /> </div>
-		</div>
-		<div class="w3l_about_bottom_left_video">
-			<h4>watch our video</h4>
-		</div>
-	</div>
-	<div class="col-md-6 w3l_about_bottom_right one">
-		<div class="abt-w3l">
-			<div class="header-w3l">
-				<h2>Admission Form</h2>
-				<h4>Enter the Following Details</h4>
-				<form action="#" method="post" class="mod2">
-					<div class="col-md-6 col-xs-6 w3l-left-mk">
-						<ul>
-							<li class="text">Name of Applicant :  </li>
-							<li class="agileits-main"><i class="fa fa-user-o" aria-hidden="true"></i><input name="name" type="text" required=""></li>
-							<li class="text">Date of Birth :  </li>
-							<li class="agileits-main"><i class="fa fa-calendar" aria-hidden="true"></i><input class="date" id="datepicker" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="" /></li>
-							<li class="text">Father Name  :  </li>
-							<li class="agileits-main"><i class="fa fa-user-o" aria-hidden="true"></i><input name="name" type="text" required=""></li>
-							<li class="text">Gender  :  </li>
-							<li class="agileits-main"><i class="fa fa-user-o" aria-hidden="true"></i><input name="gender" type="text" required=""></li>
-						</ul>
-					</div>
-					<div class="col-md-6 col-xs-6 w3l-right-mk">
-						<ul>
-							<li class="text">mobile no  :  </li>
-							<li class="agileits-main"><i class="fa fa-phone" aria-hidden="true"></i><input name="mobile" type="text" required=""></li>
-							<li class="text">Address  :  </li>
-							<li class="agileits-main"><i class="fa fa-home" aria-hidden="true"></i><input name="address" type="text" required=""></li>
-							<li class="text">District  :  </li>
-							<li class="agileits-main"><i class="fa fa-map-marker" aria-hidden="true"></i><input name="address" type="text" required=""></li>
-							<li class="text">State  :  </li>
-							<li class="agileits-main"><i class="fa fa-map-marker" aria-hidden="true"></i><input name="address" type="text" required=""></li>
-						</ul>
-					</div>
-					<div class="clearfix"></div>
-					<div class="agile-submit">
-						<input type="submit" value="submit">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+
+
 <!-- //banner -->
 <!-- Modal1 
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
@@ -156,7 +110,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 	</div>
 </div>
-//Modal1 -->	
 	
 	
 <!-- Modal2 -->
@@ -212,7 +165,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="clearfix"> </div>
 		</div>
 		<div class="col-md-5 wthree-about-grids">
-			<h4>Welcome to Our University</h4>
+			<h4>Welcome to Yudaganawa College</h4>
+			<h3>මො/යුදගනාව විද්‍යාලය, බුත්තල</h3>
 			<a href="#" class="trend-w3l" data-toggle="modal" data-target="#myModal"><span>Read More</span></a>
 			<a href="#mail" class="trend-w3l scroll"><span>Get In Touch</span></a>
 		</div>
@@ -228,7 +182,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</div> 
 			<div class="modal-body">
 				<img src="images/g10.jpg" alt=""> 
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis felis mattis at. Donec fringilla lacus eu pretium rutrum. Cras aliquet congue ullamcorper. Etiam mattis eros eu ullamcorper volutpat. Proin ut dui a urna efficitur varius. uisque molestie cursus mi et congue consectetur adipiscing elit cras rutrum iaculis enim, Lorem ipsum dolor sit amet, non convallis felis mattis at. Maecenas sodales tortor ac ligula ultrices dictum et quis urna. Etiam pulvinar metus neque, eget porttitor massa vulputate. </p>
+				<p>Details about school to be added </p>
 			</div> 
 		</div>
 	</div>
@@ -241,25 +195,25 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="stats-info">
 			<div class="col-md-3 col-xs-3 stats-grid slideanim">
 				<i class="fa fa-users" aria-hidden="true"></i>
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='12760' data-delay='.5' data-increment="1">12760</div>
+				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='25' data-delay='.5' data-increment="1">25</div>
 				
-				<h4 class="stats-info">FOREIGN FOLLOWERS</h4>
+				<h4 class="stats-info">WEBSITE VISITORS</h4>
 			</div>
 			<div class="col-md-3 col-xs-3 stats-grid slideanim">
 				<i class="fa fa-book" aria-hidden="true"></i>
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='31000' data-delay='.5' data-increment="1">31000</div>
+				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5' data-delay='.1' data-increment="1">5</div>
 				
-				<h4 class="stats-info">CLASSES COMPLETE</h4>
+				<h4 class="stats-info">CLASSES HELD</h4>
 			</div>
 			<div class="col-md-3 col-xs-3 stats-grid slideanim">
 				<i class="fa fa-trophy" aria-hidden="true"></i>
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='79000' data-delay='.5' data-increment="10">79000</div>
+				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1500' data-delay='.1' data-increment="1">1500</div>
 				
 				<h4 class="stats-info">STUDENTS ENROLLED</h4>
 			</div>
 			<div class="col-md-3 col-xs-3 stats-grid slideanim">
 					<i class="fa fa-user" aria-hidden="true"></i>
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='600' data-delay='.5' data-increment="1">600</div>
+				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='50' data-delay='.1' data-increment="1">50</div>
 			
 				<h4 class="stats-info">CERTIFIED TEACHERS</h4>
 			</div>
@@ -279,20 +233,20 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="col-xs-4 services-grid agileits-w3layouts">
 				<span class="fa fa-graduation-cap" aria-hidden="true"></span>
 				<h6>01</h6>
-				<h5>Scholarship Facility</h5>
-				<p>Itaque earum rerum hic a sapiente delectus in auctor sapien. Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+				<h5>service 1</h5>
+				<p>service 1 details to add</p>
 			</div>
 			<div class="col-xs-4 services-grid agileits-w3layouts">
 				<h6>02</h6>
 				<h5>Skilled Lecturers</h5>
-				<p>Itaque earum rerum hic a sapiente delectus in auctor sapien. Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+				<p>details about lecturers in brief to add</p>
 				<span class="fa fa-user-o grid-w3l-ser" aria-hidden="true"></span>
 			</div>
 			<div class="col-xs-4 services-grid agileits-w3layouts">
 				<span class="fa fa-book" aria-hidden="true"></span>
 				<h6>03</h6>
-				<h5>Book Library & Store</h5>
-				<p>Itaque earum rerum hic a sapiente delectus in auctor sapien. Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+				<h5>service 3</h5>
+				<p>service 3 details</p>
 			</div> 
 			<div class="clearfix"> </div>
 		</div>  
@@ -599,8 +553,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="col-md-3 col-xs-3 wthree_footer_grid_left1">
 				<h4>Navigation</h4>
 				<ul>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="index.html">Home</a></li>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#about" class="scroll">About Us</a></li>
+					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="index.html">About Us</a></li>
 					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#services" class="scroll">Services</a></li>
 					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#team" class="scroll">Team</a></li>
 					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#gallery" class="scroll">Gallery</a></li>
@@ -713,8 +666,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="col-md-3 col-xs-3 wthree_footer_grid_left1">
 				<h4>Navigation</h4>
 				<ul>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="index.html">Home</a></li>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#about" class="scroll">About Us</a></li>
+					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="index.html">About Us</a></li>
 					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#services" class="scroll">Services</a></li>
 					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#team" class="scroll">Team</a></li>
 					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#gallery" class="scroll">Gallery</a></li>
