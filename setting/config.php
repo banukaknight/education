@@ -5,8 +5,8 @@ class project2
 	
 {
 	public $server = "localhost";
-	public $username = "username";
-	public $password = "password";
+	public $username = "root";
+	public $password = "root";
 	public $dbname = "project2";
 	public $connectdb;
 	
