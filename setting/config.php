@@ -39,7 +39,14 @@ class project2
 		
 		return $student_info_run;
 	}
+	public function student_grade_select($st_username)
+	{
+		$student_grade = "select st_grade from st_info where st_username='$st_username'";
+		$student_info_run = $this->connectdb->query($student_grade);
 		
+		return $student_info_run;
+	}	
+	
 	
 	/////////////////////////////// ADMINNNNNNNNNNNNNNNNN--------------------------
 	

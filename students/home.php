@@ -10,7 +10,7 @@ else
 {
 	$st_username = $_SESSION['st_user'];
 	$st_name = $ravi->student_info_select($st_username);
-	
+	$st_grade = $ravi->student_grade_select($st_username);
 	$student_name_display = $st_name->fetch_assoc();
 }
 
@@ -96,6 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li><a href="#section-3" class="icon-food"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Teachers</span></a></li>
 											<li><a href="#section-4" class="icon-lab"><i class="fa fa-flask"></i> <span>Subject</span></a></li>
 											<li><a href="#section-5" class="icon-truck"> <span>Results</span></a></li>
+											<li><a href="#section-6" class="icon-lab"><i class="fa fa-flask"></i> <span>Time table</span></a></li>
 										</ul>
 									</nav>
 									<div class="content tab">
@@ -282,6 +283,222 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 											<div class="mediabox">
 
+											</div>
+										</section>
+										<section id="section-6">
+											<div class="graph">
+											<div class="tables">
+											<?php
+											
+												if ($st_grade==1)
+												{
+													?>
+															
+																<table class="table table-hover"> 
+																	<thead>
+																		<tr> 
+																		<th>Time</th> <th>Monday</th><th>Tuesday</th> <th>Wednesday</th><th>Thursday</th><th>Friday</th>
+																		</tr>
+																	</thead> 
+																	<tbody>
+																	    <tr>
+																		<td>7:50-8:30 AM</td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td>
+																		</tr>
+																		<tr>
+																		<td>8:30-9:10 AM</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td>
+																		</tr>
+																		<tr>
+																		<td>9:10-9:50 AM</td><td>Dancing/Singing</td><td>Bhuddism</td><td>maths</td><td>Scouting</td><td>Sports</td>
+																		</tr>
+																		<tr>
+																		<td>9:50-10:30 AM</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td>
+																		</tr>
+																		<tr>
+																		<td>10:50-11:30 AM</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td>
+																		</tr>
+																		<tr>
+																		<td>11:30-12:10 PM</td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td>
+																		</tr>
+																		<tr>
+																		<td>12:10-12:50 PM</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td>
+																		</tr>
+																		<tr>
+																		<td>12:50-1:30 PM</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td>
+																		</tr>
+																	</tbody> 
+																</table>
+												<?php }
+																
+												
+												else if ($st_grade==2)
+												{
+													?>
+							
+															
+																<table class="table table-hover"> 
+																	<thead>
+																		<tr> 
+																		<th>Time</th> <th>Monday</th><th>Tuesday</th> <th>Wednesday</th><th>Thursday</th><th>Friday</th>
+																		</tr>
+																	</thead> 
+																	<tbody>
+																	    <tr>
+																		<td>7:50-8:30 AM</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td>
+																		</tr>
+																		<tr>
+																		<td>8:30-9:10 AM</td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td>
+																		</tr>
+																		<tr>
+																		<td>9:10-9:50 AM</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td>
+																		</tr>
+																		<tr>
+																		<td>9:50-10:30 AM</td><td>Dancing/Singing</td><td>Bhuddism</td><td>maths</td><td>Scouting</td><td>Sports</td>
+																		</tr>
+																		<tr>
+																		<td>10:50-11:30 AM</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td>
+																		</tr>
+																		<tr>
+																		<td>11:30-12:10 PM</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td>
+																		</tr>
+																		<tr>
+																		<td>12:10-12:50 PM</td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td>
+																		</tr>
+																		<tr>
+																		<td>12:50-1:30 PM</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td>
+																		</tr>
+																	</tbody> 
+																</table>
+												<?php }
+																
+												
+												else if ($st_grade==3)
+												{
+													?>
+							
+															
+																<table class="table table-hover"> 
+																	<thead>
+																		<tr> 
+																		<th>Time</th> <th>Monday</th><th>Tuesday</th> <th>Wednesday</th><th>Thursday</th><th>Friday</th>
+																		</tr>
+																	</thead> 
+																	<tbody>
+																	    <tr>
+																		<td>7:50-8:30 AM</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td>
+																		</tr>
+																	    <tr>
+																		<td>8:30-9:10 AM</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td>
+																		</tr>
+																		<tr>
+																		<td>9:10-9:50 AM </td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td>
+																		</tr>
+																		<tr>
+																		<td>9:50-10:30 AM</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td>
+																		</tr>
+																		<tr>
+																		<td>10:50-11:30 AM</td><td>Dancing/Singing</td><td>Bhuddism</td><td>maths</td><td>Scouting</td><td>Sports</td>
+																		</tr>
+																		<tr>
+																		<td>11:30-12:10 AM</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td>
+																		</tr>
+																		<tr>
+																		<td>12:10-12:50 PM</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td>
+																		</tr>
+																		<tr>
+																		<td>12:50-1:30 PM </td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td>
+																		</tr>
+																	</tbody> 
+																</table>
+												<?php }
+																
+												
+												else if ($st_grade==4)
+												{
+													?>
+							
+															
+																<table class="table table-hover"> 
+																	<thead>
+																		<tr> 
+																		<th>Time</th> <th>Monday</th><th>Tuesday</th> <th>Wednesday</th><th>Thursday</th><th>Friday</th>
+																		</tr>
+																	</thead> 
+																	<tbody>
+																	    <tr>
+																		<td>7:50-8:30 AM</td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td>
+																		</tr>
+																																			    <tr>
+																		<td>8:30-9:10 AM</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td>
+																		</tr>
+																	    <tr>
+																		<td>9:10-9:50 AM</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td>
+																		</tr>
+																		<tr>
+																		<td>9:50-10:30 AM </td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td>
+																		</tr>
+																		<tr>
+																		<td>10:50-11:30 AM</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td>
+																		</tr>
+																		<tr>
+																		<td>11:30-12:10 AM</td><td>Dancing/Singing</td><td>Bhuddism</td><td>maths</td><td>Scouting</td><td>Sports</td>
+																		</tr>
+																		<tr>
+																		<td>12:10-12:50 PM</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td>
+																		</tr>
+																		<tr>
+																		<td>12:50-1:30 PM</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td>
+																		</tr>
+																	</tbody> 
+																</table>
+												<?php }
+																
+												
+												else if ($st_grade==5)
+												{
+													?>
+							
+															
+																<table class="table table-hover"> 
+																	<thead>
+																		<tr> 
+																		<th>Time</th> <th>Monday</th><th>Tuesday</th> <th>Wednesday</th><th>Thursday</th><th>Friday</th>
+																		</tr>
+																	</thead> 
+																	<tbody>
+																	    <tr>
+																		<td>7:50-8:30 AM</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td>
+																		</tr>
+																		<tr>
+																		<td>8:30-9:10 AM</td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td>
+																		</tr>
+																																			    <tr>
+																		<td>9:10-9:50 AM</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td><td>Dancing/Singing</td>
+																		</tr>
+																	    <tr>
+																		<td>9:50-10:30 AM</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td><td>Sinhala</td>
+																		</tr>
+																		<tr>
+																		<td>10:50-11:30 AM </td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td><td>English</td>
+																		</tr>
+																		<tr>
+																		<td>11:30-12:10 AM</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td><td>Sports</td><td>Tamil</td>
+																		</tr>
+																		<tr>
+																		<td>12:10-12:50 PM</td><td>Dancing/Singing</td><td>Bhuddism</td><td>maths</td><td>Scouting</td><td>Sports</td>
+																		</tr>
+																		<tr>
+																		<td>12:50-1:30 PM</td><td>Sinhala</td><td>Dancing/Singing</td><td>Bhuddism</td><td>Maths</td><td>Scouting</td>
+																		</tr>
+																		
+																	</tbody> 
+																</table>
+												<?php }
+																
+												
+						
+													?>
+																
+															</div>
 											</div>
 										</section>
 									</div>
