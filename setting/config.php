@@ -5,8 +5,8 @@ class project2
 	
 {
 	public $server = "localhost";
-	public $username = "username";
-	public $password = "password";
+	public $username = "root";
+	public $password = "root";
 	public $dbname = "project2";
 	public $connectdb;
 	
@@ -39,7 +39,14 @@ class project2
 		
 		return $student_info_run;
 	}
+	public function student_grade_select($st_username)
+	{
+		$student_grade = "select st_grade from st_info where st_username='$st_username'";
+		$student_info_run = $this->connectdb->query($student_grade);
 		
+		return $student_info_run;
+	}	
+	
 	
 	/////////////////////////////// ADMINNNNNNNNNNNNNNNNN--------------------------
 	
@@ -102,37 +109,10 @@ class project2
 		return $student_password_update_run;
 	}
 	
+	
+	
 	///////////////////------- end student password update --------------//////////////
 	
-
-
-
-	//// ----- attendance marking code by banuka----///
-
-	public function st_attendance($st_username)
-	{
-		$st_ip = getenv("REMOTE_ADDR"); //get ip address of visitor										
-		date_default_timezone_set("Asia/Colombo");
-		$at_iddateh = $st_username ."_".  date("Y-m-d_H");
-		$at_date = date("Y-m-d");
-		$at_time = date("H:i:s");
-		$add_attendance = "insert into st_attendance(st_username,st_ip,at_iddateh,at_date,at_time) value('$st_username','$st_ip','$at_iddateh','$at_date','$at_time')";							
-		$add_attendance_run = $this->connectdb->query($add_attendance);
-		
-		return $add_attendance_run;
-		 
-	}
-
-	public function get_attendance($st_username)
-	{
-		$get_attendance_select = "select * from st_attendance where st_username='$st_username'";
-		$get_attendance_run = $this->connectdb->query($get_attendance_select);
-		return $get_attendance_run;
-	}
-
-	//// END attendance marking code ----///
-
-
 	///////////////////-------- display subject in admin ----------------////////
 	public function subject_info()
 	{

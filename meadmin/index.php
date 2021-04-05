@@ -39,12 +39,15 @@ if(isset($_POST['admin_signin']))
 
 ?>
 <!--
-w3 URL: http://w3layouts.com
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Admin Login</title>
+<title>Augment an Admin Panel Category Flat Bootstrap Responsive Web Template | Login :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -67,16 +70,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 								<!--/login-->
 								
-									   <div class="error_page" >
+									   <div class="error_page">
 												<!--/login-top-->
 												
-													<div class="error-top" style="background-image: url('../images/bg/alogin.jpg'); background-size: cover;">
+													<div class="error-top">
 													
-														<h2 class="inner-tittle page">Admin Login</h2>
+														<h2 class="inner-tittle page">Login</h2>
 													
-													    <div class="login" >
-															<h3 class="inner-tittle t-inner" style="text-shadow: 2px 2px 5px white;">Login</h3>
+													    <div class="login">
+															<h3 class="inner-tittle t-inner">RR E-Learning House Login</h3>
 														
+																<div class="buttons login">
+																			<ul>
+																				<li><a href="#" class="hvr-sweep-to-right">Facebook</a></li>
+																				<li class="lost"><a href="#" class="hvr-sweep-to-left">Twitter</a> </li>
+																				<div class="clearfix"></div>
+																			</ul>
+																		</div>
 																<form method="post">
 					<input type="text" class="text" name="admin_username" placeholder="Username" value="<?php if(isset($_POST['admin_signin'])){ echo $_POST['admin_username']; } ?>">
 					<input type="password" placeholder="Password" name="admin_password" value="<?php if(isset($_POST['admin_signin'])){ echo $_POST['admin_password']; } ?>">
