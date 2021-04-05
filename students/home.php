@@ -289,21 +289,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 										<section id="section-7">
-											<div class="mediabox">
-											<strong>Attendence </strong>
 
-											<?php  
-												echo 'User IP Address - '.$_SERVER['REMOTE_ADDR'];  
-												$st_ip = getenv("REMOTE_ADDR"); //get ip address of visitor
-												?>  
+											<div class="graph">
+											<strong>Attendance Module (Automated) </strong> <br>
 
+<?php  
+/* Attendance marking code by Banuka Vidusanka */
+	echo 'Logged in User IP Address - '.$_SERVER['REMOTE_ADDR'];  
+	$attendance_success = $ravi->st_attendance($st_username);
 
-												<form action="">
-												<label for="attended">Present: </label>
-												<input type="checkbox" name="attended" value="attended">
-												</form>
+	if($attendance_success==true)
+		{
+			echo "<script>alert('Attendance Marked!');</script>";
+		}else{
+			echo "<p>Attendence has been updated.</p>";
+		}
+
+	?>  
+															<div class="tables">
+															<h5>Attendance data of student id: <?php echo $st_username ?></h5>
+																<table class="table table-hover"> 
+																	<thead>
+																		<tr> 
+																			<th>#</th> 
+																			<th>IP Address</th> 
+																			<th>Date</th>
+																			<th>Time</th> 
+																			<th>Attendace for Hour</th>
+																		</tr> 
+																	</thead> 
+																	<tbody>
+															<?php 
+															$st_attendance_data = $ravi->get_attendance($st_username);
+																while($got_attendance = $st_attendance_data->fetch_assoc())		{ 
+																		?>
+																		
+																		<tr>
+																			<th scope="row"><?php echo $got_attendance['id']; ?></th>
+																			<td><?php echo $got_attendance['st_ip']; ?></td> 
+																			<td><?php echo $got_attendance['at_date']; ?></td> 
+																			<td><?php echo $got_attendance['at_time']; ?></td> 
+																			<td><?php echo substr($got_attendance['at_iddateh'], -2); ?></td>
+																		</tr> 
+																		
+																		<?php  } ?>
+																	</tbody> 
+																</table>
+															</div>
 												
-											</div>
+													</div>
+
 										</section>
 
 
@@ -427,7 +462,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
 			<!--/down-->
 			<div class="down">
-				<a href="index.html"><img src="images/admin.jpg"></a>
+				<?php
+				$st_gender = $student_name_display['st_gender'];
+				if($st_gender == 'Male'){
+					echo "<img src='images/picm.jpg'>";
+				}else if($st_gender == 'Female'){
+					echo "<img src='images/picf.jpg'>";
+				}else{
+					echo "<img src='images/pice.jpg'>";
+				}
+				
+				?>
+
 				<a href="index.html"><span class=" name-caret"><?php echo $student_name_display['st_fullname']; ?></span></a>
 				<p>Student</p>
 				<ul>
