@@ -95,7 +95,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li><a href="#section-2" class="icon-cup"><i class="lnr lnr-lighter"></i> <span>Change Password</span></a></li>
 											<li><a href="#section-3" class="icon-food"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Teachers</span></a></li>
 											<li><a href="#section-4" class="icon-lab"><i class="fa fa-flask"></i> <span>Subject</span></a></li>
-											<li><a href="#section-5" class="icon-truck"> <span>Results</span></a></li>
+											<li><a href="#section-5" > <i class="fa fa-line-chart" aria-hidden="true"></i> <span>Results</span></a></li>
+											<li><a href="#section-7" > <i class="fa fa-check-circle" aria-hidden="true"></i><span>Attendence</span></a></li>
+										
 										</ul>
 									</nav>
 									<div class="content tab">
@@ -284,6 +286,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											</div>
 										</section>
+
+
+										<section id="section-7">
+											<div class="mediabox">
+											<strong>Attendence </strong>
+
+											<?php  
+												echo 'User IP Address - '.$_SERVER['REMOTE_ADDR'];  
+												$st_ip = getenv("REMOTE_ADDR"); //get ip address of visitor
+												?>  
+
+
+												<form action="">
+												<label for="attended">Present: </label>
+												<input type="checkbox" name="attended" value="attended">
+												</form>
+												
+											</div>
+										</section>
+
+
+
 									</div>
 									<!-- /content -->
 								</div>

@@ -42,11 +42,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Augment an Admin Panel Category Flat Bootstrap Responsive Web Template | Login :: w3layouts</title>
+<title>Student Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="keywords" content="Edu-app web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
@@ -68,17 +67,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									   <div class="error_page">
 												<!--/login-top-->
 												
-													<div class="error-top">
+													<div class="error-top" style="background-image: url('../images/bg/slogin.jpg'); background-size: cover;">
 													<h2 class="inner-tittle page">Student Login</h2>
 													    <div class="login">
-														<h3 class="inner-tittle t-inner">Login</h3>
-																<div class="buttons login">
-																			<ul>
-																				<li><a href="#" class="hvr-sweep-to-right">Facebook</a></li>
-																				<li class="lost"><a href="#" class="hvr-sweep-to-left">Twitter</a> </li>
-																				<div class="clearfix"></div>
-																			</ul>
-																		</div>
+														<h3 class="inner-tittle t-inner" style="text-shadow: 2px 2px 5px white;">Login</h3>
 																<form method="post">
 																		<input type="text" class="text" name="st_username" placeholder="Username">
 																		<input type="password" placeholder="Password" name="st_password">
@@ -86,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																		<div class="clearfix"></div>
 																		
 																		<div class="new">
-																			<p><label class="checkbox11"><input type="checkbox" name="checkbox"><i> </i>Forgot Password ?</label></p>
+																			<p><label class="checkbox11" style="text-shadow: 2px 2px 5px white;"><input type="checkbox" name="checkbox"><i> </i>Forgot Password ?</label></p>
 																			
 																			<div class="clearfix"></div>
 																		</div>
