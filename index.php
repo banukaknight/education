@@ -1,10 +1,6 @@
 
 <!--
-	Author: W3layouts
-	Developed By Ravi Khadka
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
+	w3 URL: http://w3layouts.com
 -->
 <!DOCTYPE html>
 <html lang="zxx">
@@ -28,11 +24,30 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
 <!-- //online-fonts -->
+<!-- inner css -->
+<style>
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+</style>
+<!-- //inner css -->
+<!-- other -->
+<link rel="icon" href="./images/bg/logo.png">
 </head>
 <body>
 <!-- banner -->
-<div class="main_section_agile" id="home">
-	<div class="agileits_w3layouts_banner_nav">
+<div class="main_section_agile" id="home" style="background-image: url('./images/bg/navbg.jpg'); background-size: cover;">
+	<div class="agileits_w3layouts_banner_nav" >
 		<nav class="navbar navbar-default">
 			<div class="navbar-header navbar-left">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -41,20 +56,20 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-			<h1><a class="navbar-brand" href="index.html"><i class="fa fa-book" aria-hidden="true"></i> Mo/Yudaganawa Vidyalaya</a></h1>
+			<h1><a class="navbar-brand" href="index.html">
+			<i aria-hidden="true"><img src="./images/bg/logo.png" style="height: 30px;" alt=""></i> 
+			Mo/Yudaganawa Vidyalaya</a></h1>
 
 			</div>
 			<div class="w3layouts_header_right">
-			    <form action="#" method="post">
-					<input name="Search here" type="search" placeholder="Search" required="">
-					<input type="submit" value="">
-				</form>
+			
+
 			</div>
+			
 			<ul class="agile_forms">
 			<li><a class="active" href="students/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Student LOGIN</a> </li>
 			<li><a class="active" href="meadmin/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Admin LOGIN</a> </li>
-				
-			<!--	<li><a href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up</a> </li> -->
+			
 			</ul>
 			
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,86 +90,22 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</div>
 </div>
 
+<!-- google search bar -->
+<div style=" clear: both; float:right;  display: table;">
+		<script async src="https://cse.google.com/cse.js?cx=99a93e0f1f02f8cdb"></script>
+<div class="gcse-search" enableAutoComplete="true"></div>
+</div>
+<!-- //google search bar -->
 
-<!-- //banner -->
-<!-- Modal1 
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
-	<div class="modal-dialog">
-	
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				
-				<div class="signin-form profile">
-					<h3 class="agileinfo_sign">Sign In</h3>	
-					<div class="login-form">
-						<form  method="post">
-							<input type="text" name="st_username" placeholder="Enter Your Username" required="">
-							<input type="password" name="st_password" placeholder="Password" >
-							<div class="tp">
-								<input type="submit" value="Sign In" name="student_signin">
-							</div>
-						</form>
-					</div>
-					<div class="login-social-grids">
-						<ul>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-rss"></i></a></li>
-						</ul>
-					</div>
-					<p><a href="#" data-toggle="modal" data-target="#myModal3" > Don't have an account?</a></p>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-</div>
-	
-	
-<!-- Modal2 -->
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
-	<div class="modal-dialog">
-	<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<!--
-				<div class="signin-form profile">
-					<h3 class="agileinfo_sign">Sign Up</h3>	
-					<div class="login-form">
-						<form method="post" >
-						   <input type="text" name="username" placeholder="Username" required="">
-							<input type="email" name="email" placeholder="Email" required="">
-							<input type="password" name="password" placeholder="Password" required="">
-							<select class="form-control" name="grade" required="">
-							
-								<option class="select_grade">
-								Select Class
-								</option>
-							
-								
-								
-							</select>
-							<input type="submit" value="Sign Up" name="student_signup">
-						</form>
-					</div>
-					<p><a href="#"> By clicking Sign Up, I agree to your terms</a></p>
-				</div>
-				-->
-			</div>
-		</div>
-	</div>
-</div>
-<div class="clearfix"> </div> 
-<!-- //Modal2 -->	
+
 <!-- about -->
 <div class="about-top" id="about">
 	<div class="container">
-		<h3 class="w3l-title">About Us</h3>
+		<h3 class="w3l-title">About Us <small>| අපි ගැන | எங்களை பற்றி</small></h3>
 		<div class="w3layouts_header">
 			<p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
 		</div>
+
 		<div class="col-md-7 wthree-services-bottom-grids">
 			<div class="wthree-services-left">
 				<img src="images/ab1.jpg" alt="">
@@ -165,8 +116,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="clearfix"> </div>
 		</div>
 		<div class="col-md-5 wthree-about-grids">
-			<h4>Welcome to Yudaganawa College</h4>
+			<h1>Welcome to Yudaganawa College</h1>
+			<hr>
 			<h3>මො/යුදගනාව විද්‍යාලය, බුත්තල</h3>
+			<h3>மொ/யுதகனாவ வித்தியாலயம்</h3>
+			<hr>
 			<a href="#" class="trend-w3l" data-toggle="modal" data-target="#myModal"><span>Read More</span></a>
 			<a href="#mail" class="trend-w3l scroll"><span>Get In Touch</span></a>
 		</div>
@@ -225,9 +179,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- services -->
 <div class="services" id="services" >
 	<div class="container">  
-		<h3 class="w3l-title">Our Services</h3>
+		<h3 class="w3l-title">Our Services <small>| අපගේ සේවාවන් | எங்களுடைய சேவைகள்</small></h3>
 		<div class="w3layouts_header">
-			<p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+			<p><i class="fa fa-cog fa-spin fa-fw"></i>
+<span class="sr-only">Loading...</span></p>
 		</div>
 		<div class="services-w3ls-row">
 			<div class="col-xs-4 services-grid agileits-w3layouts">
@@ -238,7 +193,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</div>
 			<div class="col-xs-4 services-grid agileits-w3layouts">
 				<h6>02</h6>
-				<h5>Skilled Lecturers</h5>
+				<h5>service 2</h5>
 				<p>details about lecturers in brief to add</p>
 				<span class="fa fa-user-o grid-w3l-ser" aria-hidden="true"></span>
 			</div>
@@ -255,14 +210,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //services -->
 <!-- Gallery -->
 <section class="portfolio-w3ls" id="gallery">
-		<h3 class="w3l-title">Our Gallery</h3>
+		<h3 class="w3l-title">Our Gallery <small>| අපේ ඡායාරූප | எங்களுடைய புகைப்படங்கள்</h3>
 		<div class="w3layouts_header">
-			<p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+			<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 		</div>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g1.jpg" class="swipebox"><img src="images/g1.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 						</div>
 				</a>
@@ -270,7 +225,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g2.jpg" class="swipebox"><img src="images/g2.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 						</div>
 				</a>
@@ -278,7 +233,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g3.jpg" class="swipebox"><img src="images/g3.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 						</div>
 				</a>
@@ -286,7 +241,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g7.jpg" class="swipebox"><img src="images/g7.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 						</div>
 				</a>
@@ -294,7 +249,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g5.jpg" class="swipebox"><img src="images/g5.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 						</div>
 					</a>
@@ -302,7 +257,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g6.jpg" class="swipebox"><img src="images/g6.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 					   </div>
 				   </a>
@@ -310,7 +265,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g11.jpg" class="swipebox"><img src="images/g11.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 					   </div>
 				   </a>
@@ -318,7 +273,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g8.jpg" class="swipebox"><img src="images/g8.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 					   </div>
 				   </a>
@@ -326,7 +281,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g9.jpg" class="swipebox"><img src="images/g9.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 						</div>
 				</a>
@@ -334,7 +289,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g10.jpg" class="swipebox"><img src="images/g10.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 						</div>
 				</a>
@@ -342,7 +297,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g4.jpg" class="swipebox"><img src="images/g4.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 						</div>
 				</a>
@@ -350,7 +305,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="col-md-3 col-xs-3 gallery-grid gallery1">
 					<a href="images/g12.jpg" class="swipebox"><img src="images/g12.jpg" class="img-responsive" alt="/">
 						<div class="textbox">
-						<h4>scholarly</h4>
+						<h4>view</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
 						</div>
 				</a>
@@ -361,52 +316,40 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- team -->
 <div class="team-w3l" id="team">
 	<div class="container">
-		<h3 class="w3l-title">Our Skilled Lecturers</h3>
+		<h3 class="w3l-title">Our Faculty <small>| අපේ ගුරුවරු | எங்களுடைய ஆசிரியர்கள்</h3>
 		<div class="w3layouts_header">
 			<p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
 		</div>
 		<div class="team-w3l-grid">
 			<div class="col-md-4 col-xs-4 about-poleft t1">
 				<div class="about_img"><img src="images/t1.jpg" alt="">
-				  <h5>Victoria</h5>
+				  <h5>T-1</h5>
 				  <div class="about_opa">
-					<p>Professor</p>
+					<p>Principle</p>
 					<ul class="fb_icons2 text-center">
-						<li><a class="fa fa-facebook" href="#"></a></li>
-						<li><a class="fa fa-twitter" href="#"></a></li>
-						<li><a class="fa fa-google" href="#"></a></li>
-						<li><a class="fa fa-linkedin" href="#"></a></li>
-						<li><a class="fa fa-pinterest-p" href="#"></a></li>
+					<li><a class="fa fa-linkedin" href="#"></a></li>
 					</ul>
 				  </div>
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-4 about-poleft t2">
 				<div class="about_img"><img src="images/t2.jpg" alt="">
-				  <h5>Darponia</h5>
+				  <h5>T2</h5>
 				  <div class="about_opa">
-					<p>Senior Lecturers</p>
+					<p>Vice Principle</p>
 					<ul class="fb_icons2 text-center">
-						<li><a class="fa fa-facebook" href="#"></a></li>
-						<li><a class="fa fa-twitter" href="#"></a></li>
-						<li><a class="fa fa-google" href="#"></a></li>
-						<li><a class="fa fa-linkedin" href="#"></a></li>
-						<li><a class="fa fa-pinterest-p" href="#"></a></li>
+					<li><a class="fa fa-linkedin" href="#"></a></li>
 					</ul>
 				  </div>
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-4 about-poleft t3">
 				<div class="about_img"><img src="images/t3.jpg" alt="">
-				  <h5>Kylie</h5>
+				  <h5>T3</h5>
 				  <div class="about_opa">
-					<p>Lecturers</p>
+					<p>Teacher</p>
 					<ul class="fb_icons2 text-center">
-						<li><a class="fa fa-facebook" href="#"></a></li>
-						<li><a class="fa fa-twitter" href="#"></a></li>
-						<li><a class="fa fa-google" href="#"></a></li>
-						<li><a class="fa fa-linkedin" href="#"></a></li>
-						<li><a class="fa fa-pinterest-p" href="#"></a></li>
+					<li><a class="fa fa-linkedin" href="#"></a></li>
 					</ul>
 				  </div>
 				</div>
@@ -416,45 +359,33 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="team-w3l-grid grid-2-team">
 			<div class="col-md-4 col-xs-4 about-poleft t1">
 				<div class="about_img"><img src="images/t4.jpg" alt="">
-				  <h5>Cameron</h5>
+				  <h5>T4</h5>
 				  <div class="about_opa">
-					<p>Professor</p>
+					<p>Teacher</p>
 					<ul class="fb_icons2 text-center">
-						<li><a class="fa fa-facebook" href="#"></a></li>
-						<li><a class="fa fa-twitter" href="#"></a></li>
-						<li><a class="fa fa-google" href="#"></a></li>
-						<li><a class="fa fa-linkedin" href="#"></a></li>
-						<li><a class="fa fa-pinterest-p" href="#"></a></li>
+					<li><a class="fa fa-linkedin" href="#"></a></li>
 					</ul>
 				  </div>
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-4 about-poleft t2">
 				<div class="about_img"><img src="images/t5.jpg" alt="">
-				  <h5>Darponia</h5>
+				  <h5>T5</h5>
 				  <div class="about_opa">
-					<p>Senior Lecturers</p>
+					<p>Teacher</p>
 					<ul class="fb_icons2 text-center">
-						<li><a class="fa fa-facebook" href="#"></a></li>
-						<li><a class="fa fa-twitter" href="#"></a></li>
-						<li><a class="fa fa-google" href="#"></a></li>
-						<li><a class="fa fa-linkedin" href="#"></a></li>
-						<li><a class="fa fa-pinterest-p" href="#"></a></li>
+					<li><a class="fa fa-linkedin" href="#"></a></li>
 					</ul>
 				  </div>
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-4 about-poleft t3">
 				<div class="about_img"><img src="images/t6.jpg" alt="">
-				  <h5>Austin</h5>
+				  <h5>T6</h5>
 				  <div class="about_opa">
-					<p>Lecturers</p>
+					<p>Teacher</p>
 					<ul class="fb_icons2 text-center">
-						<li><a class="fa fa-facebook" href="#"></a></li>
-						<li><a class="fa fa-twitter" href="#"></a></li>
-						<li><a class="fa fa-google" href="#"></a></li>
-						<li><a class="fa fa-linkedin" href="#"></a></li>
-						<li><a class="fa fa-pinterest-p" href="#"></a></li>
+					<li><a class="fa fa-linkedin" href="#"></a></li>
 					</ul>
 				  </div>
 				</div>
@@ -476,9 +407,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	?>
 <div id="mail" class="contact">
 	<div class="container">
-		<h3 class="w3l-title">Mail Us</h3>
+		<h3 class="w3l-title">Contact Us <small>| අප හා සම්බන්ධ වන්න | தொடர்பு கொள்ள</small></h3>
 		<div class="w3layouts_header">
-			<p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+			<p><i class="fa fa-phone" aria-hidden="true"></i></p>
 		</div>
 		<div class="agile_banner_bottom_grids">
 			<div class="col-md-4 col-xs-4 w3_agile_contact_grid">
@@ -488,7 +419,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="agile_contact_grid_right agilew3_contact">
 					<h4>Address</h4>
 					<p><?php echo $general_fetch['website_address']; ?></p>
-					<p>Nepal</p>
+					
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-4 w3_agile_contact_grid">
@@ -514,7 +445,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="clearfix"> </div>
 		</div>
 		<div class="w3l-form">
-			<h3 class="w3l-title">Get In Touch</h3>
+			<h3 class="w3l-title">Write us <small>| අපට ලියන්න | எங்களுக்கு எழுதுங்கள்</small></h3>
+			<div class="w3layouts_header">
+			<p><i class="fa fa-commenting" aria-hidden="true"></i></p>
+		</div>
 			<div class="contact-grid1">
 				<div class="contact-top1">
 					<form action="#" method="post">
@@ -541,7 +475,25 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 	</div>
 </div>
-<div id="map"></div>
+
+
+<!-- map-code -->
+<div>
+	<div class="container">
+		<h3 class="w3l-title">Map <small>| සිතියම | வரைபடம்</small></h3>
+		<div class="w3layouts_header">
+			<p><i class="fa fa-map-marker" aria-hidden="true"></i></p>
+		</div>
+		<div class="col-12 map-responsive">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15848.579419245478!2d81.231447327707!3d6.752182739885466!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed2b592735868f4a!2sYudaganawa%20Vidyalaya!5e0!3m2!1sen!2slk!4v1617245354335!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		
+		</div>
+		
+		<div class="clearfix"> </div>
+	</div>
+</div>
+
+
 <!-- footer -->
 <div class="footer">
 	<div class="container">
@@ -585,120 +537,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<p>© <?php echo $general_fetch['website_start']; ?> - 2018 Scholarly. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a> Developed By Ravi Khadka</p>
 	</div>
 </div>
-	<?php } else{ ?>
+	<?php } ?>
 
-	<div id="mail" class="contact">
-	<div class="container">
-		<h3 class="w3l-title">Mail Us</h3>
-		<div class="w3layouts_header">
-			<p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
-		</div>
-		<div class="agile_banner_bottom_grids">
-			<div class="col-md-4 col-xs-4 w3_agile_contact_grid">
-				<div class="agile_contact_grid_left">
-					<i class="fa fa-map-marker" aria-hidden="true"></i>
-				</div>
-				<div class="agile_contact_grid_right agilew3_contact">
-					<h4>Address</h4>
-					<p><?php echo "Enter Your Business Address"; ?></p>
-					<p></p>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-4 w3_agile_contact_grid">
-				<div class="agile_contact_grid_left agileits_w3layouts_left">
-					<i class="fa fa-mobile" aria-hidden="true"></i>
-				</div>
-				<div class="agile_contact_grid_right agileits_w3layouts_right">
-					<h4>Phone</h4>
-					<p><?php echo "Enter Your Business Email"; ?> <span><?php echo "Phone"; ?></span></p>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-4 w3_agile_contact_grid">
-				<div class="agile_contact_grid_left agileits_w3layouts_left1">
-					 <i class="fa fa-envelope-o" aria-hidden="true"></i>
-				</div>
-				<div class="agile_contact_grid_right agileits_w3layouts_right1">
-					<h4>Email</h4>
-					<p><a href="mailto:info@example.com"><?php echo "Business Email"; ?></a>
-						<span><a href="mailto:info@example.com"><?php echo "Email 2"; ?></a></span></p>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="w3l-form">
-			<h3 class="w3l-title">Get In Touch</h3>
-			<div class="contact-grid1">
-				<div class="contact-top1">
-					<form action="#" method="post">
-						<div class="col-md-6 col-xs-6 wthree_contact_left_grid">
-							<label>Name*</label>
-							<input type="text" name="Name" placeholder="Name" required="">
-							<label>E-mail*</label>
-							<input type="email" name="E-mail" placeholder="E-mail" required="">
-						</div>
-						<div class="col-md-6 col-xs-6 wthree_contact_left_grid">
-							<label>Phone Number*</label>
-							<input type="text" name="number" placeholder="Phone Number" required="">
-							<label>Subject*</label>
-							<input type="text" name="subject" placeholder="Subject" required="">
-						</div>
-						<div class="form-group">
-							<label>Message*</label>
-							<textarea placeholder name="Message" required=""></textarea>
-						</div>
-							<input type="submit" value="Send">
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="map"></div>
-<!-- footer -->
-<div class="footer">
-	<div class="container">
-		<div class="wthree_footer_grid_left">
-			<div class="col-md-3 col-xs-3 wthree_footer_grid_left1">
-				<h4>About Us</h4>
-				<p><?php echo "Write About ur Business"; ?></p>
-			</div>
-			<div class="col-md-3 col-xs-3 wthree_footer_grid_left1">
-				<h4>Navigation</h4>
-				<ul>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="index.html">About Us</a></li>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#services" class="scroll">Services</a></li>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#team" class="scroll">Team</a></li>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#gallery" class="scroll">Gallery</a></li>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#mail" class="scroll">Mail Us</a></li>
-				</ul>
-			</div>
-			<div class="col-md-3 col-xs-3 wthree_footer_grid_left1 w3l-3">
-				<h4>Others</h4>
-				<ul>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Media</a></li>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Mobile Apps</a></li>
-					<li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">Privacy Policy</a></li>
-				</ul>
-			</div>
-			<div class="col-md-3 col-xs-3 wthree_footer_grid_left1 wthree_footer_grid_right1">
-				<h4>Contact Us</h4>
-				<ul>
-					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com"><?php echo $general_fetch['website_email1']; ?></a></li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i><?php echo "Business Phone No"; ?></li>
-					<li><i class="fa fa-fax" aria-hidden="true"></i><?php echo "Business Address"; ?></li>
-				</ul>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-</div>
-<div class="w3layouts_copy_right">
-	<div class="container">
-		<p>© <?php echo $general_fetch['website_start']; ?> - 2018 Scholarly. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a> Developed By Ravi Khadka</p>
-	</div>
-</div>
-	<?php }?>
 	<!-- //footer -->
 
 <!-- js-scripts -->			
@@ -708,25 +548,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //js-files -->
 <!-- Baneer-js -->
 
-<!-- Map-JavaScript -->
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>        
-			<script type="text/javascript">
-				google.maps.event.addDomListener(window, 'load', init);
-				function init() {
-					var mapOptions = {
-						zoom: 11,
-						center: new google.maps.LatLng(40.6700, -73.9400),
-						styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
-					};
-					var mapElement = document.getElementById('map');
-					var map = new google.maps.Map(mapElement, mapOptions);
-					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(40.6700, -73.9400),
-						map: map,
-					});
-				}
-			</script>
-		<!-- //Map-JavaScript -->
 
 <!-- smooth scrolling -->
 <script src="js/SmoothScroll.min.js"></script>
@@ -746,15 +567,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	});
 </script>
 	<script type="text/javascript">
-		$(document).ready(function() {
-		/*
-			var defaults = {
-			containerID: 'toTop', // fading element id
-			containerHoverID: 'toTopHover', // fading element hover id
-			scrollSpeed: 1200,
-			easingType: 'linear' 
-			};
-		*/								
+		$(document).ready(function() {							
 		$().UItoTop({ easingType: 'easeOutQuart' });
 		});
 	</script>
