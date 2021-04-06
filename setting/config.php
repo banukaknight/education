@@ -36,10 +36,16 @@ class project2
 	{
 		$student_info_sel = "select * from st_info where st_username='$st_username'";
 		$student_info_run = $this->connectdb->query($student_info_sel);
-		
 		return $student_info_run;
 	}
-		
+	
+	//////////// TimeTable retrieval ----------
+	public function get_timetable($st_grade)
+	{
+		$st_timetable = "select * from table_name where st_grade='$st_grade'";
+		$st_timetable_run = $this->connectdb->query($st_timetable);
+		return $st_timetable_run;
+	}
 	
 	/////////////////////////////// ADMINNNNNNNNNNNNNNNNN--------------------------
 	
