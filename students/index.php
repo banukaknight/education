@@ -34,10 +34,11 @@ if(isset($_POST['student_signin']))
 
 ?>
 <!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
+Initial Template by: W3layouts © 2016
+Initial development by: Ravi Khadka © 2018
+Capstone development by: Banuka | Checki | Samrin | Sanduni | Kavindu
+Capstone for: Lovely Professional University © 2021
+Project Guidence: Ms. Sonam Kaler
 -->
 <!DOCTYPE HTML>
 <html>

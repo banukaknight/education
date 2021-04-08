@@ -14,23 +14,22 @@ else
 
 }
 
-
 ?>
 <!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
+Initial Template by: W3layouts © 2016
+Initial development by: Ravi Khadka © 2018
+Capstone development by: Banuka | Checki | Samrin | Sanduni | Kavindu
+Capstone for: Lovely Professional University © 2021
+Project Guidence: Ms. Sonam Kaler
 -->
 <!DOCTYPE HTML>
 <html>
 
 <head>
-    <title>Augment an Admin Panel Category Flat Bootstrap Responsive Web Template | Home :: w3layouts</title>
+    <title><?php echo "Logged in as: $st_username" ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <meta name="keywords" content="E-App">
     <script type="application/x-javascript">
     addEventListener("load", function() {
         setTimeout(hideURLbar, 0);
@@ -44,6 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/banukacss.css" rel='stylesheet' type='text/css' />
     <!-- Graph CSS -->
     <link href="css/font-awesome.css" rel="stylesheet">
     <!-- jQuery -->
@@ -59,15 +59,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="js/radar.js"></script>
     <link href="css/barChart.css" rel='stylesheet' type='text/css' />
     <link href="css/fabochart.css" rel='stylesheet' type='text/css' />
+
     <!--clock init-->
     <script src="js/css3clock.js"></script>
     <!--Easy Pie Chart-->
     <!--skycons-icons-->
     <script src="js/skycons.js"></script>
-
     <script src="js/jquery.easydropdown.js"></script>
-
     <!--//skycons-icons-->
+
+    <link rel="stylesheet" href="js-calendar/app.css">
 </head>
 
 <body>
@@ -77,10 +78,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="inner-content">
                 <!-- header-starts -->
                 <div class="header-section">
-
                     <div class="clearfix"></div>
                 </div>
                 <!-- //header-ends -->
+
                 <div class="outter-wp">
                     <!--/tabs-->
                     <div class="tab-main">
@@ -89,6 +90,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div id="tabs" class="tabs">
                                 <h2 class="inner-tittle">Welcome,
                                     <?php echo ucfirst($student_name_display['st_fullname']); ?> </h2>
+
+
                                 <div class="graph">
                                     <nav>
                                         <ul>
@@ -107,16 +110,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <li><a href="#section-7"><i class="fa fa-check-circle"></i>
                                                     <span>Attendence</span></a></li>
 
+
                                         </ul>
                                     </nav>
                                     <div class="content tab">
                                         <section id="section-1">
                                             <div class="mediabox">
+
                                                 <strong>Personal Information</strong>
-                                                <p> <strong>WELCOME</strong>,
+                                                <p> <strong>Name: </strong>
                                                     <?php echo ucfirst($student_name_display['st_fullname']); ?>
                                                 </p>
-                                                <p><strong>standard: </strong>
+                                                <p><strong>Grade: </strong>
                                                     <?php echo ucfirst($student_name_display['st_grade']); ?>
                                                 </p>
                                                 <p><strong>Roll No: </strong>
@@ -136,25 +141,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <p> <strong>Address:</strong>
                                                     <?php echo ucfirst($student_name_display['st_address']); ?>
                                                 </p>
-                                                <p> <strong>District:</strong>
-                                                    <?php echo ucfirst($student_name_display['st_district']); ?>
-                                                </p>
-                                                <p> <strong>Username:</strong>
+                                                <p> <strong>Registration No:</strong>
                                                     <?php echo ucfirst($student_name_display['st_username']); ?>
                                                 </p>
-                                            </div>
-                                            <div class="mediabox">
-                                                <strong>Parents Detail</strong>
-                                                <p><strong>Father Name: </strong>
-                                                    <?php echo ucfirst($student_name_display['st_father']); ?>
-                                                </p>
-                                                <p><strong>Mother Name: </strong>
-                                                    <?php echo ucfirst($student_name_display['st_mother']); ?>
-                                                </p>
-                                                <p><strong>Parents Contact: </strong>
+                                                <p><strong>Contact: </strong>
                                                     <?php echo ucfirst($student_name_display['st_parents_contact']); ?>
                                                 </p>
                                             </div>
+
                                         </section>
                                         <section id="section-2">
 
@@ -299,14 +293,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </section>
 
                                         <section id="section-6">
-                                            <div class="graph" style="background-image: url('./images/bk/ruledbg.jpg')">
+                                            <div class="graph" id="ttbg">
                                                 <div class="tables">
 
                                                     <table class="table table-hover table-condensed table-sm ">
                                                         <thead>
-														<caption><b>Time Table for Grade: <?php echo  $student_name_display['st_grade']; ?> </b></caption>
+                                                            <caption><b>Time Table for Grade:
+                                                                    <?php echo  $student_name_display['st_grade']; ?>
+                                                                </b></caption>
                                                             <tr class="info">
-                                                                <th>#</th><th>Time</th> <th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th>
+                                                                <th>#</th>
+                                                                <th>Time</th>
+                                                                <th>Monday</th>
+                                                                <th>Tuesday</th>
+                                                                <th>Wednesday</th>
+                                                                <th>Thursday</th>
+                                                                <th>Friday</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -318,7 +320,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 															while($t_info = $get_timetable->fetch_assoc()) {
 																		?>
 
-                                                            <tr  <?php if($n==5){ echo "class='danger'"; } ?>  >
+                                                            <tr <?php if($n==5){ echo "class='danger'"; } ?>>
                                                                 <th class="danger" scope="row"><?php echo $n; ?></th>
                                                                 <th class="info"><?php echo $t_info['time']; ?></th>
                                                                 <td><?php echo $t_info['Monday']; ?></td>
@@ -358,7 +360,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		}
 
 	?>
-                                                <div class="tables">
+                                                <div class="tables" id="attnbg">
                                                     <h5>Attendance data of student id: <?php echo $st_username ?></h5>
                                                     <table class="table table-hover">
                                                         <thead>
@@ -496,12 +498,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <!--/charts-inner-->
                     </div>
-                    <!--//outer-wp-->
+
                 </div>
+                    <!--//outer-wp-->
                 <!--footer section start-->
                 <footer>
-                    <p>&copy 2018 Augment . All Rights Reserved | Design by <a href="https://w3layouts.com/"
-                            target="_blank">W3layouts.</a> and Develop By Ravi Khadka</p>
+                    <p>
+                        <?php $ip = $_SERVER['REMOTE_ADDR'];
+					if ($ip != '127.0.0.1'){
+					$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+                        //code for getting location of user using ip address
+					echo "User ID: $st_username | Logged in from: "; 
+					echo "$details->city, $details->region, $details->country with IP address: $details->ip" ;
+										}else{
+											echo "Logged in User ID: $st_username";
+                                       }
+					?>
+                        <a class=" btn-danger btn-sm float-right " href="logouts.php"><span> Log out </span><i
+                                class="lnr lnr-power-switch"></i></a>
+                                <a class=" btn-primary btn-sm float-right " href="../"><span> Home </span><i class="lnr lnr-arrow-left"></i></a>
+                   
+                    </p>
                 </footer>
                 <!--footer section end-->
             </div>
@@ -510,48 +527,78 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--/sidebar-menu-->
         <div class="sidebar-menu">
             <header class="logo">
-                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html"> <span
-                        id="logo">
-                        <h1>Augment</h1>
+                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo">
+                        <h1><?php echo $st_username ?></h1>
                     </span>
-                    <!--<img id="logo" src="" alt="Logo"/>-->
                 </a>
             </header>
             <div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
             <!--/down-->
-            <div class="down">
+            <div class="down" id="sidebarbg">
                 <?php
 				$st_gender = $student_name_display['st_gender'];
 				if($st_gender == 'Male'){
-					echo "<img src='images/picm.jpg'>";
+					echo "<img src='images/bk/picm.png'>";
 				}else if($st_gender == 'Female'){
-					echo "<img src='images/picf.jpg'>";
+					echo "<img src='images/bk/picf.png'>";
 				}else{
-					echo "<img src='images/pice.jpg'>";
+					echo "<img src='images/bk/pice.png'>";
 				}
 				
 				?>
 
-                <a href="index.html"><span
-                        class=" name-caret"><?php echo $student_name_display['st_fullname']; ?></span></a>
+                <span class=" name-caret"><?php echo $student_name_display['st_fullname']; ?></span>
                 <p>Student</p>
                 <ul>
-                    <li><a class="tooltips" href="index.html"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-                    <li><a class="tooltips" href="index.html"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+                    <li><a class="tooltips" href="#"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+                    <li><a class="tooltips" href="#"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
                     <li><a class="tooltips" href="logouts.php"><span>Log out</span><i
                                 class="lnr lnr-power-switch"></i></a></li>
                 </ul>
+
             </div>
+
             <!--//down-->
-            <div class="menu">
+            <div class="menu ">
+
                 <ul id="menu">
-                    <li><a href="index.html"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
 
+                    <li><a href="./assignments/index.php"><i class="fa fa-file-text"></i>
+                            <span>Assignments</span></a></li>
 
+                    <li><span>
+                            <div class="dark ">
+                                <div class="calendar ">
+                                    <div class="calendar-header">
+                                        <span class="month-picker" id="month-picker">February</span>
+                                        <div class="year-picker">
+                                            <span class="year-change" id="prev-year">
+                                                <pre><</pre>
+                                            </span>
+                                            <span id="year">2021</span>
+                                            <span class="year-change" id="next-year">
+                                                <pre>></pre>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-body">
+                                        <div class="calendar-week-day">
+                                            <div>Sun</div>
+                                            <div>Mon</div>
+                                            <div>Tue</div>
+                                            <div>Wed</div>
+                                            <div>Thu</div>
+                                            <div>Fri</div>
+                                            <div>Sat</div>
+                                        </div>
+                                        <div class="calendar-days"></div>
+                                    </div>
 
+                                    <div class="month-list"></div>
+                                </div>
 
-
-
+                            </div>
+                        </span></li>
                 </ul>
             </div>
         </div>
@@ -585,6 +632,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="js/CSSPlugin.min.js"></script>
     <script src="js/jquery.nicescroll.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js-calendar/app.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

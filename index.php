@@ -1,6 +1,9 @@
-
 <!--
-	w3 URL: http://w3layouts.com
+Initial Template by: W3layouts © 2016
+Initial development by: Ravi Khadka © 2018
+Capstone development by: Banuka | Checki | Samrin | Sanduni | Kavindu
+Capstone for: Lovely Professional University © 2021
+Project Guidence: Ms. Sonam Kaler
 -->
 <!DOCTYPE html>
 <html lang="zxx">
@@ -19,34 +22,18 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
 <link rel="stylesheet" href="css/swipebox.css">
 <link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" href="css/banukacss.css" type="text/css" media="all" /> <!-- Style-CSS --> 
 <!-- //css files -->
 <!-- online-fonts -->
 <link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
 <!-- //online-fonts -->
-<!-- inner css -->
-<style>
-.map-responsive{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-}
-.map-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
-</style>
-<!-- //inner css -->
 <!-- other -->
-<link rel="icon" href="./images/bg/logo.png">
+<link rel="icon" href="./images/bk/logo.png">
 </head>
 <body>
 <!-- banner -->
-<div class="main_section_agile" id="home" style="background-image: url('./images/bg/navbg.jpg'); background-size: cover;">
+<div class="main_section_agile" id="home" style="background-image: url('./images/bk/navbg.jpg'); background-size: cover;">
 	<div class="agileits_w3layouts_banner_nav" >
 		<nav class="navbar navbar-default">
 			<div class="navbar-header navbar-left">
@@ -57,7 +44,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<span class="icon-bar"></span>
 				</button>
 			<h1><a class="navbar-brand" href="index.html">
-			<i aria-hidden="true"><img src="./images/bg/logo.png" style="height: 30px;" alt=""></i> 
+			<i aria-hidden="true"><img src="./images/bk/logo.png" style="height: 30px;" alt=""></i> 
 			Mo/Yudaganawa Vidyalaya</a></h1>
 
 			</div>
@@ -437,20 +424,20 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 				<div class="agile_contact_grid_right agileits_w3layouts_right1">
 					<h4>Email</h4>
-					<p><a href="mailto:info@example.com"><?php echo $general_fetch['website_email1']; ?></a>
-						<span><a href="mailto:info@example.com"><?php echo $general_fetch['website_email2']; ?></a></span></p>
+					<p><a href="mailto: <?php echo $general_fetch['website_email1']; ?>"><?php echo $general_fetch['website_email1']; ?></a>
+						<span><a href="mailto: <?php echo $general_fetch['website_email2']; ?>"><?php echo $general_fetch['website_email2']; ?></a></span></p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
 		<div class="w3l-form">
-			<h3 class="w3l-title">Write us <small>| අපට ලියන්න | எங்களுக்கு எழுதுங்கள்</small></h3>
+			<h3 class="w3l-title">Write to us <small>| අපට ලියන්න | எங்களுக்கு எழுதுங்கள்</small></h3>
 			<div class="w3layouts_header">
 			<p><i class="fa fa-commenting" aria-hidden="true"></i></p>
 		</div>
 			<div class="contact-grid1">
-				<div class="contact-top1">
+				<div class="contact-top1" style="background-image: url('./images/bk/contactbg.jpg'); background-size: cover;">
 					<form action="#" method="post">
 						<div class="col-md-6 col-xs-6 wthree_contact_left_grid">
 							<label>Name*</label>
@@ -523,7 +510,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="col-md-3 col-xs-3 wthree_footer_grid_left1 wthree_footer_grid_right1">
 				<h4>Contact Us</h4>
 				<ul>
-					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com"><?php echo $general_fetch['website_email1']; ?></a></li>
+					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto: <?php echo $general_fetch['website_email1']; ?>"><?php echo $general_fetch['website_email1']; ?></a></li>
 					<li><i class="fa fa-phone" aria-hidden="true"></i><?php echo $general_fetch['website_phone1']; ?></li>
 					<li><i class="fa fa-fax" aria-hidden="true"></i><?php echo $general_fetch['website_address']; ?></li>
 				</ul>
@@ -532,9 +519,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 	</div>
 </div>
-<div class="w3layouts_copy_right">
+<div class="custom_copy_right">
 	<div class="container">
-		<p>© <?php echo $general_fetch['website_start']; ?> - 2018 Scholarly. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a> Developed By Ravi Khadka</p>
+		<p>© <?php echo $general_fetch['website_start']; ?> Developed by W3layouts | Ravi Khadka | & <big>Students of <a href="https://www.lpu.in/">Lovely Professional University</a></big></p>
 	</div>
 </div>
 	<?php } ?>
@@ -571,7 +558,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		$().UItoTop({ easingType: 'easeOutQuart' });
 		});
 	</script>
-	<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 0.9;"> </span></a>
 <!-- //moving-top scrolling -->
 <!-- gallery popup -->
 <script src="js/jquery.swipebox.min.js"></script> 

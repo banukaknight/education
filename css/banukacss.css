@@ -1,0 +1,57 @@
+/*--
+Author: Banuka Vidusanka
+Author URL: https://banukaknight.github.io/
+--*/
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.custom_copy_right {
+    padding: 1.5em 0;
+    text-align: center;
+	background:-webkit-linear-gradient(#85e7ff,#0660e6);
+	background:-moz-linear-gradient(#85e7ff,#0660e6);
+	background:-ms-linear-gradient(#85e7ff,#0660e6);
+    background: linear-gradient(to right bottom,#85e7ff,#0660e6);
+}
+.custom_copy_right p {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.1em;
+}
+.custom_copy_right p a{
+	color:#002147;
+	text-decoration:none;
+}
+.custom_copy_right p a:hover{
+	color:#fff;
+}
+
+.nav  > li > a{
+    text-shadow: 0 0 3px #00d9ff;
+}
+
+a.navbar-brand {
+    text-shadow: 0 0 3px #00aeff, 0 0 5px #0000FF;
+}
+
+.contact-top1 > form > div > label{
+    text-shadow: 0 0 4px #555555;
+}
+
+body {
+       background-image: linear-gradient(to right, white,rgb(161, 207, 228), white);
+}
+
