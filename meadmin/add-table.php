@@ -45,8 +45,8 @@ if(isset($_POST['add_exam_term']))
 	<div class="graph-form">
 		<div class="validation-form">
 			<!---->
-			<h2 align="center"><?php echo strtoupper($_GET['ravi']); ?></h2>
-			
+			<h2><?php echo strtoupper($_GET['ravi']); ?></h2>
+			<h1>NOT IN USE..... DELETE ??</h1>
 <form method="post">
 	<div class="col-md-12 form-group1 group-mail">
 					<label class="control-label">Add Exam Term</label>

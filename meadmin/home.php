@@ -30,7 +30,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 
 <head>
-    <title>Augment an Admin Panel Category Flat Bootstrap Responsive Web Template | Home :: w3layouts</title>
+    <title>Admin ID: <?php echo $meadmin_username_display['admin_username']; ?> </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -170,19 +170,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
 
 
-                    <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span>Database</span> <span
-                                class="fa fa-angle-right" style="float: right"></span></a>
-                        <ul id="menu-academico-sub">
-                            <li id="menu-academico-avaliacoes"><a href="home.php?ravi=student-information">Database
-                                    Information</a></li>
-                            <li id="menu-academico-boletim"><a href="home.php?ravi=add-table">Add Database</a></li>
-                            <li id="menu-academico-avaliacoes"><a href="#">Edit Database???</a></li>
-                            <li id="menu-academico-avaliacoes"><a href="#">Delete Database???</a></li>
-                            <li id="menu-academico-boletim"><a href="home.php?ravi=class-routine">Class Routine</a></li>
-                        </ul>
-                    </li>
-
-
                     <li id="menu-academico"><a href="#"><i class="fa fa-file-text-o"></i> <span>Settings</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
@@ -190,6 +177,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     Website Information</a></li>
                             <li id="menu-academico-avaliacoes" style="display:none"><a
                                     href="home.php?ravi=edit-general-information">Edit General Information</a></li>
+                            <li id="menu-academico-boletim"><a href="home.php?ravi=add-table">Add Database</a></li>
                         </ul>
                     </li>
 

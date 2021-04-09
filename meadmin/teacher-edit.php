@@ -9,7 +9,7 @@
         </ol>
     </div>
     <!--//sub-heard-part-->
-    <div class="graph-visual tables-main">
+    <div class="bkbox">
         <h2 class="inner-tittle">
             EDIT & DELETE TEACHER RECORDS
         </h2>
@@ -75,7 +75,7 @@
 
         </div>
     </div>
-
+    <!-- //bkbox -->
 
 </div>
 <!--//graph-visual-->
