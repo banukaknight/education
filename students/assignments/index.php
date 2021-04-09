@@ -21,13 +21,13 @@ if(isset($_FILES['file']))
     $target_path = $uploadFolder . time() .'_'. $st_username .'_'. str_replace( '_','', basename( $_FILES['file']['name']) );
     $extension=pathinfo($filename,PATHINFO_EXTENSION);
     
-    if(!in_array($extension,['pdf','png','jpg','jpeg','doc']))
+    if(!in_array($extension,['png','jpg','jpeg','doc']))
 	{
-		echo "your file exetension must be .pdf,.png, .jpg or .doc";
+		$message = "your file exetension must be .png, .jpg or .doc";
     }
     elseif ($_FILES['file']['size']>1000000)
     {
-        echo "file is too large";
+        $message = "file is too large";
     }    
         //Try to move the uploaded file into the designated folder
         if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
@@ -112,7 +112,7 @@ function formatBytes($bytes, $precision = 2) {
 <html>
 
 <head>
-    <title><?php echo "Logged in as: $st_username" ?></title>
+    <title><?php echo "Student ID: $st_username" ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="E-App">
@@ -172,7 +172,7 @@ function formatBytes($bytes, $precision = 2) {
                         <?php echo ucfirst($student_name_display['st_fullname']); ?> </h2>
 
                     <div id="container">
-                        <h2>Assignment Uploading Portal: <?php echo $st_username ?></h2>
+                        <h2 class="inner-tittle">Assignment Uploading Portal: <?php echo $st_username ?></h2>
 
                         <fieldset class="scheduler-border">
                             <legend class="scheduler-border">Submit Assignment</legend>
@@ -180,20 +180,15 @@ function formatBytes($bytes, $precision = 2) {
                                 <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
                                 <p><label for="name">Select file</label><br />
                                     <input type="file" name="file" />
+                                    <input type="submit" name="submit" value="Start Upload" />
+                                    <?php echo $message ?>
                                 </p>
-                                <p><input type="submit" name="submit" value="Start upload" /></p>
                             </form>
                         </fieldset>
 
                         <fieldset class="scheduler-border">
                             <legend class="scheduler-border">Previousely Uploaded Assignments</legend>
-                            <!-- <ul id="menu">
-                <li><a href="">All files</a></li>
-            </ul>
-            <ul id="files">
-                <?php //echo $uploaded_files; ?>
-            </ul> -->
-
+                          
                             <table id="assitb" class=" table table-condensed table-hover">
                                 <?php echo $uploaded_files; ?>
                             </table>
@@ -214,29 +209,32 @@ function formatBytes($bytes, $precision = 2) {
 					echo "User ID: $st_username | Logged in from: "; 
 					echo "$details->city, $details->region, $details->country with IP address: $details->ip" ;
 										}else{
-											echo "Logged in User ID: $st_username";
+											echo "Student ID: $st_username";
                                        }
 					?>
-                        <a class=" btn-danger btn-sm float-right" href="../logouts.php"><span> Log out </span><i class="lnr lnr-power-switch"></i></a>
-                        <a class=" btn-primary btn-sm float-right " href="../"><span> Go Back </span><i class="lnr lnr-arrow-left"></i></a>
+                        <a class=" btn-danger btn-sm float-right" href="../logouts.php"><span> Log out </span><i
+                                class="lnr lnr-power-switch"></i></a>
+                        <a class=" btn-primary btn-sm float-right " href="../"><span> Go Back </span><i
+                                class="lnr lnr-arrow-left"></i></a>
                     </p>
                 </footer>
 
                 <!--footer section end-->
 
-<!--//content-inner-->
-        <!--/sidebar-menu-->
-        <div class="sidebar-menu">
-            <header class="logo">
-                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo">
-                        <h1><?php echo $st_username ?></h1>
-                    </span>
-                </a>
-            </header>
-            <div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
-            <!--/down-->
-            <div class="down" id="sidebarbg">
-                <?php
+                <!--//content-inner-->
+                <!--/sidebar-menu-->
+                <div class="sidebar-menu">
+                    <header class="logo">
+                        <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span
+                                id="logo">
+                                <h1><?php echo $st_username ?></h1>
+                            </span>
+                        </a>
+                    </header>
+                    <div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+                    <!--/down-->
+                    <div class="down" id="sidebarbg">
+                        <?php
 				$st_gender = $student_name_display['st_gender'];
 				if($st_gender == 'Male'){
 					echo "<img src='../images/bk/picm.png'>";
@@ -248,30 +246,30 @@ function formatBytes($bytes, $precision = 2) {
 				
 				?>
 
-                <span class=" name-caret"><?php echo $student_name_display['st_fullname']; ?></span>
-                <p>Student</p>
-                <ul>
-                    <li><a class="tooltips" href="../"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-                    <li><a class="tooltips" href="#"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-                    <li><a class="tooltips" href="../logouts.php"><span>Log out</span><i
-                                class="lnr lnr-power-switch"></i></a></li>
-                </ul>
+                        <span class=" name-caret"><?php echo $student_name_display['st_fullname']; ?></span>
+                        <p>Student</p>
+                        <ul>
+                            <li><a class="tooltips" href="../"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+                            <li><a class="tooltips" href="#"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+                            <li><a class="tooltips" href="../logouts.php"><span>Log out</span><i
+                                        class="lnr lnr-power-switch"></i></a></li>
+                        </ul>
 
-            </div>
+                    </div>
 
-            <!--//down-->
-            <div class="menu ">
+                    <!--//down-->
+                    <div class="menu ">
 
-                <ul id="menu">
+                        <ul id="menu">
 
-                    <li><a href="../"><i class="lnr lnr-user"></i>
-                            <span>Profile</span></a></li>
+                            <li><a href="../"><i class="lnr lnr-user"></i>
+                                    <span>Profile</span></a></li>
 
-                   
-                </ul>
-            </div>
-        </div>
-        <div class="clearfix"></div>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
 
             </div>
 

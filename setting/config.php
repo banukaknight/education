@@ -10,6 +10,8 @@ class project2
 	public $dbname = "project2";
 	public $connectdb;
 	
+	public $gradelist = array(1,2,3,4,5); //list of grades in school
+
 	function __construct()
 	{
 		$this->connectdb = new mysqli($this->server,$this->username,$this->password,$this->dbname);
@@ -187,7 +189,7 @@ class project2
 		return $grade_run;
 	}
 	
-	///////////// display data from st_info select st-grade ///////////
+	///////////// display data from st_info select st-grade - REMOVE ///////////
 	public function grade_st_info($grade_st_data)
 	{
 		$grade_st_info_select = "select * from st_info where st_grade='$grade_st_data'";
@@ -201,10 +203,20 @@ class project2
 		$student_info_display_admin_run = $this->connectdb->query($student_info_display_admin_select);
 		return $student_info_display_admin_run;
 	}
+////////// all student info display by admin - banuka //////////////////////////
+public function all_student_info_display_admin()
+{
+	$student_info_display_admin_select = "select * from st_info";
+	$student_info_display_admin_run = $this->connectdb->query($student_info_display_admin_select);
+	return $student_info_display_admin_run;
+}
+
+
 	/////////// add student from admin panel /////////////////////
-	public function add_student($std_fullname,$std_username,$std_password,$std_grade,$std_roll,$std_dob,$std_address,$std_district,$std_gender,$std_father,$std_mother,$std_parent_contact)
+	public function add_student($std_fullname,$std_username,$std_password,$std_grade,$std_roll,$std_dob,$std_address,$std_gender,$std_parent_contact)
 	{
-		$add_student_insert = "insert into st_info(st_fullname,st_username,st_password,st_grade,roll_no,st_dob,st_address,st_district,st_gender,st_father,st_mother,st_parents_contact) value('$std_fullname','$std_username','$std_password','$std_grade','$std_roll','$std_dob','$std_address','$std_district','$std_gender','$std_father','$std_mother','$std_parent_contact')";
+		$add_student_insert = "insert into st_info(st_fullname,st_username,st_password,st_grade,roll_no,st_dob,st_address,st_gender,st_parents_contact) value('$std_fullname','$std_username','$std_password','$std_grade','$std_roll','$std_dob','$std_address','$std_gender','$std_parent_contact')";
+		//echo $add_student_insert; //debugging purpose only
 		$add_student_run = $this->connectdb->query($add_student_insert);
 		return $add_student_run;
 	}

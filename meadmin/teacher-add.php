@@ -43,14 +43,14 @@
 		<ol class="breadcrumb m-b-0">
 			<li><a href="index.html">Home</a></li>
 			<li class="active">
-				<?php if(isset($_GET['ravi'])){ echo strtoupper($page=$_GET['ravi']); } ?>
+			<?php echo strtoupper($_GET['ravi']); ?>
 			</li>
 		</ol>
 	</div>
 	<!--//sub-heard-part-->
 	<div class="graph-visual tables-main">
 		<h2 class="inner-tittle">
-			<?php echo strtoupper($_GET['ravi']); ?>
+			ADD NEW TEACHER RECORDS
 		</h2>
 
 		<div class="grid-1">

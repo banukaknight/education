@@ -66,3 +66,11 @@ legend.scheduler-border {
     margin:0px !important;
     padding:5px !important;
 }
+
+#container > fieldset:nth-child(2) {
+    background-image: url('../images/bk/assignments.png'); background-size: fill;  background-repeat: no-repeat;
+}
+
+#container > fieldset:nth-child(3) {
+    background-image: url('../images/bk/ruledbgline.jpg'); background-size: fill;  background-repeat: repeat;
+}

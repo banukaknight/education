@@ -16,7 +16,7 @@
 	  if($check_we>0)
 	  {
 		 echo "<script>alert('You Have Aleread Added Your Website Info ');</script>" ;
-	  	echo "<script>window.location = 'home.php';</script>";
+	  	echo "<script>window.location = 'home.php?ravi=edit-general-information';</script>";
 	  }		
 			else
 			{

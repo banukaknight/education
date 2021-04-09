@@ -38,7 +38,7 @@ if(isset($_POST['up_teacher']))
 	<!--sub-heard-part-->
 	<div class="sub-heard-part">
 		<ol class="breadcrumb m-b-0">
-			<li><a href="index.html">Home</a></li>
+			<li><a href="index.php">Home</a></li>
 			<li class="active">
 				<?php if(isset($_GET['ravi'])){ echo strtoupper($page=$_GET['ravi']); } ?>
 			</li>

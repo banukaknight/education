@@ -26,7 +26,7 @@ Project Guidence: Ms. Sonam Kaler
 <html>
 
 <head>
-    <title><?php echo "Logged in as: $st_username" ?></title>
+    <title><?php echo "Student ID: $st_username" ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="E-App">
@@ -65,7 +65,6 @@ Project Guidence: Ms. Sonam Kaler
     <!--Easy Pie Chart-->
     <!--skycons-icons-->
     <script src="js/skycons.js"></script>
-    <script src="js/jquery.easydropdown.js"></script>
     <!--//skycons-icons-->
 
     <link rel="stylesheet" href="js-calendar/app.css">
@@ -349,7 +348,7 @@ Project Guidence: Ms. Sonam Kaler
 
                                                 <?php  
 /* Attendance marking code by Banuka Vidusanka */
-	echo 'Logged in User IP Address - '.$_SERVER['REMOTE_ADDR'];  
+	echo 'User IP Address - '.$_SERVER['REMOTE_ADDR'];  
 	$attendance_success = $ravi->st_attendance($st_username);
 
 	if($attendance_success==true)
@@ -511,7 +510,7 @@ Project Guidence: Ms. Sonam Kaler
 					echo "User ID: $st_username | Logged in from: "; 
 					echo "$details->city, $details->region, $details->country with IP address: $details->ip" ;
 										}else{
-											echo "Logged in User ID: $st_username";
+											echo "Student ID: $st_username";
                                        }
 					?>
                         <a class=" btn-danger btn-sm float-right " href="logouts.php"><span> Log out </span><i
