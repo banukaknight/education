@@ -11,6 +11,7 @@ class project2
 	public $connectdb;
 	
 	public $gradelist = array(1,2,3,4,5); //list of grades in school
+	public $stafflist = array("Teacher","Admin"); //list of faculty types
 
 	function __construct()
 	{
@@ -48,7 +49,42 @@ class project2
 		$st_timetable_run = $this->connectdb->query($st_timetable);
 		return $st_timetable_run;
 	}
-	
+	////////////// FACULTY - banuka
+	public function faculty_login_check($t_username,$t_password)
+	{ 
+		$t_login_check = "select  * from teacher_info where t_username = '$t_username' and t_pass='$t_password' and t_staff_type='Teacher'";
+		$t_login_run = $this->connectdb->query($t_login_check);
+		$t_login_num = $t_login_run->num_rows;
+		return $t_login_num;
+	}
+
+	public function faculty_password_change($t_password_update,$t_username)
+	{
+		$faculty_password_update = "update teacher_info set t_pass='$t_password_update' where t_username='$t_username'";
+		$faculty_password_update_run = $this->connectdb->query($faculty_password_update);
+		return $faculty_password_update_run;
+	}
+
+	// attendence by faculty -banuka
+	public function faculty_mark_attendence($tb_name, $t_username, $sesh_date, $sesh_info, $attendence_arr)
+	{		
+		$attendence_keys = "";
+		$attendence_vals = "";
+		foreach ($attendence_arr as $key => $val){
+			$attendence_keys = $attendence_keys . ",`". $key ."`" ;
+			$attendence_vals =  $attendence_vals .",'". $val . "'" ;
+		}
+
+		$mark_attendence = "insert into $tb_name(t_username,sesh_date,sesh_info $attendence_keys ) value ('$t_username','$sesh_date','$sesh_info'  $attendence_vals  )";
+	echo $mark_attendence; //debugging purpose only
+	$mark_attendence_run = $this->connectdb->query($mark_attendence);
+	echo "<br>";
+	echo $this->connectdb -> error;
+		return $mark_attendence_run;
+			$attendence_keys = $attendence_keys . ",". $key ;
+		//INSERT INTO `at_g_1` (`sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `10000000`, `10000001`, `10000007`) VALUES ('1', '1000', '2021-04-11', '2021-04-12 23:13:57', 'test2', '1', '0', '1');
+	}
+
 	/////////////////////////////// ADMINNNNNNNNNNNNNNNNN--------------------------
 	
 	public function meadmin_check($admin_username,$admin_password)
@@ -66,6 +102,7 @@ class project2
 	}
 	
 	//////////////////////////////////Teacher Info ////////////////////////////////
+	// --- function used by admin-mod login & faculty-mod info collect
 	public function teacher_info($adminname,$t_staff_type)
 	{
 		switch($t_staff_type)
@@ -81,13 +118,11 @@ class project2
 		}
 		$teacher_info_select_run = $this->connectdb->query($teacher_info_select);
 		return $teacher_info_select_run;
-		
-	
-		
 	}
+
 	public function teacher_info_display_admin()
 	{
-		$teacher_info_admin = "select * from teacher_info";
+		$teacher_info_admin = "select * from teacher_info where t_staff_type='Teacher'";
 		$teacher_info_admin_run = $this->connectdb->query($teacher_info_admin);
 		return $teacher_info_admin_run;
 	}
@@ -142,13 +177,13 @@ class project2
 
 
 	///////////////////-------- display subject in admin ----------------////////
-	public function subject_info()
-	{
+	// public function subject_info()
+	// {
 		
-		$subject_info_admin = "select * from subjects_info";
-		$subject_info_admin_run = $this->connectdb->query($subject_info_admin);
-		return $subject_info_admin_run;
-	}
+	// 	$subject_info_admin = "select * from subjects_info";
+	// 	$subject_info_admin_run = $this->connectdb->query($subject_info_admin);
+	// 	return $subject_info_admin_run;
+	// }
 	
 	////////////  edit teacher information ////////////////////
 	
@@ -159,17 +194,19 @@ class project2
 		return $edit_teacherid_run;
 	}
 	///////////////// update teacher info from admin/////////////
-	public function update_teacher_info($up_fullname,$up_address,$up_email,$up_father,$up_mother,$up_dob,$up_qualification,$up_contact,$up_staff,$up_gender,$teacher_id)
+	public function update_teacher_info($up_fullname,$up_address,$up_email,$up_dob,$up_contact,$up_gender,$teacher_id)
 	{
-		$update_teacher_info_select = "update teacher_info set t_fullname='$up_fullname',t_address='$up_address',t_email='$up_email',t_father='$up_father',t_mother='$up_mother',t_dob='$up_dob',t_qualification='$up_qualification',t_contact='$up_contact',t_staff_type='$up_staff',t_gender='$up_gender' where t_id='$teacher_id'";
+		$update_teacher_info_select = "update teacher_info set t_fullname='$up_fullname',t_address='$up_address',t_email='$up_email',t_dob='$up_dob',t_contact='$up_contact',t_gender='$up_gender' where t_id='$teacher_id'";
+		//echo $update_teacher_info_select; //for debugigng only
 		$update_teacher_info_run = $this->connectdb->query($update_teacher_info_select);
 		return $update_teacher_info_run;
 	}
 	
 	////////// add new teacher form admin ////////////////////////
-	public function add_teacher($add_t_fullname,$add_t_address,$add_t_email,$add_t_username,$add_t_pass,$add_t_father,$add_t_mother,$add_t_dob,$add_t_qualification,$add_t_contact,$add_t_staff,$add_t_gender)
+	public function add_teacher($add_t_fullname,$add_t_address,$add_t_email,$add_t_username,$add_t_pass,$add_t_dob,$add_t_contact,$add_t_staff,$add_t_gender)
 	{
-	$add_teacher = "insert into teacher_info(t_fullname,t_address,t_email,t_username,t_pass,t_father,t_mother,t_dob,t_qualification,t_contact,t_staff_type,t_gender) value('$add_t_fullname','$add_t_address','$add_t_email','$add_t_username','$add_t_pass','$add_t_father','$add_t_mother','$add_t_dob','$add_t_qualification','$add_t_contact','$add_t_staff','$add_t_gender')";
+	$add_teacher = "insert into teacher_info(t_fullname,t_address,t_email,t_username,t_pass,t_dob,t_contact,t_staff_type,t_gender) value('$add_t_fullname','$add_t_address','$add_t_email','$add_t_username','$add_t_pass','$add_t_dob','$add_t_contact','$add_t_staff','$add_t_gender')";
+	//echo $add_teacher; //debugging purpose only
 	$add_teacher_run = $this->connectdb->query($add_teacher);
 		return $add_teacher_run;
 	}
@@ -181,6 +218,16 @@ class project2
 	$delete_teacher_info_run = $this->connectdb->query($delete_teacher_info);
 	return $delete_teacher_info_run;
 	}
+
+	//////// delete student form admin -banuka //////////////////////
+	public function delete_student($del_st)
+	{
+	$delete_st_info = " delete from st_info where st_username='$del_st'";
+	$delete_st_info_run = $this->connectdb->query($delete_st_info);
+	return $delete_st_info_run;
+	}
+
+	
 	////////////////////// looping class from subject info table////////////////
 	public function grade($grade)
 	{
@@ -190,26 +237,26 @@ class project2
 	}
 	
 	///////////// display data from st_info select st-grade - REMOVE ///////////
-	public function grade_st_info($grade_st_data)
-	{
-		$grade_st_info_select = "select * from st_info where st_grade='$grade_st_data'";
-		$grade_st_info_run = $this->connectdb->query($grade_st_info_select);
-		return $grade_st_info_run;
-	}
-	////////// student info display by admin //////////////////////////
+	// public function grade_st_info($grade_st_data)
+	// {
+	// 	$grade_st_info_select = "select * from st_info where st_grade='$grade_st_data'";
+	// 	$grade_st_info_run = $this->connectdb->query($grade_st_info_select);
+	// 	return $grade_st_info_run;
+	// }
+	////////// student info display (by grade) by admin //////////////////////////
 	public function student_info_display_admin($class_students_data)
 	{
 		$student_info_display_admin_select = "select * from st_info where st_grade='$class_students_data'";
 		$student_info_display_admin_run = $this->connectdb->query($student_info_display_admin_select);
 		return $student_info_display_admin_run;
 	}
-////////// all student info display by admin - banuka //////////////////////////
-public function all_student_info_display_admin()
-{
-	$student_info_display_admin_select = "select * from st_info";
-	$student_info_display_admin_run = $this->connectdb->query($student_info_display_admin_select);
-	return $student_info_display_admin_run;
-}
+	////////// all student info display by admin - banuka //////////////////////////
+	public function all_student_info_display_admin()
+	{
+		$student_info_display_admin_select = "select * from st_info";
+		$student_info_display_admin_run = $this->connectdb->query($student_info_display_admin_select);
+		return $student_info_display_admin_run;
+	}
 
 
 	/////////// add student from admin panel /////////////////////
@@ -218,8 +265,32 @@ public function all_student_info_display_admin()
 		$add_student_insert = "insert into st_info(st_fullname,st_username,st_password,st_grade,roll_no,st_dob,st_address,st_gender,st_parents_contact) value('$std_fullname','$std_username','$std_password','$std_grade','$std_roll','$std_dob','$std_address','$std_gender','$std_parent_contact')";
 		//echo $add_student_insert; //debugging purpose only
 		$add_student_run = $this->connectdb->query($add_student_insert);
+		
+		if($add_student_run ==true){
+			//attendence module, table column adding -banuka
+			$atten_tb = "at_g_" . $std_grade; //set tablename for grade
+			$attendence_col_insert = "ALTER TABLE `$atten_tb` ADD `$std_username` TINYINT NOT NULL DEFAULT '2';";
+			//echo $attendence_col_insert; //debugging purpose
+			//$attendence_col_run = $this->connectdb->query($attendence_col_insert);
+			if (! $this->connectdb->query($attendence_col_insert)) {
+				echo("Error description: " . $this->connectdb -> error);
+			}
+		}
 		return $add_student_run;
 	}
+
+	/////////// UPDATE student from admin panel - banuka /////////////////////
+	public function update_student_adm($std_fullname,$std_username,$std_password,$std_grade,$std_roll,$std_dob,$std_address,$std_gender,$std_parent_contact)
+	{
+		$add_student_insert = "update st_info set st_fullname='$std_fullname', st_password='$std_password',st_grade='$std_grade', 
+		roll_no='$std_roll', st_dob='$std_dob', st_address='$std_address', st_gender='$std_gender', st_parents_contact='$std_parent_contact' 
+		where st_username='$std_username' ";
+		//echo $add_student_insert; //debugging purpose only
+		$add_student_run = $this->connectdb->query($add_student_insert);
+		return $add_student_run;
+	}
+	
+		
 	
 	///////////// General Information about website ///////////
 	public function general_setting($web_name,$web_address,$web_phone1,$web_phone2,$web_email1,$web_email2,$web_start,$web_about)

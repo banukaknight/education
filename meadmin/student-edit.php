@@ -1,3 +1,11 @@
+<?php
+//code for added layer of security, to prevent direct access to module -banuka
+ if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+    /* choose the appropriate page to redirect users */
+    die( header( 'location: ./home.php' ) );
+}
+?>
 <?php 
  
  if(isset($_POST['std_edit_now']))
@@ -34,7 +42,7 @@
 		 if($add_student_done==true)
 		 {
 			 echo "<script>alert('Student Edit SUCCESFUL!');</script>";
-			//echo "<script>window.location = 'home.php?ravi=student-information';</script>";
+			//echo "<script>window.location = 'home.php?at=student-information';</script>";
 		 }
 		 else
 		 {
@@ -51,11 +59,11 @@ if(isset($_POST['std_delete_now'])){
     $del_done = $ravi->delete_student($std_username);
     if($del_done==true)
     {
-        echo "<script>window.location = 'home.php?ravi=student-information'; alert('Deleted Teacher Record');</script>";	
+        echo "<script>window.location = 'home.php?at=student-information'; alert('Deleted Student Record');</script>";	
     }
     else
     {
-        echo "<script>window.location='home.php?ravi=student-edit'; alert('Unable to delete Teacher Record');</script>";
+        echo "<script>window.location='home.php?at=student-edit'; alert('Unable to delete Student Record');</script>";
     }
 }
 ?>
@@ -66,7 +74,7 @@ if(isset($_POST['std_delete_now'])){
         <ol class="breadcrumb m-b-0">
             <li><a href="home.php">Home</a></li>
             <li class="active">
-                <?php echo strtoupper($_GET['ravi']); ?>
+                <?php echo strtoupper($_GET['at']); ?>
             </li>
         </ol>
     </div>
@@ -75,41 +83,42 @@ if(isset($_POST['std_delete_now'])){
     <div class="bkbox">
         <h2 class="inner-tittle ">EDIT STUDENT</h2>
 
-            <form method="post">
+        <form method="post">
 
-                <label class="form-label">Select Student Registration:</label>
-                <div class="row">
-            <div class=" col-md-6">
-                <select name="std_id" class="form-select" required>
-                    <?php
+            <label class="form-label">Select Student Registration:</label>
+            <div class="row">
+                <div class=" col-md-6">
+                    <select name="std_id" class="form-select" required>
+                        <?php
                         $opt = $ravi->all_student_info_display_admin(); //get all students
 						while($op=$opt->fetch_assoc()) {
 						?>
-                    <option value="<?php echo $op['st_username']; ?>">
-                        <?php echo $op['st_username'] ." - ". $op['st_fullname'] ; ?></option>
+                        <option value="<?php echo $op['st_username']; ?>"
+                            <?php if(isset($_POST['students_info']) && $_POST['std_id']==$op['st_username'] ) { echo 'selected="selected"';} ?>>
+                            <?php echo $op['st_username'] ." - G:". $op['st_grade'] ." - ". $op['st_fullname']; ?>
+                        </option>
 
-                    <?php } ?>
+                        <?php } ?>
 
-                </select>
-                
-        </div>
-        
-        <div class=" col-md-6">
-                <Button type="submit" name="students_info" class="btn btn-info">Display Student Info</button>
-                        </div>
+                    </select>
+
                 </div>
-            </form>
+
+                <div class=" col-md-6">
+                    <Button type="submit" name="students_info" class="btn btn-info">Display Student Info</button>
+                </div>
+            </div>
+        </form>
         <div class="clearfix"> </div>
 
-        <?php
-										
-                                        if(isset($_POST['students_info']))
-                                        {
-                                            $std_id = $_POST['std_id'];
-                                        $st_info =$ravi->student_info_select($std_id);
-	                                    $st_info_display = $st_info->fetch_assoc();
-                                            //$s_sn = 1;
-                                    ?>
+        <?php						
+            if(isset($_POST['students_info']))
+            {
+                $std_id = $_POST['std_id'];
+            $st_info =$ravi->student_info_select($std_id);
+            $st_info_display = $st_info->fetch_assoc();
+                //$s_sn = 1;
+        ?>
 
 
         <div class="graph">
@@ -233,26 +242,3 @@ if(isset($_POST['std_delete_now'])){
     </div>
 </div>
 
-
-<script>
-//bootstrap validation code by banuka
-(function() {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-        .forEach(function(form) {
-            form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
-</script>

@@ -1,3 +1,11 @@
+<?php
+//code for added layer of security, to prevent direct access to module -banuka
+ if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+    /* choose the appropriate page to redirect users */
+    die( header( 'location: ./home.php' ) );
+}
+?>
 <?php 
 
  $teacher_id = $_GET['teacherid'];
@@ -23,7 +31,7 @@ if(isset($_POST['up_teacher']))
 	$update_done = $ravi->update_teacher_info($up_fullname,$up_address,$up_email,$up_dob,$up_contact,$up_gender,$teacher_id);
 	if($update_done==true)
 	{
-		echo "<script>window.location='home.php?ravi=teacher-information';</script>";
+		echo "<script>window.location='home.php?at=teacher-information';</script>";
 		echo "<script>alert('Teacher Edit SUCCESFUL!');</script>";
 	}
 	else
@@ -39,7 +47,7 @@ if(isset($_POST['up_teacher']))
     <div class="sub-heard-part">
         <ol class="breadcrumb m-b-0">
             <li><a href="home.php">Home</a></li>
-            <li class="active"><?php if(isset($_GET['ravi'])){ echo strtoupper($page=$_GET['ravi']); } ?>
+            <li class="active"><?php if(isset($_GET['at'])){ echo strtoupper($page=$_GET['at']); } ?>
             </li>
         </ol>
     </div>

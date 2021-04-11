@@ -17,7 +17,7 @@ else
 ?>
 <!--
 Initial Template by: W3layouts © 2016
-Initial development by: Ravi Khadka © 2018
+Prior development by: Ravi Khadka © 2018
 Capstone development by: Banuka | Checki | Samrin | Sanduni | Kavindu
 Capstone for: Lovely Professional University © 2021
 Project Guidence: Ms. Sonam Kaler
@@ -109,7 +109,6 @@ Project Guidence: Ms. Sonam Kaler
                                             <li><a href="#section-7"><i class="fa fa-check-circle"></i>
                                                     <span>Attendence</span></a></li>
 
-
                                         </ul>
                                     </nav>
                                     <div class="content tab">
@@ -161,7 +160,7 @@ Project Guidence: Ms. Sonam Kaler
 													
 													if($prev_password!=$old_password)
 													{ 
-														echo "<script>alert('Old Password Does not Matched');</script>";	
+														echo "<script>alert('Old Password not Matched');</script>";	
 													}
 													else
 													{
@@ -176,7 +175,7 @@ Project Guidence: Ms. Sonam Kaler
 													}
 														else
 														{
-															echo "<script>alert('cant update password');</script>";
+															echo "<script>alert('Unable to update password');</script>";
 														}
 													}
 													
@@ -188,19 +187,21 @@ Project Guidence: Ms. Sonam Kaler
                                                         <span class="input-group-addon">
                                                             <i class="fa fa-key"></i> </span>
                                                         <input type="password" class="form-control1 icon"
-                                                            name="old_password" placeholder="Old Password">
+                                                            name="old_password" placeholder="Old Password" required>
 
                                                     </div>
                                                     <div class="input-group input-icon">
                                                         <span class="input-group-addon">
                                                             <i class="fa fa-key"></i> </span>
                                                         <input type="password" class="form-control1 icon"
-                                                            placeholder="New Password" name="new_password">
+                                                            title="Accept: AlphaNumeric & @£$!%*#?&_ length(2-30)"
+                                                            placeholder="New Password" name="new_password" required
+                                                            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@£$!%*#?&_]{2,30}$">
 
                                                     </div>
 
-                                                    <input type="submit" name="change_password" class="a_demo_four"
-                                                        value="Change Password">
+                                                    <button type="submit" name="change_password" class="btn btn-info">
+                                                        Change Password</button>
                                                 </form>
                                             </div>
                                         </section>
@@ -241,7 +242,6 @@ Project Guidence: Ms. Sonam Kaler
                                                 </div>
 
                                             </div>
-
 
                                         </section>
                                         <section id="section-4">
@@ -295,7 +295,8 @@ Project Guidence: Ms. Sonam Kaler
                                             <div class="graph" id="ttbg">
                                                 <div class="tables">
 
-                                                    <table class="table table-hover table-condensed table-sm ">
+                                                    <table
+                                                        class="table table-hover table-condensed table-sm table-responsive">
                                                         <thead>
                                                             <caption><b>Time Table for Grade:
                                                                     <?php echo  $student_name_display['st_grade']; ?>
@@ -499,7 +500,7 @@ Project Guidence: Ms. Sonam Kaler
                     </div>
 
                 </div>
-                    <!--//outer-wp-->
+                <!--//outer-wp-->
                 <!--footer section start-->
                 <footer>
                     <p>
@@ -515,8 +516,9 @@ Project Guidence: Ms. Sonam Kaler
 					?>
                         <a class=" btn-danger btn-sm float-right " href="logouts.php"><span> Log out </span><i
                                 class="lnr lnr-power-switch"></i></a>
-                                <a class=" btn-primary btn-sm float-right " href="../"><span> Home </span><i class="lnr lnr-arrow-left"></i></a>
-                   
+                        <a class=" btn-primary btn-sm float-right " href="../"><span> Home </span><i
+                                class="lnr lnr-arrow-left"></i></a>
+
                     </p>
                 </footer>
                 <!--footer section end-->

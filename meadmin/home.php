@@ -16,15 +16,13 @@ else
 	$info_display = $info->fetch_assoc();
 	
 }
-
-
-
 ?>
 <!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
+Initial Template by: W3layouts © 2016
+Prior development by: Ravi Khadka © 2018
+Capstone development by: Banuka | Checki | Samrin | Sanduni | Kavindu
+Capstone for: Lovely Professional University © 2021
+Project Guidence: Ms. Sonam Kaler
 -->
 <!DOCTYPE HTML>
 <html>
@@ -46,8 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="../css/bootstrap5.min.css" rel="stylesheet" type='text/css' crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -97,9 +94,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				//include SECTIONS CODE
 				//or load other modules in this place.... based on button clicks on left navs
 				$homepage = "home1";
-				if(isset($_GET['ravi']))
+				if(isset($_GET['at']))
 				{
-					$homepage = $_GET['ravi'];
+					$homepage = $_GET['at'];
 				}
 				include $homepage.".php";
 				?>
@@ -147,10 +144,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span>Students</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
-                            <li id="menu-academico-avaliacoes"><a href="home.php?ravi=student-information">View Student
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=student-information">View Student
                                     Information</a></li>
-                            <li id="menu-academico-boletim"><a href="home.php?ravi=student-add">Register Student</a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?ravi=student-edit">Edit Students</a></li>
+                            <li id="menu-academico-boletim"><a href="home.php?at=student-add">Register Student</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=student-edit">Edit Students</a></li>
 
                         </ul>
                     </li>
@@ -160,10 +157,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 class="fa fa-angle-right" style="float: right"></span></a>
 
                         <ul id="menu-academico-sub">
-                            <li id="menu-academico-avaliacoes"><a href="home.php?ravi=teacher-information">View Teacher
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=teacher-information">View Teacher
                                     Information</a></li>
-                            <li id="menu-academico-boletim"><a href="home.php?ravi=teacher-add">Add New Teacher</a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?ravi=teacher-edit">Edit Teachers</a>
+                            <li id="menu-academico-boletim"><a href="home.php?at=teacher-add">Add New Teacher</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=teacher-edit">Edit Teachers</a>
                             </li>
 
                         </ul>
@@ -173,11 +170,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li id="menu-academico"><a href="#"><i class="fa fa-file-text-o"></i> <span>Settings</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
-                            <li id="menu-academico-avaliacoes"><a href="home.php?ravi=general-information">Update
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=general-information">Update
                                     Website Information</a></li>
                             <li id="menu-academico-avaliacoes" style="display:none"><a
-                                    href="home.php?ravi=edit-general-information">Edit General Information</a></li>
-                            <li id="menu-academico-boletim"><a href="home.php?ravi=add-table">Add Database</a></li>
+                                    href="home.php?at=edit-general-information">Edit General Information</a></li>
+                            <li id="menu-academico-boletim"><a href="home.php?at=add-table">Add Database</a></li>
                         </ul>
                     </li>
 
@@ -188,7 +185,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <script>
     var toggle = true;
-
     $(".sidebar-icon").click(function() {
         if (toggle) {
             $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
@@ -207,6 +203,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         toggle = !toggle;
     });
     </script>
+
+    
+<script>
+//bootstrap validation code -banuka
+(function() {
+    'use strict'
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()
+</script>
+
     <!--js -->
     <link rel="stylesheet" href="css/vroom.css">
     <script type="text/javascript" src="js/vroom.js"></script>
@@ -217,9 +235,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
-    </script>
+    <script src="../js/bootstrap5.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

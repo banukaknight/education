@@ -1,3 +1,11 @@
+<?php
+//code for added layer of security, to prevent direct access to module -banuka
+ if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+    /* choose the appropriate page to redirect users */
+    die( header( 'location: ./home.php' ) );
+}
+?>
 <?php 
  if(isset($_POST['add_teacher_info']))
  {
@@ -47,7 +55,7 @@
     <div class="sub-heard-part">
         <ol class="breadcrumb m-b-0">
             <li><a href="index.html">Home</a></li>
-            <li class="active"><?php echo strtoupper($_GET['ravi']); ?>
+            <li class="active"><?php echo strtoupper($_GET['at']); ?>
             </li>
         </ol>
     </div>
@@ -147,26 +155,3 @@
 
 </div>
 <!-- //outter-wp" -->
-
-<script>
-//bootstrap validation code by banuka
-(function() {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-        .forEach(function(form) {
-            form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
-</script>

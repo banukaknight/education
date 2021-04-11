@@ -53,11 +53,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 			</div>
 			
-			<ul class="agile_forms">
-			<li><a class="active" href="students/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Student LOGIN</a> </li>
-			<li><a class="active" href="meadmin/index.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Admin LOGIN</a> </li>
 			
-			</ul>
+			<div class="dropdown" style="float:right; margin-right:2em;">
+  <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown" style="border-radius: 2em;"><i class="fa fa-sign-in" aria-hidden="true"></i> LOGIN
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu pull-right">
+    <li class="bg-info"><a href="students/index.php">STUDENT LOGIN</a></li>
+    <li class="bg-light"><a href="meadmin/index.php">ADMIN LOGIN</a></li>
+    <li class="bg-info"><a href="faculty/index.php">FACULTY LOGIN</a></li>
+  </ul>
+</div>
 			
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -103,7 +108,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="clearfix"> </div>
 		</div>
 		<div class="col-md-5 wthree-about-grids">
-			<h1>Welcome to Yudaganawa College</h1>
+			<h1>Welcome to Yudaganawa Vidyalaya</h1>
 			<hr>
 			<h3>මො/යුදගනාව විද්‍යාලය, බුත්තල</h3>
 			<h3>மொ/யுதகனாவ வித்தியாலயம்</h3>

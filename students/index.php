@@ -35,7 +35,7 @@ if(isset($_POST['student_signin']))
 ?>
 <!--
 Initial Template by: W3layouts © 2016
-Initial development by: Ravi Khadka © 2018
+Prior development by: Ravi Khadka © 2018
 Capstone development by: Banuka | Checki | Samrin | Sanduni | Kavindu
 Capstone for: Lovely Professional University © 2021
 Project Guidence: Ms. Sonam Kaler
