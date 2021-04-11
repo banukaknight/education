@@ -55,3 +55,12 @@ body {
        background-image: linear-gradient(to right, white,rgb(161, 207, 228), white);
 }
 
+.bkbox {
+    background-color: #dff8ff;
+    padding: 1.8em;
+   box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border: 1px solid #E7E7E8;
+}
