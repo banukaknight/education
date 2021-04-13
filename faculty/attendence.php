@@ -52,8 +52,9 @@ if(isset($_POST['submit_attendence'])){
                         <?php
 						foreach($ravi->gradelist as $g){
 						?>
-                        <option value="<?php echo $g; ?>" <?php if(isset($_POST['get_stlist']) && $_POST['std_grade']==$g ) { echo 'selected="selected"';} ?> >
-                        <?php echo $g; ?></option>
+                        <option value="<?php echo $g; ?>"
+                            <?php if(isset($_POST['get_stlist']) && $_POST['std_grade']==$g ) { echo 'selected="selected"';} ?>>
+                            <?php echo $g; ?></option>
                         <?php } ?>
                     </select>
                 </div>
@@ -83,15 +84,16 @@ if(isset($_POST['submit_attendence'])){
 
                 <div class="col-md-3 ">
                     <label class="form-label">Session Date*</label>
-                    <input type="date" name="sesh_date" class="form-control" value="2021-12-12" required title="Date of Session held">
+                    <input type="date" name="sesh_date" class="form-control" value="2021-12-12" required
+                        title="Date of Session held">
                     <div class="invalid-feedback"> Please provide date session took place! </div>
                 </div>
 
                 <div class="col-md-6 ">
 
                     <label class="form-label">Session Info*</label>
-                    <input type="text" name="sesh_info"  class="form-control" placeholder="Session Topic" value="Topic" required
-                        pattern="^[A-Za-z ,-.']{2,100}$ title="Session Content required">
+                    <input type="text" name="sesh_info" class="form-control" placeholder="Session Topic" value="Topic"
+                        required pattern="^[A-Za-z ,-.']{2,100}$ title=" Session Content required">
                     <div class="invalid-feedback"> Special characters not allowed! </div>
                 </div>
 
@@ -121,15 +123,21 @@ if(isset($_POST['submit_attendence'])){
                                     echo "<img class='gendpic' src='images/bk/pice.png'> ";
                                 }
                             echo $s_sn; ?>
-                        </td>
+                            </td>
                             <td><?php echo $student_info_admin['st_username']; ?></td>
                             <td><?php echo $student_info_admin['st_fullname']; ?></td>
                             <td><?php echo $student_info_admin['roll_no'] ?></td>
                             <td>
-                                Present:<input type="radio" name="<?php echo $student_info_admin['st_username'] ?>"
-                                    value=1>
-                                | Absent:<input type="radio" name="<?php echo $student_info_admin['st_username'] ?>"
-                                    value=0 checked>
+                                <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+                                    <label class="btn btn-sm btn-success ">
+                                        <input type="radio" name="<?php echo $student_info_admin['st_username'] ?>"
+                                            value="1" autocomplete="off"> Present
+                                    </label>
+                                    <label class="btn btn-sm  btn-danger active">
+                                        <input type="radio" name="<?php echo $student_info_admin['st_username'] ?>"
+                                            value="0" autocomplete="off" checked> Absent
+                                    </label>
+                                </div>
                             </td>
                         </tr>
 
@@ -144,8 +152,9 @@ if(isset($_POST['submit_attendence'])){
         <?php	} else {	 ?>
         <h3>No Student information in selected class</h3>
         <?php 	} }else{    ?>
-            <br><h3>Select a Grade to Mark Attendence</h3>
-            <?php } ?>
+        <br>
+        <h3>Select a Grade to Mark Attendence</h3>
+        <?php } ?>
 
     </div>
 </div>

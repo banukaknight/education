@@ -250,7 +250,7 @@ Project Guidence: Ms. Sonam Kaler
                 <ul id="menu">
                     <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
 
-                    <li><a href="./assignments/index.php"><i class="fa fa-file-text"></i>
+                    <li><a href="home.php?at=assignments"><i class="fa fa-file-text"></i>
                             <span>Assignments</span></a></li>
                     <li><a href="home.php?at=attendence"><i class="fa fa-check-circle"></i>
                             <span>Attendence</span></a></li>
