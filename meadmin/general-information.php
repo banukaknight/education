@@ -22,8 +22,8 @@
 			$check_we = $web_info_check->num_rows;
 	  if($check_we>0)
 	  {
-		 echo "<script>alert('You Have Aleread Added Your Website Info ');</script>" ;
-	  	echo "<script>window.location = 'home.php?at=edit-general-information';</script>";
+		$ravi->alertFunc("You Have Aleread Added Your Website Info!");
+			echo "<script>window.location = 'home.php?at=edit-general-information';</script>";
 	  }		
 			else
 			{
@@ -42,12 +42,12 @@
 	 	$web_info_success = $ravi->general_setting($web_name,$web_address,$web_phone1,$web_phone2,$web_email1,$web_email2,$web_start,$web_about);
 	 if($web_info_success==true)
 	 {
-		 echo "<script>alert('Success Added Website Information Thank You.....');</script>";
-		 echo "<script>window.location= 'home.php';</script>";
+		$ravi->alertFunc("Success Added Website Information!");
+		echo "<script>window.location= 'home.php';</script>";
 	 }
 	 else
 	 {
-		 echo "<script>alert('Please contact with devloper for fixing this problem or try later');</script>";
+		$ravi->alertFunc("Unable to update General info!");
 	 }
 	  
 

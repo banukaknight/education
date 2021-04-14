@@ -88,9 +88,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- //header-ends -->
 
 
-
-
                 <?php 
+                //-----------------------------------------
 				//include SECTIONS CODE
 				//or load other modules in this place.... based on button clicks on left navs
 				$homepage = "home1";
@@ -99,9 +98,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					$homepage = $_GET['at'];
 				}
 				include $homepage.".php";
+                //-----------------------------------------
 				?>
-
-
 
 
 

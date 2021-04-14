@@ -32,11 +32,11 @@ if(isset($_POST['up_teacher']))
 	if($update_done==true)
 	{
 		echo "<script>window.location='home.php?at=teacher-information';</script>";
-		echo "<script>alert('Teacher Edit SUCCESFUL!');</script>";
+		$ravi->alert_success("Teacher Edit SUCCESFUL!");
 	}
 	else
 	{
-		echo "<script>alert('Cannot update Information');</script>";
+        $ravi->alert_danger("Cannot update InformationL!");
 	}
 }
 ?>

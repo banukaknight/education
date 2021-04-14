@@ -23,7 +23,7 @@
 	            <h2 class="inner-tittle ">TEACHER INFORMATION</h2>
 	            <div class="tables">
 
-	                <table class="table table-bordered " id="stinfo">
+	                <table class="table table-bordered mytbl " >
 
 	                    <thead>
 	                        <tr>
@@ -48,16 +48,16 @@
 	                            <th scope="row"><?php echo $t_sn; ?></th>
 	                            <th>
 	                                <?php
-																				$t_gender = $teacher_info_admin['t_gender'];
-																				if($t_gender == 'Male'){
-																					echo "<img class='gendpic' src='images/bk/picm.png'> ";
-																				}else if($t_gender == 'Female'){
-																					echo "<img class='gendpic' src='images/bk/picf.png'> ";
-																				}else{
-																					echo "<img class='gendpic' src='images/bk/pice.png'> ";
-																				}
-																				echo $t_gender;
-																				?>
+										$t_gender = $teacher_info_admin['t_gender'];
+										if($t_gender == 'Male'){
+											echo "<img class='gendpic' src='images/bk/picm.png'> ";
+										}else if($t_gender == 'Female'){
+											echo "<img class='gendpic' src='images/bk/picf.png'> ";
+										}else{
+											echo "<img class='gendpic' src='images/bk/pice.png'> ";
+										}
+										echo $t_gender;
+										?>
 	                            </th>
 	                            <td><?php echo $teacher_info_admin['t_fullname']; ?></td>
 	                            <td><?php echo $teacher_info_admin['t_email']; ?></td>

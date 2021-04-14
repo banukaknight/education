@@ -3,7 +3,7 @@ error_reporting(0);
 $conn=mysqli_connect("localhost","username","password","project2");
 $sql="SELECT * FROM st_assignments";
 $res=mysqli_query($conn,$sql);
-$files = mysqli_fetch_all($result,MYSQLI_ASSOC);
+$files = mysqli_fetch_all($rest,MYSQLI_ASSOC);
 if(isset($_POST['save']))
 {
 	$filename=$_FILES['myfile']['name'];
@@ -62,3 +62,7 @@ if(file_exists($filepath))
 	
 	
 ?>
+
+
+ 
+</body></html>

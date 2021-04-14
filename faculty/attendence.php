@@ -25,6 +25,11 @@ if(isset($_POST['submit_attendence'])){
     }
 
     $mark_attendence_done = $ravi->faculty_mark_attendence($tb_name, $t_username, $sesh_date, $sesh_info, $attendence_arr);
+    if($mark_attendence_done==true){
+        $ravi->alert_success("Attendence Marked!");
+    }else{
+        $ravi->alert_danger($ravi->connectdb->error);
+    }
 }
 ?>
 
@@ -79,7 +84,7 @@ if(isset($_POST['submit_attendence'])){
 
         <?php if($student_dis_admin->num_rows>0){ ?>
 
-        <div class="tables">
+        <div class="">
             <form method="post" class="row g-3 needs-validation banukastform" novalidate>
 
                 <div class="col-md-3 ">
@@ -93,27 +98,27 @@ if(isset($_POST['submit_attendence'])){
 
                     <label class="form-label">Session Info*</label>
                     <input type="text" name="sesh_info" class="form-control" placeholder="Session Topic" value="Topic"
-                        required pattern="^[A-Za-z ,-.']{2,100}$ title=" Session Content required">
-                    <div class="invalid-feedback"> Special characters not allowed! </div>
+                        required pattern="^[A-Za-z ,-.']{2,100}$" title="No special characteres allowed">
+                    <div class="invalid-feedback"> Please fill Session Info! </div>
                 </div>
 
+                <div id="tablediv">
+                    <table class=" table table-bordered table-sm table-responsive mytbl">
 
-                <table class=" table table-bordered table-sm table-responsive" id="stinfo">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Registration No</th>
+                                <th>Full Name</th>
+                                <th>Roll No</th>
+                                <th>Mark Attendence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Registration No</th>
-                            <th>Full Name</th>
-                            <th>Roll No</th>
-                            <th>Mark Attendence</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <?php while($student_info_admin =$student_dis_admin->fetch_assoc())	{ ?>
-                        <tr>
-                            <td> <?php
+                            <?php while($student_info_admin =$student_dis_admin->fetch_assoc())	{ ?>
+                            <tr>
+                                <td> <?php
                                 $st_gender = $student_info_admin['st_gender'];
                                 if($st_gender == 'Male'){
                                     echo "<img class='gendpic' src='images/bk/picm.png'> ";
@@ -123,27 +128,29 @@ if(isset($_POST['submit_attendence'])){
                                     echo "<img class='gendpic' src='images/bk/pice.png'> ";
                                 }
                             echo $s_sn; ?>
-                            </td>
-                            <td><?php echo $student_info_admin['st_username']; ?></td>
-                            <td><?php echo $student_info_admin['st_fullname']; ?></td>
-                            <td><?php echo $student_info_admin['roll_no'] ?></td>
-                            <td>
-                                <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-                                    <label class="btn btn-sm btn-success ">
-                                        <input type="radio" name="<?php echo $student_info_admin['st_username'] ?>"
-                                            value="1" autocomplete="off"> Present
-                                    </label>
-                                    <label class="btn btn-sm  btn-danger active">
-                                        <input type="radio" name="<?php echo $student_info_admin['st_username'] ?>"
-                                            value="0" autocomplete="off" checked> Absent
-                                    </label>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                                <td><?php echo $student_info_admin['st_username']; ?></td>
+                                <td><?php echo $student_info_admin['st_fullname']; ?></td>
+                                <td><?php echo $student_info_admin['roll_no'] ?></td>
+                                <td>
+                                    <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+                                        <label class="btn btn-sm btn-success ">
+                                            <input type="radio" name="<?php echo $student_info_admin['st_username'] ?>"
+                                                value="1" autocomplete="off"> Present
+                                        </label>
+                                        <label class="btn btn-sm  btn-danger active">
+                                            <input type="radio" name="<?php echo $student_info_admin['st_username'] ?>"
+                                                value="0" autocomplete="off" checked> Absent
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
 
-                        <?php $s_sn++; } ?>
-                    </tbody>
-                </table>
+                            <?php $s_sn++; } ?>
+                        </tbody>
+                    </table>
+                </div>
+                <!--//tablediv-->
                 <input type="hidden" name="at_grade" value="<?php echo $std_grade; ?>">
                 <input type="submit" name="submit_attendence">
             </form>

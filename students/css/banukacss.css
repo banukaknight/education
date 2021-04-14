@@ -54,10 +54,10 @@ p.error
     padding: 6px;
 }
 
-#tablediv {
-    
+#attnbg{
+    background-color: red;
     max-height: 500px;
-    overflow:auto;
+    overflow-y:auto;
 }
 
 fieldset.scheduler-border {
@@ -86,4 +86,26 @@ legend.scheduler-border {
 
 #container > fieldset:nth-child(3) {
     background-image: url('../images/bk/ruledbgline.jpg'); background-size: fill;  background-repeat: repeat;
+}
+
+
+.bkbox {
+    background-color: #dff8ff;
+    padding: 1.8em;
+   box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border: 1px solid #E7E7E8;
+}
+
+.mytbl > tbody > tr > td , .mytbl > tbody > tr > th{
+    border-spacing:0; /* Removes the cell spacing via CSS */
+    border-collapse: collapse; 
+    margin:0px !important;
+    padding:5px !important;
+}
+
+#tablediv {
+    min-height:400px; max-height:30vh; overflow:auto;
 }

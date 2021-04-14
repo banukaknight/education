@@ -33,7 +33,7 @@
 
 	 if($std_fullname=="" or $std_username=="" or $std_password=="" or $std_grade=="" or $std_gender=="" or $std_roll=="" or $std_dob=="" or $std_address=="" or $std_parent_contact=="")
 	 {
-		 echo "<script>alert('please fill form and Add Student');</script>";
+        $ravi->alert_danger("Form not filled properly!");
 	 }
 	 else
 	 {
@@ -41,12 +41,12 @@
 		 $add_student_done = $ravi->update_student_adm($std_fullname,$std_username,$std_password,$std_grade,$std_roll,$std_dob,$std_address,$std_gender,$std_parent_contact);
 		 if($add_student_done==true)
 		 {
-			 echo "<script>alert('Student Edit SUCCESFUL!');</script>";
+            $ravi->alert_success("Student Edit SUCCESFUL!");
 			//echo "<script>window.location = 'home.php?at=student-information';</script>";
 		 }
 		 else
 		 {
-			 echo "<script>alert('Student Edit FAILED!');</script>";
+			$ravi->alert_danger("Student Edit FAILED!");
 		 }
 		 
 	 }

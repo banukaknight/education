@@ -34,7 +34,7 @@
 <td><?php echo $file['size']/1000 . "KB";?></td>
 <td><?php echo $file['downloads'];?></td>
 <td>
-<a href="index.php?file_id=<?php echo $file['id']?>">"download</a>
+<a href="index.php?file_id=<?php echo $file['id']?>">download</a>
 </td>
 </tr>
 <?php endforeach ; 

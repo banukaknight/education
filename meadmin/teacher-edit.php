@@ -24,10 +24,7 @@
 
 
         <div class="tables">
-
-
-            <table class="table table-bordered table-responsive" id="stinfo">
-
+            <table class="table table-bordered table-responsive mytbl" >
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -42,10 +39,9 @@
                 <tbody>
 
                     <?php $teacher_dis_admin = $ravi->teacher_info_display_admin();
-													$t_sn = 1;
-													while($teacher_info_admin =$teacher_dis_admin->fetch_assoc())					{
-														
-																		?>
+							$t_sn = 1;
+                        while($teacher_info_admin =$teacher_dis_admin->fetch_assoc())					{
+                            ?>
 
 
                     <tr>

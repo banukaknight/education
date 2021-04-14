@@ -1,18 +1,22 @@
 <?php 
-
-  
 class project2
 	
 {
-	public $server = "localhost";
 	public $username = "username";
 	public $password = "password";
+
+	// public $username = "root";
+	// public $password = "";
+
+	public $server = "localhost";
 	public $dbname = "project2";
 	public $connectdb;
-	
+
+	//-- global variables for use
 	public $gradelist = array(1,2,3,4,5); //list of grades in school
 	public $stafflist = array("Teacher","Admin"); //list of faculty types
-
+	public $subjectlist = array("Maths","Science", "English", "Tamil", "Sinhala");
+	
 	function __construct()
 	{
 		$this->connectdb = new mysqli($this->server,$this->username,$this->password,$this->dbname);
@@ -76,12 +80,10 @@ class project2
 		}
 
 		$mark_attendence = "insert into $tb_name(t_username,sesh_date,sesh_info $attendence_keys ) value ('$t_username','$sesh_date','$sesh_info'  $attendence_vals  )";
-	echo $mark_attendence; //debugging purpose only
+	//echo $mark_attendence; //debugging purpose only
 	$mark_attendence_run = $this->connectdb->query($mark_attendence);
-	echo "<br>";
-	echo $this->connectdb -> error;
+	//echo $this->connectdb -> error;
 		return $mark_attendence_run;
-			$attendence_keys = $attendence_keys . ",". $key ;
 		//INSERT INTO `at_g_1` (`sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `10000000`, `10000001`, `10000007`) VALUES ('1', '1000', '2021-04-11', '2021-04-12 23:13:57', 'test2', '1', '0', '1');
 	}
 
@@ -336,5 +338,81 @@ class project2
 			}
 			return 	$Nepdev_Run;
 	}
+
+	// assignment up faculty -banuka
+	public function assi_up_faculty($t_username, $assi_deadline, $assi_subject, $assi_title, $assi_grade, $assi_location )
+	{ 
+		//$assi_add = "INSERT INTO `tblfiles` (`FileName`, `Location`) VALUES ('{$filename}','{$location}')";
+		$assi_add = "INSERT INTO `fc_assignments` (`t_username`,`assi_deadline`,`assi_subject`,`assi_title`,`assi_grade`,`assi_location`) VALUES ('{$t_username}','{$assi_deadline}','{$assi_subject}','{$assi_title}','{$assi_grade}','{$assi_location}')";
+		$assi_run =  $this->connectdb->query($assi_add);
+		//echo $assi_add; //for debugging only
+		return $assi_run;
+	}
+	public function assi_rem_faculty($assi_id){
+		$assi_rem = "UPDATE `fc_assignments` SET `assi_grade`='0',`assi_subject`='-',`assi_location`='Uploaded/Removed.png' WHERE `assi_id`='$assi_id'";
+		//echo $assi_rem; //debugging only
+		$assi_run =  $this->connectdb->query($assi_rem);
+		return $assi_run;
+	}
+	public function assi_list_faculty($t_username)
+	{ 
+		$assi_get = "SELECT * FROM `fc_assignments` WHERE t_username='$t_username'";
+		$assi_run =  $this->connectdb->query($assi_get);
+		return $assi_run;
+	}
+	public function assi_list_grade($st_grade)
+	{ 
+		$assi_get = "SELECT * FROM `fc_assignments` WHERE assi_grade='$st_grade'";
+		$assi_run =  $this->connectdb->query($assi_get);
+		return $assi_run;
+	}
+	public function assi_list_subject($st_grade,$assi_subject)
+	{ 
+		$assi_get = "SELECT * FROM `fc_assignments` WHERE assi_grade='$st_grade' AND assi_subject='$assi_subject'";
+		$assi_run =  $this->connectdb->query($assi_get);
+		return $assi_run;
+	}
+	public function assi_by_id($assi_id)
+	{
+		$assi_get = "SELECT * FROM `fc_assignments` WHERE assi_id='$assi_id'";
+		$assi_run =  $this->connectdb->query($assi_get);
+		return $assi_run;
+	}
+
+	//additional functions for reusability -banuka
+//php function that calls a javascript - script that display "alert"
+	//$ravi->alertFunc("Alert");
+	function alertFunc($msg){
+	echo "<script type='text/javascript'>alert('$msg');</script>";
+ 	}
+
+	// if($mark_attendence_done==true){
+    //     $ravi->alert_success("Attendence Marked!");
+    // }else{
+    //     $ravi->alert_danger($ravi->connectdb->error);
+    // }
+  
+	//function to call an alert using bootstrap
+	//$ravi->alert_danger("ERROR");
+	function alert_danger($msg){
+		echo "<div class='row'><div class='col-md-1'></div>
+		<div class='col-md-10 alert alert-danger alert-dismissible'>
+		<a href='#' class='close' data-dismiss='alert' aria-label='close'>Close &times;</a>
+		<strong>ERROR! </strong>$msg
+		</div>	</div>";
+	}
+	
+	//$ravi->alert_success("Success");
+	function alert_success($msg){
+		echo "<div class='row'><div class='col-md-1'></div>
+		<div class='col-md-10 alert alert-success alert-dismissible'>
+		<a href='#' class='close' data-dismiss='alert' aria-label='close'>Close &times;</a>
+		<strong>SUCCESS! </strong>$msg
+		</div>	</div>";
+	}
+
+
+
 	}
 $ravi = new project2;
+?>

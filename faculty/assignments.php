@@ -1,36 +1,61 @@
 <?php
+//code for added layer of security, to prevent direct access to module -banuka
+ if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+    /* choose the appropriate page to redirect users */
+    die( header( 'location: ./home.php' ) );
+}
+?>
+<?php
 if (isset($_POST['btn_upload'])) {
-$target_dir = "Uploaded/";
-$target_file = $target_dir . date("dmYhis") . basename($_FILES["myfile"]["name"]);
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
- 
-if($imageFileType != "jpg" || $imageFileType != "png" || $imageFileType != "jpeg" || $imageFileType != "gif" ) {
-if (move_uploaded_file($_FILES["myfile"]["tmp_name"], $target_file)) {
-$files = date("dmYhis") . basename($_FILES["myfile"]["name"]);
-}else{
-echo "Error Uploading File";
-exit;
-}
-}else{
-echo "File Not Supported";
-exit;
-}
+    $target_dir = "Uploaded/";
+    $target_file = $target_dir . date("ymd-his-") . basename($_FILES["myfile"]["name"]);
+    //if(strlen($target_file) > )
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    $assi_size = $_FILES['myfile']['size'];
 
-//$t_username
-$assi_deadline = $_POST['assi_deadline'];
-$assi_subject = $_POST['assi_subject'];
-$assi_title = $_POST['assi_title'];
-$assi_grade = $_POST['assi_grade'];
-$assi_location = $target_dir . $files;
+    if( !in_array($imageFileType,['doc','pdf','png','jpg','jpeg']) ) {
+        $ravi->alert_danger("File extention must be jpg, png, jpeg, gif, doc or pdf!");
+    }elseif ($assi_size>1000000) {
+        $ravi->alert_danger("File Size too large!");
+        //move copy of file to server
+    }elseif (move_uploaded_file($_FILES["myfile"]["tmp_name"], $target_file)) {
+        $files = date("dmYhis") . basename($_FILES["myfile"]["name"]);
+            //update db record
+            //$t_username
+            $assi_deadline = $_POST['assi_deadline'];
+            $assi_subject = $_POST['assi_subject'];
+            $assi_title = $_POST['assi_title'];
+            $assi_grade = $_POST['assi_grade'];
+            $assi_location = $target_dir . $files;
+            //$assi_size
 
-$upload_success = $ravi->assi_up_faculty($t_username, $assi_deadline, $assi_subject, $assi_title, $assi_grade, $assi_location );
-if ($upload_success) {
-echo "File has been uploaded";
-}else{
-    echo $upload_success;
-}
-}
+            $upload_success = $ravi->assi_up_faculty($t_username, $assi_deadline, $assi_subject, $assi_title, $assi_grade, $assi_location );
+                if ($upload_success) {
+                $ravi->alert_success("File has been Uploaded!");
+                }else{
+                $ravi->alert_danger("Unable to update Database!");
+                }
+    }else{
+            $ravi->alert_danger("Unable to Upload!");
+    }
+}//post add
+
+//code to remove assignment from server & database
+if (isset($_POST['btn_remove'])){
+    $rem_assi_location = $_POST['rem_assi_location'];
+    $rem_assi_id = $_POST['rem_assi_id'];
+    if(unlink($rem_assi_location)){
+        //unlink removes file from sever storage
+    }
+    $remove_success = $ravi->assi_rem_faculty($rem_assi_id);
+    if ($remove_success) {
+    $ravi->alert_success("File has been Removed!");
+    }else{
+    $ravi->alert_danger("Unable to update Database!");
+    }
+}//post remove
 ?>
 
 <div class="outter-wp">
@@ -70,7 +95,8 @@ echo "File has been uploaded";
 
                 <div class="col-md-4 ">
                     <label class="form-label">Assignment File*</label>
-                    <input type="file" name="myfile" class="form-control">
+                    <input type="file" name="myfile" class="form-control" required>
+                    <div class="invalid-feedback">File required! </div>
                 </div>
 
                 <div class="col-md-4 ">
@@ -98,39 +124,72 @@ echo "File has been uploaded";
                 <div class="clearfix"> </div>
                 <div class="col-md-12">
                     <button type="submit" name="btn_upload" class="btn-block btn btn-success"><i
-                            class="fa fa-upload fw-fa"></i>
-                        Upload</button>
+                            class="fa fa-upload fw-fa"></i> Upload Assignment</button>
                 </div>
 
             </form>
         </div>
 
         <br>
-        <div class="container">
-            <table id="demo" class="table table-bordered">
+
+
+        <div class="container" id="tablediv">
+            <?php
+            $get_assi_list = $ravi->assi_list_faculty($t_username);
+            if($get_assi_list->num_rows > 0){
+        ?>
+
+            <h4 class="inner-tittle text-uppercase">Previous Uploads by: <?php echo $t_username?></h4>
+            <table class="table table-bordered table-sm table-responsive mytbl">
                 <thead>
                     <tr>
-                        <td>FileName</td>
-                        <td>Download</td>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Grade</th>
+                        <th>Subject</th>
+                        <th>Uploaded @</th>
+                        <th>Deadline</th>
+                        <th>Download</th>
+                        <th>Remove</th>
                     </tr>
                 </thead>
                 <tbody>
-
                     <?php
-      $get_assi_list = $ravi->assi_list_faculty($t_username);
-
-      while($row =$get_assi_list->fetch_assoc())	{ 
-          
-            echo '<tr>';
-            echo '<td>'.$row['assi_title'].'</td>';
-            echo '<td><a class="btn" href="'.$row['assi_location'].'">Download</a></td>';
-            echo '</tr>';
-
-      }
-      ?>
+                    $a_sn = 1;
+                        while($row =$get_assi_list->fetch_assoc())	{     ?>
+                    <tr>
+                        <th><?php echo $a_sn ?></th>
+                        <td><?php echo $row['assi_title']?></td>
+                        <td><?php echo $row['assi_grade']?></td>
+                        <td><?php echo $row['assi_subject']?></td>
+                        <td><?php echo $row['assi_dateup']?></td>
+                        <td><?php echo $row['assi_deadline']?></td>
+                        <td><a class="btn btn-warning btn-sm" href="<?php echo $row['assi_location'] ?>"
+                                target="_blank">
+                                <i class="fa fa-download fw-fa"></i> Download</a></td>
+                        <td>
+                            <form class="form-inline" method="post">
+                                <input type="hidden" name="rem_assi_id" value="<?php echo $row['assi_id'] ?>">
+                                <input type="hidden" name="rem_assi_location"
+                                    value="<?php echo $row['assi_location'] ?>">
+                                <button type="submit" name="btn_remove" class="btn btn-danger btn-sm" <?php if($row['assi_grade']==0){echo "disabled";}?> ><i
+                                        class="fa fa-remove fw-fa"></i> Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php
+                        $a_sn++;
+                        }
+                    ?>
                 </tbody>
             </table>
+
+            <?php }else{ ?>
+            <h4 class="inner-tittle text-uppercase">No Previous Uploads</h4>
+            <?php } //end-if ?>
         </div>
+        <!-- //container -->
+
 
     </div>
     <!-- //bkbox -->

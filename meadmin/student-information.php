@@ -25,22 +25,21 @@
             <label class="form-label">Select Grade:</label>
 
             <div class="row">
-                <div class=" col-md-4 ">
+                <div class=" col-md-2 ">
                     <select name="std_grade" class="form-select" required>
                         <?php
 						
 						foreach($ravi->gradelist as $g){
 						?>
-                        <option value="<?php echo $g; ?>" 
-                            <?php if(isset($_POST['students_info']) && $_POST['std_grade']==$g ) { echo 'selected="selected"';} ?> >
-                        <?php echo $g; ?></option>
+                        <option value="<?php echo $g; ?>"
+                            <?php if(isset($_POST['students_info']) && $_POST['std_grade']==$g ) { echo 'selected="selected"';} ?>>
+                            <?php echo $g; ?></option>
                         <?php } ?>
                     </select>
                 </div>
-                <div class=" col-md-6 ">
-                    <button type="submit" name="students_info" class=" btn btn-warning">Display Class Students</button>
-
-                    <button type="submit" name="all_st" class="btn btn-info">Display All Students</button>
+                <div class=" col ">
+                    <button type="submit" name="students_info" class=" btn btn-warning">Class Students</button>
+                    <button type="submit" name="all_st" class="btn btn-info">All Students</button>
                 </div>
             </div>
         </form>
@@ -48,16 +47,15 @@
         <div class="clearfix"> </div>
 
         <?php					
-        if(isset($_POST['students_info']) || isset($_POST['all_st']))
-        {
-            if(isset($_POST['students_info'])){
+          if(isset($_POST['students_info'])){
                 $std_grade = $_POST['std_grade'];
                 $student_dis_admin=	$ravi->student_info_display_admin($std_grade);
-                echo "<h1>Grade - $std_grade : Students' Information</h1>";
-            }elseif(isset($_POST['all_st'])){
-                //all_student_info_display_admin
+                echo "<h2 class='inner-tittle'>Grade - $std_grade : Students' Information</h2>";
+            // }elseif(isset($_POST['all_st'])){
+            }else{
+                //all_student_info_display_admin (DEFAULT)
                 $student_dis_admin=	$ravi->all_student_info_display_admin();
-                echo "<h1>All Student Information</h1>";
+                echo "<h2 class='inner-tittle'>All Student Information</h2>";
             }
             $s_sn = 1;
 
@@ -65,7 +63,7 @@
 			?>
 
         <div class="tables">
-            <table class=" table table-bordered table-sm table-responsive" id="stinfo">
+            <table class=" table table-bordered table-sm table-responsive mytbl">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -106,10 +104,9 @@
                 </tbody>
             </table>
             <?php    } else {	 ?>
-            <br><h3>No Student information in selected class</h3>
-            <?php 	} }else{    ?>
-            <br><h3>Select a Grade to display Student Info</h3>
-            <?php } ?>
+            <br>
+            <h3>No Student information in selected class</h3>
+            <?php 	} ?>
 
         </div>
     </div>

@@ -29,7 +29,8 @@ a:not([class]):hover {
     height:20px;
 }
 
-#stinfo > tbody > tr > td , #stinfo > tbody > tr > th{
+
+.mytbl > tbody > tr > td , .mytbl > tbody > tr > th{
     border-spacing:0; /* Removes the cell spacing via CSS */
     border-collapse: collapse; 
     margin:0px !important;

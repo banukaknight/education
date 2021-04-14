@@ -31,7 +31,7 @@
 
 	 if($add_t_fullname=="" OR $add_t_address=="" OR $add_t_email=="" OR $add_t_username=="" OR $add_t_pass=="" OR $add_t_dob=="" OR $add_t_contact=="" OR $add_t_staff=="" OR $add_t_gender=="")
 	 {
-		 echo "<script>alert('Some Field are missing....');</script>";
+		$ravi->alert_danger("Form not completed!");
 	 }
 	 else
 	 {
@@ -39,12 +39,12 @@
 	 $add_done = $ravi->add_teacher($add_t_fullname,$add_t_address,$add_t_email,$add_t_username,$add_t_pass,$add_t_dob,$add_t_contact,$add_t_staff,$add_t_gender);
 	 if($add_done==true)
 	 {
-        echo "<script>alert('Teacher Added Succesfully!');</script>";
+        $ravi->alert_success("Teacher Record Added!");
 		 //echo "<script>window.location='home.php?teacher=teacher-information';</script>";
 	 }
 	 else
 	 {
-		 echo "<script>alert('Adding Teacher Uncessesful!');</script>";
+		$ravi->alert_danger("Adding Teacher Unsuccesful");
 	 }
  }
  }

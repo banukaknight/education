@@ -33,21 +33,18 @@
 	 	$upweb_info_success = $ravi->general_setting_update($upweb_name,$upweb_address,$upweb_phone1,$upweb_phone2,$upweb_email1,$upweb_email2,$upweb_start,$upweb_about);
 	 if($upweb_info_success==true)
 	 {
-		 echo "<script>alert('Success Update Website Information Thank You.....');</script>";
-		 echo "<script>window.location= 'home.php';</script>";
+		$ravi->alertFunc("Succesfully updated website info!");
+		echo "<script>window.location= 'home.php';</script>";
 	 }
 	 else
 	 {
-		 echo "<script>alert('Please contact with devloper for fixing this problem or try later');</script>";
+		$ravi->alertFunc("Unable to update Genneral Settings!");
 	 }
 	  
-
-	 
 	 
  }
 	$dis_general_data = $ravi->general_setting_check();
-			$display_general_setting = $dis_general_data->fetch_assoc();			
-			
+			$display_general_setting = $dis_general_data->fetch_assoc();					
 ?>
 			
 			<form method="post">

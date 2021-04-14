@@ -34,7 +34,7 @@
     
     if($std_fullname=="" or $std_username=="" or $std_password=="" or $std_grade=="" or $std_gender=="" or $std_roll=="" or $std_dob=="" or $std_address=="" or $std_parent_contact=="")
 	 {
-		 echo "<script>alert('Please fill all fields accurately!');</script>";
+        $ravi->alert_danger("Please fill all fields accurately!");
 	 }
 	 else
 	 {
@@ -42,12 +42,12 @@
 		 $std_gender,$std_parent_contact);
 		 if($add_student_done==true)
 		 {
-            echo "<script>alert('Student Record added!');</script>";
+            $ravi->alertFunc("Student Record Added!");
 			echo "<script>window.location = 'home.php?at=student-add';</script>";
 		 }
 		 else
 		 {
-			 echo "<script>alert('Student Add FAILED!');</script>";
+            $ravi->alert_danger("Student Add Failed!");
 		 }
 		 
 	 }
@@ -115,8 +115,7 @@
                     <label class="form-label">Grade*</label>
                     <select name="std_grade" class="form-select" required>
                         <?php
-						
-						foreach($ravi->gradelist as $g){
+						    foreach($ravi->gradelist as $g){
 						?>
                         <option value="<?php echo $g; ?>"><?php echo $g; ?></option>
                         <?php } ?>

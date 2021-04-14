@@ -59,7 +59,7 @@ Project Guidence: Ms. Sonam Kaler
     <script src="js/radar.js"></script>
     <link href="css/barChart.css" rel='stylesheet' type='text/css' />
     <link href="css/fabochart.css" rel='stylesheet' type='text/css' />
-
+   
     <!--clock init-->
     <script src="js/css3clock.js"></script>
     <!--Easy Pie Chart-->
@@ -308,9 +308,28 @@ Project Guidence: Ms. Sonam Kaler
                 });
             }, 400);
         }
-
         toggle = !toggle;
     });
+    </script>
+
+    <script>
+    //bootstrap validation code -banuka
+    (function() {
+        'use strict'
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
     </script>
 
     <!--js -->
