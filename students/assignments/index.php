@@ -3,7 +3,7 @@ include "../../setting/config.php";
  session_start();
 if(!$_SESSION['st_user'])
 {
-	header("location:../index.php");
+	header("location:../home.php");
 }
 else
 {

@@ -6,39 +6,34 @@
     die( header( 'location: ./home.php' ) );
 }
 ?>
-<?php
-if (isset($_POST['btn_upload'])) {
-    $target_dir = "Uploaded/";
-    $target_file = $target_dir . date("ymd-his-") . basename($_FILES["myfile"]["name"]);
-    //if(strlen($target_file) > )
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-    $assi_size = $_FILES['myfile']['size'];
 
-    if( !in_array($imageFileType,['doc','pdf','png','jpg','jpeg']) ) {
+<?php
+if (isset($_POST['btn_submit'])) {
+    $target_dir = "Submitted/";
+    $sub_assi_id = $_POST['sub_assi_id'];
+    $ori_file = $target_dir . basename($_FILES["myfile"]["name"]);
+    $imageFileType = pathinfo($ori_file,PATHINFO_EXTENSION);
+    $target_file = $target_dir . $sub_assi_id ."_". $st_username .".". $imageFileType;
+   
+    $uploadOk = 1;
+    $sub_size = $_FILES['myfile']['size'];
+
+   if( !in_array($imageFileType,['doc','pdf','png','jpg','jpeg']) ) {
         $ravi->alert_danger("File extention must be jpg, png, jpeg, gif, doc or pdf!");
-    }elseif ($assi_size>1000000) {
+    }elseif ($sub_size>1000000) {
         $ravi->alert_danger("File Size too large!");
         //move copy of file to server
     }elseif (move_uploaded_file($_FILES["myfile"]["tmp_name"], $target_file)) {
-        $files = date("dmYhis") . basename($_FILES["myfile"]["name"]);
             //update db record
-            //$t_username
-            $assi_deadline = $_POST['assi_deadline'];
-            $assi_subject = $_POST['assi_subject'];
-            $assi_title = $_POST['assi_title'];
-            $assi_grade = $_POST['assi_grade'];
-            $assi_location = $target_dir . $files;
-            //$assi_size
 
-            $upload_success = $ravi->assi_up_faculty($t_username, $assi_deadline, $assi_subject, $assi_title, $assi_grade, $assi_location );
+            $upload_success = $ravi->assi_sub_student($sub_assi_id, $st_username, $target_file, $sub_size);
                 if ($upload_success) {
-                $ravi->alert_success("File has been Uploaded!");
+                $ravi->alert_success("Assignment has been Submitted!");
                 }else{
                 $ravi->alert_danger("Unable to update Database!");
                 }
     }else{
-            $ravi->alert_danger("Unable to Upload!");
+            $ravi->alert_danger("Unable to Submit!");
     }
 }//post add
 
@@ -67,6 +62,7 @@ if (isset($_POST['btn_remove'])){
         </ol>
     </div>
     <!--//sub-heard-part-->
+
 
     <div class="bkbox">
         <h2 class="inner-tittle text-uppercase">ASSIGNMENT DOWNLOAD & SUBMISSION</h2>
@@ -105,11 +101,9 @@ if (isset($_POST['btn_remove'])){
                 $assi_subject = $_POST['assi_subject'];
                 $get_assi_list = $ravi->assi_list_subject($st_grade,$assi_subject);
                 echo "<h2 class='inner-tittle'>Grade - $st_grade | Assignments for Subject: $assi_subject </h2>";
-           
             }else{
                 $get_assi_list = $ravi->assi_list_grade($st_grade);
-                echo "<h2 class='inner-tittle'>Grade - $st_grade | All Assignments</h2>";
-           
+                echo "<h2 class='inner-tittle'>Grade - $st_grade | All Assignments</h2>";   
             }
 
             if($get_assi_list->num_rows > 0){
@@ -123,14 +117,28 @@ if (isset($_POST['btn_remove'])){
                         <th>Subject</th>
                         <th>Uploaded @</th>
                         <th>Download </th>
-                        <th>Submit Answer</th>
+                        <th>Submit Assignment 
+                <span class="label label-warning">Due Today</span>   
+                <span class="label label-danger">Overdue</span>     </th>
                         <th>Deadline</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $a_sn = 1;
-                        while($row =$get_assi_list->fetch_assoc())	{     ?>
+                        while($row =$get_assi_list->fetch_assoc())	{     
+
+                        //check if assignment is overdue
+                        if( date($row['assi_deadline']) < date("Y-m-d")){
+                            $overdue = 0;
+                        }elseif( date($row['assi_deadline']) == date("Y-m-d")){
+                            $overdue = 1;
+                        }else{
+                            $overdue = -1; 
+                        }
+                        //echo $overdue;
+                        ?>
+                        
                     <tr>
                         <th><?php echo $a_sn ?></th>
                         <td><?php echo $row['assi_title']?></td>
@@ -139,13 +147,17 @@ if (isset($_POST['btn_remove'])){
                         <td><a class="btn btn-warning btn-sm" href="<?php echo '../faculty/'.$row['assi_location'] ?>"
                                 target="_blank">
                                 <i class="fa fa-download fw-fa"></i> Download</a></td>
-                        <td>
-                            <form class="form-inline" method="post">
-                                <input type="hidden" name="upl_assi_id" value="<?php echo $row['assi_id'] ?>">
-                                
-                                <button type="submit" name="btn_upload" class="btn btn-success btn-sm"
-                                    <?php if($row['assi_grade']==0){echo "disabled";}?>><i
-                                        class="fa fa-upload fw-fa"></i> Upload</button>
+                    <td <?php switch($overdue){case 0: echo 'class="bg-danger"'; break; case 1: echo 'class="bg-warning"'; break; default: echo 'class="bg-primary"'; break; }?> >
+                        
+                            <form class="form-inline" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="sub_assi_id" value="<?php echo $row['assi_id'] ?>">
+
+                                <input type="file" name="myfile" class="form-control  form-control-sm" required>
+                                <div class="invalid-feedback">File required! </div>
+
+                                <button type="submit" name="btn_submit" class="btn btn-success btn-sm"
+                                    <?php if(!$overdue){echo "disabled";}?>><i
+                                        class="fa fa-upload fw-fa"></i> Submit</button>
                             </form>
                         </td>
                         <td><?php echo $row['assi_deadline']?></td>
@@ -168,3 +180,9 @@ if (isset($_POST['btn_remove'])){
     <!-- //bkbox -->
 </div>
 <!-- //outerwap -->
+
+<script>
+$('#myModal').on('shown.bs.modal', function() {
+    $('#myInput').trigger('focus')
+})
+</script>

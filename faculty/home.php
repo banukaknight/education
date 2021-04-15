@@ -41,7 +41,8 @@ Project Guidence: Ms. Sonam Kaler
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <link href="../css/bootstrap5.min.css" rel="stylesheet" type='text/css' crossorigin="anonymous">
-    <!-- Custom CSS -->
+   
+<!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/banukacss.css" rel='stylesheet' type='text/css' />
     <!-- Graph CSS -->
@@ -81,11 +82,10 @@ Project Guidence: Ms. Sonam Kaler
                 </div>
                 <!-- //header-ends -->
 
-                <div class="outter-wp">
-
-
+               
 
                     <?php 
+                //-----------------------------------------
 				//include SECTIONS CODE
 				//or load other modules in this place.... based on button clicks on left navs
 				$homepage = "home1";
@@ -94,8 +94,8 @@ Project Guidence: Ms. Sonam Kaler
 					$homepage = $_GET['at'];
 				}
 				include $homepage.".php";
+                //-----------------------------------------
 				?>
-
 
 
 
@@ -184,8 +184,6 @@ Project Guidence: Ms. Sonam Kaler
                         <!--/charts-inner-->
                     </div>
 
-                </div>
-                <!--//outer-wp-->
                 <!--footer section start-->
                 <footer>
                     <p>

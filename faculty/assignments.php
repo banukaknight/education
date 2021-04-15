@@ -21,7 +21,7 @@ if (isset($_POST['btn_upload'])) {
         $ravi->alert_danger("File Size too large!");
         //move copy of file to server
     }elseif (move_uploaded_file($_FILES["myfile"]["tmp_name"], $target_file)) {
-        $files = date("dmYhis") . basename($_FILES["myfile"]["name"]);
+        $files = date("ymd-his-") . basename($_FILES["myfile"]["name"]);
             //update db record
             //$t_username
             $assi_deadline = $_POST['assi_deadline'];
@@ -31,7 +31,7 @@ if (isset($_POST['btn_upload'])) {
             $assi_location = $target_dir . $files;
             //$assi_size
 
-            $upload_success = $ravi->assi_up_faculty($t_username, $assi_deadline, $assi_subject, $assi_title, $assi_grade, $assi_location );
+            $upload_success = $ravi->assi_up_faculty($t_username, $assi_deadline, $assi_subject, $assi_title, $assi_grade, $assi_location, $assi_size);
                 if ($upload_success) {
                 $ravi->alert_success("File has been Uploaded!");
                 }else{
@@ -67,6 +67,7 @@ if (isset($_POST['btn_remove'])){
         </ol>
     </div>
     <!--//sub-heard-part-->
+
 
     <div class="bkbox">
 
@@ -166,7 +167,9 @@ if (isset($_POST['btn_remove'])){
                         <td><?php echo $row['assi_deadline']?></td>
                         <td><a class="btn btn-warning btn-sm" href="<?php echo $row['assi_location'] ?>"
                                 target="_blank">
-                                <i class="fa fa-download fw-fa"></i> Download</a></td>
+                                <i class="fa fa-download fw-fa"></i> Download</a>
+                                <?php echo $row['assi_size']/1000 . " KB";?>
+                                </td>
                         <td>
                             <form class="form-inline" method="post">
                                 <input type="hidden" name="rem_assi_id" value="<?php echo $row['assi_id'] ?>">

@@ -340,16 +340,16 @@ class project2
 	}
 
 	// assignment up faculty -banuka
-	public function assi_up_faculty($t_username, $assi_deadline, $assi_subject, $assi_title, $assi_grade, $assi_location )
+	public function assi_up_faculty($t_username, $assi_deadline, $assi_subject, $assi_title, $assi_grade, $assi_location, $assi_size)
 	{ 
 		//$assi_add = "INSERT INTO `tblfiles` (`FileName`, `Location`) VALUES ('{$filename}','{$location}')";
-		$assi_add = "INSERT INTO `fc_assignments` (`t_username`,`assi_deadline`,`assi_subject`,`assi_title`,`assi_grade`,`assi_location`) VALUES ('{$t_username}','{$assi_deadline}','{$assi_subject}','{$assi_title}','{$assi_grade}','{$assi_location}')";
+		$assi_add = "INSERT INTO `fc_assignments` (`t_username`,`assi_deadline`,`assi_subject`,`assi_title`,`assi_grade`,`assi_location`,`assi_size`) VALUES ('{$t_username}','{$assi_deadline}','{$assi_subject}','{$assi_title}','{$assi_grade}','{$assi_location}','{$assi_size}')";
 		$assi_run =  $this->connectdb->query($assi_add);
 		//echo $assi_add; //for debugging only
 		return $assi_run;
 	}
 	public function assi_rem_faculty($assi_id){
-		$assi_rem = "UPDATE `fc_assignments` SET `assi_grade`='0',`assi_subject`='-',`assi_location`='Uploaded/Removed.png' WHERE `assi_id`='$assi_id'";
+		$assi_rem = "UPDATE `fc_assignments` SET `assi_grade`='0',`assi_subject`='-',`assi_location`='Uploaded/Removed.png', `assi_size`='0' WHERE `assi_id`='$assi_id'";
 		//echo $assi_rem; //debugging only
 		$assi_run =  $this->connectdb->query($assi_rem);
 		return $assi_run;
@@ -378,9 +378,23 @@ class project2
 		$assi_run =  $this->connectdb->query($assi_get);
 		return $assi_run;
 	}
-
+	public function assi_sub_student($assi_id, $st_username, $sub_location, $sub_size)
+	{ 
+		//UPSERT - allow reupload of assigbments & update record accordingly
+		//$assi_add = "INSERT INTO `st_submissions` (`assi_id`,`st_username`,`sub_location`,`sub_size`) VALUES ('{$assi_id}','{$st_username}','{$sub_location}','{$sub_size}')";
+		$assi_add = "INSERT INTO `st_submissions` (`assi_id`,`st_username`,`sub_location`,`sub_size`) 
+		VALUES ('{$assi_id}','{$st_username}','{$sub_location}','{$sub_size}')
+		ON DUPLICATE KEY UPDATE 
+		`sub_location`='$sub_location', `sub_size`='$sub_size'";
+		
+		$assi_run =  $this->connectdb->query($assi_add);
+		//echo $assi_add; //for debugging only
+		//echo $this->connectdb -> error;
+		return $assi_run;
+	}
+	
 	//additional functions for reusability -banuka
-//php function that calls a javascript - script that display "alert"
+	//php function that calls a javascript - script that display "alert"
 	//$ravi->alertFunc("Alert");
 	function alertFunc($msg){
 	echo "<script type='text/javascript'>alert('$msg');</script>";

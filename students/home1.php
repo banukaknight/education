@@ -107,7 +107,7 @@
 												}
 										
 												?>
-                                <form method="post">
+                                <form method="post" class="form-inline" >
                                     <div class="input-group input-icon">
                                         <span class="input-group-addon">
                                             <i class="fa fa-key"></i> </span>

@@ -1,3 +1,9 @@
+
+/* since bootstrap 5 is messing with a link underlines  */
+a:not([class]) {
+    text-decoration: none;
+}
+
 .down > ul > li {
     text-shadow: 0 0 4px #7cbeff;
     color:#250d5c;
