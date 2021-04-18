@@ -25,15 +25,13 @@
                                         Password</span></a></li>
                             <li><a href="#section-3"><i class="lnr lnr-users"></i>
                                     <span>Teachers</span></a></li>
-                            <li><a href="#section-4"><i class="fa fa-flask"></i>
-                                    <span>Subject</span></a></li>
+                       
+                       
                             <li><a href="#section-5"><i class="lnr lnr-chart-bars"></i>
                                     <span>Results</span></a></li>
                             <li><a href="#section-6"><i class="lnr lnr-calendar-full"></i> <span>Time
                                         table</span></a></li>
-                            <li><a href="#section-7"><i class="fa fa-check-circle"></i>
-                                    <span>Attendence</span></a></li>
-
+                        
                         </ul>
                     </nav>
                     <div class="content tab">
@@ -134,32 +132,27 @@
                             <div class="graph">
                                 <div class="tables">
 
+                                <h2 class="inner-tittle ">Teachers Assigned to Subjects</h2>
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Photo</th>
-                                                <th>Teacher Name</th>
                                                 <th>Subject</th>
-                                                <th>Email</th>
-                                                <th>Time</th>
+                                                <th>Teacher ID</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php 
 															$st_grade = $student_display['st_grade'];
 															$sn = 1;
-															$teacher_info_in_student = $ravi->teacher_info_instudent($st_grade);
+															$teacher_info_in_student = $ravi->st_sub_info($st_grade);
 																while($t_info = $teacher_info_in_student->fetch_assoc())		{ 
 																		?>
 
                                             <tr>
                                                 <th scope="row"><?php echo $sn; ?></th>
-                                                <td></td>
-                                                <td><?php echo ucwords($t_info['t_fullname']); ?></td>
-                                                <td><?php echo ucwords($t_info['subject_name']); ?></td>
-                                                <td><?php echo strtolower($t_info['t_email']); ?></td>
-                                                <td><?php echo $t_info['time']; ?></td>
+                                                <td><?php echo ucwords($t_info['sub_name']); ?></td>
+                                                <td><?php echo ucwords($t_info['t_username']); ?></td>
                                             </tr>
                                             <?php $sn++; } ?>
                                         </tbody>
@@ -169,41 +162,7 @@
                             </div>
 
                         </section>
-                        <section id="section-4">
-                            <div class="graph">
-                                <div class="tables">
-
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-
-                                                <th>Teacher Name</th>
-                                                <th>Subject</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php 
-															$st_grade = $student_display['st_grade'];
-															$sn = 1;
-															$teacher_info_in_student = $ravi->teacher_info_instudent($st_grade);
-																while($t_info = $teacher_info_in_student->fetch_assoc())		{ 
-																		?>
-
-                                            <tr>
-                                                <th scope="row"><?php echo $sn; ?></th>
-
-                                                <td><?php echo ucwords($t_info['t_fullname']); ?></td>
-                                                <td><?php echo ucwords($t_info['subject_name']); ?></td>
-
-                                            </tr>
-                                            <?php $sn++; } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </section>
+                       
                         <section id="section-5">
                             <div class="mediabox">
                                 <h1>Results to be done</h1>
@@ -219,12 +178,12 @@
                         <section id="section-6">
                             <div class="graph" id="ttbg">
                                 <div class="tables">
-
-                                    <table class="table table-hover table-condensed table-sm table-responsive">
-                                        <thead>
-                                            <caption><b>Time Table for Grade:
+                                <h2 class="inner-tittle ">Time Table for Grade:
                                                     <?php echo  $student_display['st_grade']; ?>
-                                                </b></caption>
+                                                </h2>
+                                    <table class="table table-hover table-condensed table-sm table-responsive">
+                                   
+                                           <thead>
                                             <tr class="info">
                                                 <th>#</th>
                                                 <th>Time</th>
@@ -234,6 +193,7 @@
                                                 <th>Thursday</th>
                                                 <th>Friday</th>
                                             </tr>
+                                            
                                         </thead>
                                         <tbody>
                                             <?php 
@@ -266,60 +226,7 @@
                         </section>
 
 
-                        <section id="section-7">
-
-                            <div class="graph">
-                                <strong>Attendance Module (Automated) </strong> <br>
-
-                                <?php  
-/* Attendance marking code by Banuka Vidusanka */
-	echo 'User IP Address - '.$_SERVER['REMOTE_ADDR'];  
-	$attendance_success = $ravi->st_attendance($st_username);
-
-	if($attendance_success==true)
-		{
-			echo "<script>alert('Attendance Marked!');</script>";
-		}else{
-			echo "<p>Attendence has been updated.</p>";
-		}
-
-	?>
-                                <div class="tables tablediv" id="attnbg">
-                                    <h5>Attendance data of student id: <?php echo $st_username ?></h5>
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>IP Address</th>
-                                                <th>Date</th>
-                                                <th>Time</th>
-                                                <th>Attendace for Hour</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php 
-															$st_attendance_data = $ravi->get_attendance($st_username);
-																while($got_attendance = $st_attendance_data->fetch_assoc())		{ 
-																		?>
-
-                                            <tr>
-                                                <th scope="row"><?php echo $got_attendance['id']; ?>
-                                                </th>
-                                                <td><?php echo $got_attendance['st_ip']; ?></td>
-                                                <td><?php echo $got_attendance['at_date']; ?></td>
-                                                <td><?php echo $got_attendance['at_time']; ?></td>
-                                                <td><?php echo substr($got_attendance['at_iddateh'], -2); ?>
-                                                </td>
-                                            </tr>
-
-                                            <?php  } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                            </div>
-
-                        </section>
+                        
 
 
 

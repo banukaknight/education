@@ -74,6 +74,9 @@ if (isset($_POST['btn_remove'])){
             <div class="row">
                 <div class=" col-md-2">
                     <select name="assi_subject" class="form-select" required>
+                        <option value="All Subjects"
+                            <?php if(isset($_POST['grade_assi']) && $_POST['assi_subject']=="All Subjects" ) { echo 'selected="selected"';} ?> >
+                            All Subjects</option>
                         <?php						
 						foreach($ravi->subjectlist as $g){
 						?>
@@ -85,7 +88,6 @@ if (isset($_POST['btn_remove'])){
                 </div>
                 <div class=" col ">
                     <button type="submit" name="grade_assi" class=" btn btn-warning">Select Subject</button>
-                    <button type="submit" name="all_assi" class="btn btn-info">All Assignments</button>
                 </div>
             </div>
         </form>
@@ -97,14 +99,21 @@ if (isset($_POST['btn_remove'])){
         <div class="" id="tablediv">
             <?php
                 $st_grade = $student_display['st_grade'];
+                
             if(isset($_POST['grade_assi'])){
                 $assi_subject = $_POST['assi_subject'];
-                $get_assi_list = $ravi->assi_list_subject($st_grade,$assi_subject);
-                echo "<h2 class='inner-tittle'>Grade - $st_grade | Assignments for Subject: $assi_subject </h2>";
+                if($assi_subject=="All Subjects"){
+                    $get_assi_list = $ravi->assi_list_grade($st_grade);
+                    echo "<h2 class='inner-tittle'>Grade - $st_grade | All Assignments</h2>";  
+                }else{
+                    $get_assi_list = $ravi->assi_list_subject($st_grade,$assi_subject);
+                    echo "<h2 class='inner-tittle'>Grade - $st_grade | Assignments for Subject: $assi_subject </h2>";
+                }
             }else{
-                $get_assi_list = $ravi->assi_list_grade($st_grade);
+                $get_assi_list = $ravi->assi_list_grade($st_grade);//default
                 echo "<h2 class='inner-tittle'>Grade - $st_grade | All Assignments</h2>";   
             }
+                 
 
             if($get_assi_list->num_rows > 0){
             ?>
@@ -117,9 +126,10 @@ if (isset($_POST['btn_remove'])){
                         <th>Subject</th>
                         <th>Uploaded @</th>
                         <th>Download </th>
-                        <th>Submit Assignment 
-                <span class="label label-warning">Due Today</span>   
-                <span class="label label-danger">Overdue</span>     </th>
+                        <th>Submit Assignment
+                            <span class="label label-warning">Due Today</span>
+                            <span class="label label-danger">Overdue</span>
+                        </th>
                         <th>Deadline</th>
                     </tr>
                 </thead>
@@ -138,7 +148,7 @@ if (isset($_POST['btn_remove'])){
                         }
                         //echo $overdue;
                         ?>
-                        
+
                     <tr>
                         <th><?php echo $a_sn ?></th>
                         <td><?php echo $row['assi_title']?></td>
@@ -147,8 +157,9 @@ if (isset($_POST['btn_remove'])){
                         <td><a class="btn btn-warning btn-sm" href="<?php echo '../faculty/'.$row['assi_location'] ?>"
                                 target="_blank">
                                 <i class="fa fa-download fw-fa"></i> Download</a></td>
-                    <td <?php switch($overdue){case 0: echo 'class="bg-danger"'; break; case 1: echo 'class="bg-warning"'; break; default: echo 'class="bg-primary"'; break; }?> >
-                        
+                        <td
+                            <?php switch($overdue){case 0: echo 'class="bg-danger"'; break; case 1: echo 'class="bg-warning"'; break; default: echo 'class="bg-primary"'; break; }?>>
+
                             <form class="form-inline" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="sub_assi_id" value="<?php echo $row['assi_id'] ?>">
 
@@ -156,8 +167,8 @@ if (isset($_POST['btn_remove'])){
                                 <div class="invalid-feedback">File required! </div>
 
                                 <button type="submit" name="btn_submit" class="btn btn-success btn-sm"
-                                    <?php if(!$overdue){echo "disabled";}?>><i
-                                        class="fa fa-upload fw-fa"></i> Submit</button>
+                                    <?php if(!$overdue){echo "disabled";}?>><i class="fa fa-upload fw-fa"></i>
+                                    Submit</button>
                             </form>
                         </td>
                         <td><?php echo $row['assi_deadline']?></td>
