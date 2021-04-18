@@ -23,14 +23,10 @@
                                     <span>Information</span></a></li>
                             <li><a href="#section-2"><i class="lnr lnr-lighter"></i> <span>Change
                                         Password</span></a></li>
-                            <li><a href="#section-3"><i class="lnr lnr-users"></i>
-                                    <span>Teachers</span></a></li>
+
                             <li><a href="#section-4"><i class="fa fa-flask"></i>
-                                    <span>Subject</span></a></li>
-                            <li><a href="#section-5"><i class="lnr lnr-chart-bars"></i>
-                                    <span>Results</span></a></li>
-                            <li><a href="#section-6"><i class="lnr lnr-calendar-full"></i> <span>Time
-                                        table</span></a></li>
+                                    <span>Subjects</span></a></li>
+                            
                             <li><a href="#section-7"><i class="fa fa-check-circle"></i>
                                     <span>Attendence</span></a></li>
 
@@ -104,7 +100,7 @@
 												}
 										
 												?>
-                                <form method="post" class="form-inline" >
+                                <form method="post" class="form-inline">
                                     <div class="input-group input-icon">
                                         <span class="input-group-addon">
                                             <i class="fa fa-key"></i> </span>
@@ -128,7 +124,47 @@
                             </div>
                         </section>
 
+                        <section id="section-4">
 
+                        <div class="graph">
+                                <div class="tables">
+
+                                <h2 class="inner-tittle ">Gradevise Subjects Assigned to Faculty</h2>
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Subject</th>
+                                                <th>Grade</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php 
+															//$t_username;
+															$sn = 1;
+															$subject_info_in_faculty = $ravi->fc_sub_info($t_username);
+																while($t_info = $subject_info_in_faculty->fetch_assoc())		{ 
+																		?>
+
+                                            <tr>
+                                                <th scope="row"><?php echo $sn; ?></th>
+                                                <td><?php echo ucwords($t_info['sub_name']); ?></td>
+                                                <td><?php echo ucwords($t_info['st_grade']); ?></td>
+                                            </tr>
+                                            <?php $sn++; } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <section id="section-7">
+
+                            <div class="col-md-12">
+                                attendence - to do
+                            </div>
+                        </section>
 
 
                     </div>

@@ -41,8 +41,8 @@ Project Guidence: Ms. Sonam Kaler
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <link href="../css/bootstrap5.min.css" rel="stylesheet" type='text/css' crossorigin="anonymous">
-   
-<!-- Custom CSS -->
+
+    <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/banukacss.css" rel='stylesheet' type='text/css' />
     <!-- Graph CSS -->
@@ -60,7 +60,7 @@ Project Guidence: Ms. Sonam Kaler
     <script src="js/radar.js"></script>
     <link href="css/barChart.css" rel='stylesheet' type='text/css' />
     <link href="css/fabochart.css" rel='stylesheet' type='text/css' />
-   
+
     <!--clock init-->
     <script src="js/css3clock.js"></script>
     <!--Easy Pie Chart-->
@@ -82,9 +82,9 @@ Project Guidence: Ms. Sonam Kaler
                 </div>
                 <!-- //header-ends -->
 
-               
 
-                    <?php 
+
+                <?php 
                 //-----------------------------------------
 				//include SECTIONS CODE
 				//or load other modules in this place.... based on button clicks on left navs
@@ -100,89 +100,89 @@ Project Guidence: Ms. Sonam Kaler
 
 
 
-                    <!--custom-widgets-->
-                    <div class="custom-widgets">
-                        <div class="row-one">
-                            <div class="col-md-3 widget">
-                                <div class="stats-left ">
-                                    <h5>Today</h5>
-                                    <h4> Users</h4>
-                                </div>
-                                <div class="stats-right">
-                                    <label>90</label>
-                                </div>
-                                <div class="clearfix"> </div>
+                <!--custom-widgets-->
+                <div class="custom-widgets">
+                    <div class="row-one">
+                        <div class="col-md-3 widget">
+                            <div class="stats-left ">
+                                <h5>Today</h5>
+                                <h4> Users</h4>
                             </div>
-                            <div class="col-md-3 widget states-mdl">
-                                <div class="stats-left">
-                                    <h5>Today</h5>
-                                    <h4>Visitors</h4>
-                                </div>
-                                <div class="stats-right">
-                                    <label> 85</label>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="col-md-3 widget states-thrd">
-                                <div class="stats-left">
-                                    <h5>Today</h5>
-                                    <h4>Tasks</h4>
-                                </div>
-                                <div class="stats-right">
-                                    <label>51</label>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="col-md-3 widget states-last">
-                                <div class="stats-left">
-                                    <h5>Today</h5>
-                                    <h4>Alerts</h4>
-                                </div>
-                                <div class="stats-right">
-                                    <label>30</label>
-                                </div>
-                                <div class="clearfix"> </div>
+                            <div class="stats-right">
+                                <label>90</label>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
-                    </div>
-                    <!--//custom-widgets-->
-
-                    <!--/charts-->
-                    <div class="charts">
-                        <div class="chrt-inner">
-                            <!--//weather-charts-->
-                            <div class="graph-visualization">
-                                <div class="col-md-6 map-1">
-                                    <h3 class="sub-tittle">Profile </h3>
-
-
-                                </div>
-                                <div class="col-md-6 map-2">
-                                    <div class="profile-nav alt">
-                                        <section class="panel">
-                                            <div class="user-heading alt clock-row terques-bg">
-                                                <h3 class="sub-tittle clock">Easy Clock </h3>
-                                            </div>
-                                            <ul id="clock">
-                                                <li id="sec"></li>
-                                                <li id="hour"></li>
-                                                <li id="min"></li>
-                                            </ul>
-
-
-
-                                        </section>
-
-                                    </div>
-                                </div>
-                                <div class="clearfix"> </div>
+                        <div class="col-md-3 widget states-mdl">
+                            <div class="stats-left">
+                                <h5>Today</h5>
+                                <h4>Visitors</h4>
                             </div>
-
-
+                            <div class="stats-right">
+                                <label> 85</label>
+                            </div>
+                            <div class="clearfix"> </div>
                         </div>
-                        <!--/charts-inner-->
+                        <div class="col-md-3 widget states-thrd">
+                            <div class="stats-left">
+                                <h5>Today</h5>
+                                <h4>Tasks</h4>
+                            </div>
+                            <div class="stats-right">
+                                <label>51</label>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="col-md-3 widget states-last">
+                            <div class="stats-left">
+                                <h5>Today</h5>
+                                <h4>Alerts</h4>
+                            </div>
+                            <div class="stats-right">
+                                <label>30</label>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="clearfix"> </div>
                     </div>
+                </div>
+                <!--//custom-widgets-->
+
+                <!--/charts-->
+                <div class="charts">
+                    <div class="chrt-inner">
+                        <!--//weather-charts-->
+                        <div class="graph-visualization">
+                            <div class="col-md-6 map-1">
+                                <h3 class="sub-tittle">Profile </h3>
+
+
+                            </div>
+                            <div class="col-md-6 map-2">
+                                <div class="profile-nav alt">
+                                    <section class="panel">
+                                        <div class="user-heading alt clock-row terques-bg">
+                                            <h3 class="sub-tittle clock">Easy Clock </h3>
+                                        </div>
+                                        <ul id="clock">
+                                            <li id="sec"></li>
+                                            <li id="hour"></li>
+                                            <li id="min"></li>
+                                        </ul>
+
+
+
+                                    </section>
+
+                                </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+
+
+                    </div>
+                    <!--/charts-inner-->
+                </div>
 
                 <!--footer section start-->
                 <footer>
@@ -248,10 +248,40 @@ Project Guidence: Ms. Sonam Kaler
                 <ul id="menu">
                     <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
 
-                    <li><a href="home.php?at=assignments"><i class="fa fa-file-text"></i>
-                            <span>Assignments</span></a></li>
-                    <li><a href="home.php?at=attendence"><i class="fa fa-check-circle"></i>
-                            <span>Attendence</span></a></li>
+                    <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span>Assignments</span> <span
+                                class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-academico-sub">
+
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=assignments"><i
+                                        class="fa fa-file-text"></i>
+                                    <span>Distribution</span></a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=evaluation"><i
+                                        class="fa fa-file-text"></i>
+                                    <span>Evaluation</span></a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=scrutiny"><i
+                                        class="fa fa-file-text"></i>
+                                    <span>Scrutiny</span></a></li>
+
+                        </ul>
+                    </li>
+                    <li id="menu-academico"><a href="#"><i class="fa fa-check-circle"></i> <span>Attendence</span> <span
+                                class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-academico-sub">
+
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=attendence"><i
+                                        class="fa fa-file-text"></i>
+                                    <span>Mark Attendence</span></a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at="><i
+                                        class="fa fa-file-text"></i>
+                                    <span>-</span></a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at="><i
+                                        class="fa fa-file-text"></i>
+                                    <span>-</span></a></li>
+
+                        </ul>
+                    </li>
+
+
                     <li><span>
                             <div class="dark ">
                                 <div class="calendar ">

@@ -159,8 +159,22 @@ Project Guidence: Ms. Sonam Kaler
 
                 <ul id="menu">
                     <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-                    <li><a href="home.php?at=assignments"><i class="fa fa-file-text"></i>
-                            <span>Assignments</span></a></li>
+                    
+                    <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span>Assignments</span> <span
+                                class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-academico-sub">
+
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=assignments"><i
+                                        class="fa fa-file-text"></i>
+                                    <span>Download | Upload</span></a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=marks_scrutiny"><i
+                                        class="fa fa-file-text"></i>
+                                    <span>Marks | Scrutiny</span></a></li>
+
+                        </ul>
+                    </li>
+                
+
                     <li><a href="home.php?at=attendence"><i class="fa fa-check-circle"></i>
                             <span>Attendence</span></a></li>
                     <li><span>

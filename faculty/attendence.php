@@ -89,8 +89,8 @@ if(isset($_POST['submit_attendence'])){
 
                 <div class="col-md-3 ">
                     <label class="form-label">Session Date*</label>
-                    <input type="date" name="sesh_date" class="form-control" value="2021-12-12" required
-                        title="Date of Session held">
+                    <input type="date" name="sesh_date" class="form-control" value="<?php echo date('Y-m-d')?>" required
+                        title="Date of Session held" min="<?php echo date('Y-m-d')?>">
                     <div class="invalid-feedback"> Please provide date session took place! </div>
                 </div>
 

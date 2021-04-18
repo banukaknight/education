@@ -2,14 +2,14 @@
 class project2
 	
 {
-	public $username = "username";
-	public $password = "password";
+	public $username = "username"; //id16616954_username
+	public $password = "password"; //<krvSOTODP}n3P@h
 
 	// public $username = "root";
 	// public $password = "";
 
 	public $server = "localhost";
-	public $dbname = "project2";
+	public $dbname = "project2"; // id16616954_project2
 	public $connectdb;
 
 	//-- global variables for use
@@ -129,13 +129,30 @@ class project2
 		return $teacher_info_admin_run;
 	}
 	///// display teacher info in  student panel
-	public function teacher_info_instudent($st_grade)
-	{
-		$teacher_info_instudent_select = "select * from subjects_info where grade='$st_grade'";
-		$teacher_info_instudent_run = $this->connectdb->query($teacher_info_instudent_select);
-		return $teacher_info_instudent_run;
+	// public function teacher_info_instudent($st_grade)
+	// {
+	// 	$teacher_info_instudent_select = "select * from subjects_info where grade='$st_grade'";
+	// 	$teacher_info_instudent_run = $this->connectdb->query($teacher_info_instudent_select);
+	// 	return $teacher_info_instudent_run;
 		
+	// }
+
+	// student - get gradevise teachers
+	public function st_sub_info($st_grade)
+	{
+		$sub_info_select = "SELECT * FROM `sub_info` WHERE `st_grade`='$st_grade'";
+		$sub_info_run = $this->connectdb->query($sub_info_select);
+		return $sub_info_run;
 	}
+	// faculty - get facultyvise subjects
+	public function fc_sub_info($t_username)
+	{
+		$sub_info_select = "SELECT * FROM `sub_info` WHERE `t_username`='$t_username'";
+		$sub_info_run = $this->connectdb->query($sub_info_select);
+		return $sub_info_run;
+	}
+
+
 	////////////////////////End Teacher Info ------------//////////////////////
 	
 	///////////////////////// student password update //////////
@@ -152,7 +169,7 @@ class project2
 
 
 
-	//// ----- attendance marking code by banuka----///
+	//// ----- automated attendance marking code by banuka----///
 
 	public function st_attendance($st_username)
 	{
@@ -178,15 +195,6 @@ class project2
 	//// END attendance marking code ----///
 
 
-	///////////////////-------- display subject in admin ----------------////////
-	// public function subject_info()
-	// {
-		
-	// 	$subject_info_admin = "select * from subjects_info";
-	// 	$subject_info_admin_run = $this->connectdb->query($subject_info_admin);
-	// 	return $subject_info_admin_run;
-	// }
-	
 	////////////  edit teacher information ////////////////////
 	
 	public function edit_teacherid($teacher_id)
@@ -372,7 +380,7 @@ class project2
 		$assi_run =  $this->connectdb->query($assi_get);
 		return $assi_run;
 	}
-	public function assi_by_id($assi_id)
+	public function fc_assi_by_id($assi_id)
 	{
 		$assi_get = "SELECT * FROM `fc_assignments` WHERE assi_id='$assi_id'";
 		$assi_run =  $this->connectdb->query($assi_get);
@@ -393,6 +401,57 @@ class project2
 		return $assi_run;
 	}
 	
+	public function fc_sub_by_assiid($assi_id){
+		$assi_get = "SELECT * FROM `st_submissions` WHERE assi_id='$assi_id'";
+		$assi_run =  $this->connectdb->query($assi_get);
+		return $assi_run;
+	}
+
+	//faculty updating assignment marks
+	public function fc_evaluate_sub($sub_id,$initial_marks,$final_marks,$fc_response){
+		$eval_sub = "UPDATE `st_submissions` SET `initial_marks`='$initial_marks',`final_marks`='$final_marks',`fc_response`='$fc_response' WHERE `sub_id`='$sub_id';";
+		//echo $eval_sub; //debugging only
+		$eval_run =  $this->connectdb->query($eval_sub);
+		return $eval_run;
+	}
+
+	//faculty responding to scrutiny request
+	public function fc_scrutiny_sub($sub_id,$final_marks,$fc_response){
+		$eval_sub = "UPDATE `st_submissions` SET `final_marks`='$final_marks',`fc_response`='$fc_response' WHERE `sub_id`='$sub_id';";
+		//echo $eval_sub; //debugging only
+		$eval_run =  $this->connectdb->query($eval_sub);
+		return $eval_run;
+	}
+
+	//student requesting for scrutiny
+	public function st_scrutiny_sub($sub_id,$scrutiny_req){
+		$eval_sub = "UPDATE `st_submissions` SET `scrutiny_req`='$scrutiny_req' WHERE `sub_id`='$sub_id';";
+		//echo $eval_sub; //debugging only
+		$eval_run =  $this->connectdb->query($eval_sub);
+		return $eval_run;
+	}
+
+	//inner-join tables to get submissions for a faculty
+	public function fc_sub_by_fcid($t_username){
+		$sub_get = "SELECT *
+		FROM st_submissions
+		INNER JOIN fc_assignments ON st_submissions.assi_id = fc_assignments.assi_id WHERE fc_assignments.t_username=$t_username ORDER BY `st_submissions`.`sub_id` ASC";
+		//echo $sub_get; //debugging only
+		$sub_run =  $this->connectdb->query($sub_get);
+		return $sub_run;
+	}
+	//inner-join tables to get submissions for a student
+	public function st_sub_by_stid($st_username){
+		$sub_get = "SELECT *
+		FROM st_submissions
+		INNER JOIN fc_assignments ON st_submissions.assi_id = fc_assignments.assi_id WHERE st_submissions.st_username=$st_username ORDER BY `st_submissions`.`sub_id` ASC";
+		//echo $sub_get; //debugging only
+		$sub_run =  $this->connectdb->query($sub_get);
+		return $sub_run;
+	}
+
+
+	// //----------------------------------------
 	//additional functions for reusability -banuka
 	//php function that calls a javascript - script that display "alert"
 	//$ravi->alertFunc("Alert");
