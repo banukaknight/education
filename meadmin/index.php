@@ -6,11 +6,8 @@ session_start();
 //}
  include "../setting/config.php";
 
-
-
 if(isset($_POST['admin_signin']))
 {
-	
 	$admin_username = mysqli_real_escape_string($ravi->hackme(),$_POST['admin_username']);
     $admin_password = mysqli_real_escape_string($ravi->hackme(),$_POST['admin_password']);
 	if($admin_username=="" AND $admin_password=="")
@@ -20,7 +17,6 @@ if(isset($_POST['admin_signin']))
 	else
 	{
 		$melogin = $ravi->meadmin_check($admin_username,$admin_password);
-		
 		if($melogin==1)
 		{
 		$_SESSION['meadmin'] = 	$admin_username;
@@ -29,96 +25,102 @@ if(isset($_POST['admin_signin']))
 		{
 			echo "<script>alert('Email Or Password does not matched');</script>";
 		}
-	
 	}
-
-	
 }
-
 ?>
 <!--
-w3 URL: http://w3layouts.com
+Initial Template by: W3layouts © 2016
+Prior development by: Ravi Khadka © 2018
+Capstone development by: Banuka | Checki | Samrin | Sanduni | Kavindu
+Capstone for: Lovely Professional University © 2021
+Project Guidence: Ms. Sonam Kaler
 -->
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>Admin Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Augment Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript">
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
+	<title>Admin Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="keywords" content="Edu-app web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/login_style.css">
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
-    </script>
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <!-- Graph CSS -->
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <!-- jQuery -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet'
-        type='text/css'>
-    <!-- lined-icons -->
-    <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
-    <!-- //lined-icons -->
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <!--clock init-->
 </head>
 
-<body>
-    <!--/login-->
+<body class="img js-fullheight" style="background-image: url(images/bk/login_bg.jpg); background-repeat: repeat-y; ">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+				<a href="../"><h2 class="heading-section">Mo/Yudaganawa Vidyalaya</h2></a>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+						<h3 class="mb-4 text-center">Admin Login</h3>
+						<form  method="post">
+							<div class="form-group">
+								<input name="admin_username" type="text" class="form-control" placeholder="Username" required>
+							</div>
+							<div class="form-group">
+								<input name="admin_password" id="password-field" type="password" class="form-control" placeholder="Password"
+									required>
+								<span toggle="#password-field"
+									class="fa fa-fw fa-eye field-icon toggle-password"></span>
+							</div>
+							<div class="form-group">
+								<button name="admin_signin" type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+							</div>
+							<div class="form-group d-md-flex">
+								<div class="w-50">
+									<label class="checkbox-wrap checkbox-primary">Remember Me
+										<input type="checkbox" checked>
+										<span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="w-50 text-md-right">
+									<a href="../" style="color: #fff">Return to Home</a>
+								</div>
+							</div>
+						</form>
 
-    <div class="error_page">
-        <!--/login-top-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-        <div class="error-top" style="background-image: url('../images/bg/alogin.jpg'); background-size: cover;">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
-            <h2 class="inner-tittle page">Admin Login</h2>
+	<script>
+		(function ($) {
+			"use strict";
+			var fullHeight = function () {
 
-            <div class="login">
-                <h3 class="inner-tittle t-inner" style="text-shadow: 2px 2px 5px white;">Login</h3>
+				$('.js-fullheight').css('height', $(window).height());
+				$(window).resize(function () {
+					$('.js-fullheight').css('height', $(window).height());
+				});
+			};
+			fullHeight();
+			$(".toggle-password").click(function () {
+				$(this).toggleClass("fa-eye fa-eye-slash");
+				var input = $($(this).attr("toggle"));
+				if (input.attr("type") == "password") {
+					input.attr("type", "text");
+				} else {
+					input.attr("type", "password");
+				}
+			});
+		})(jQuery);
+	</script>
 
-                <form method="post">
-                    <input type="text" class="text" name="admin_username" placeholder="Username"
-                        value="<?php if(isset($_POST['admin_signin'])){ echo $_POST['admin_username']; } ?>">
-                    <input type="password" placeholder="Password" name="admin_password"
-                        value="<?php if(isset($_POST['admin_signin'])){ echo $_POST['admin_password']; } ?>">
-                    <div class="submit"><input type="submit" value="Login" name="admin_signin"></div>
-                    <div class="clearfix"></div>
-
-
-                </form>
-            </div>
-
-
-        </div>
-
-
-        <!--//login-top-->
-    </div>
-
-    <!--//login-->
-    <!--footer section start-->
-    <div class="footer">
-        <div class="error-btn">
-            <a class="read fourth" href="../">Return to Home</a>
-        </div>
-    </div>
-    <!--footer section end-->
-    <!--/404-->
-    <!--js -->
-    <script src="js/jquery.nicescroll.js"></script>
-    <script src="js/scripts.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
