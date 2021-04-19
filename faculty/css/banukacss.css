@@ -116,5 +116,5 @@ legend.scheduler-border {
 }
 
 #tablediv {
-    min-height:400px; max-height:30vh; overflow:auto;
+   max-height:30vh; overflow:auto;
 }

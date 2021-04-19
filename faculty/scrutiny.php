@@ -158,7 +158,7 @@
                         <form class="form-inline" method="post" >
                             <td><input name="final_marks" class="form-control " type="number" min="0" max="100"
                                     value="<?php echo $row['final_marks']?>" required></td>
-                            <td><input name="fc_response" class="form-control" type="text" maxlength="50"
+                            <td><input name="fc_response" class="form-control" type="text" maxlength="50" pattern="^[A-Za-z0-9 ,-.']{1,50}$"
                                     value="<?php echo $row['fc_response']?>" required></td>
 
                             <td>

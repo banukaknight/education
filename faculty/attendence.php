@@ -98,7 +98,7 @@ if(isset($_POST['submit_attendence'])){
 
                     <label class="form-label">Session Info*</label>
                     <input type="text" name="sesh_info" class="form-control" placeholder="Session Topic" value="Topic"
-                        required pattern="^[A-Za-z ,-.']{2,100}$" title="No special characteres allowed">
+                        required pattern="^[A-Za-z0-9 ,-.']{2,100}$" title="No special characteres allowed">
                     <div class="invalid-feedback"> Please fill Session Info! </div>
                 </div>
 
@@ -152,7 +152,8 @@ if(isset($_POST['submit_attendence'])){
                 </div>
                 <!--//tablediv-->
                 <input type="hidden" name="at_grade" value="<?php echo $std_grade; ?>">
-                <input type="submit" name="submit_attendence">
+                <br>
+                <input type="submit" name="submit_attendence" value="Mark Attendence">
             </form>
         </div>
 

@@ -1,3 +1,12 @@
+<?php
+//code for added layer of security, to prevent direct access to module -banuka
+ if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+    /* choose the appropriate page to redirect users */
+    die( header( 'location: ../' ) );
+}
+?>
+
 <?php 
 class project2
 	
@@ -349,31 +358,7 @@ class project2
 	 $update_general_run = $this->connectdb->query($update_general_setting);
 		return $update_general_run;
 	}
-	public function meravi_add_table($Nepdev_table_Name,$Nepdev_student_name,$Nepdev_student_grade,$Nepdev_subject1,$Nepdev_subject2,$Nepdev_subject3,$Nepdev_subject4,$Nepdev_subject5,$Nepdev_subject6,$Nepdev_subject7,$Nepdev_subject8,$Nepdev_subject9,$Nepdev_subject10,$Nepdev_subject11)
-	{
-		$Meravi_database = "CREATE TABLE $Nepdev_table_Name(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,$Nepdev_student_name varchar(250) Null,$Nepdev_student_grade varchar(10) null,$Nepdev_subject1 varchar(250) null,$Nepdev_subject2 varchar(250) null,$Nepdev_subject3 varchar(250) null,$Nepdev_subject4 varchar(250) null,$Nepdev_subject5 varchar(250) null,$Nepdev_subject6 varchar(250) null,$Nepdev_subject7 varchar(250) null,$Nepdev_subject8 varchar(250) null,$Nepdev_subject9 varchar(250) null,$Nepdev_subject10 varchar(250) null,$Nepdev_subject11 varchar(250) null)";
-		$Meravi_run = $this->connectdb->query($Meravi_database);
-		return $Meravi_run;
-	}
-	public function Nepdev_Exam_Term($Nepdev_exam_term)
-	{
-		$Nepdev_Select = "SELECT * FROM exam_term where name='$Nepdev_exam_term'";
-		$Nepdev_Run = $this->connectdb->query($Nepdev_Select);
-		if($Nepdev_Run->num_rows>0)
-		{
-			echo "<script>alert('You Have ALready Added $Nepdev_exam_term');</script>";
-		}
-		else
-		{
-			$Nepdev_Add = "INSERT INTO exam_term(name) VALUES('$Nepdev_exam_term')";
-			$Nedev_Add_Run = $this->connectdb->query($Nepdev_Add);
-			if($Nedev_Add_Run==true)
-			{
-				echo "<script>alert('Success Added $Nepdev_exam_term');</script>";
-				}
-			}
-			return 	$Nepdev_Run;
-	}
+	
 
 	// assignment up faculty -banuka
 	public function assi_up_faculty($t_username, $assi_deadline, $assi_subject, $assi_title, $assi_grade, $assi_location, $assi_size)

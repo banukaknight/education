@@ -97,9 +97,8 @@ Project Guidence: Ms. Sonam Kaler
 										    <!--footer section start-->
 										<div class="footer">
 												<div class="error-btn">
-															<a class="read fourth" href="index.html">Return to Home</a>
+															<a class="read fourth" href="../">Return to Home</a>
 															</div>
-										   <p>&copy 2016 Augment . All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts.</a></p>
 										</div>
 									<!--footer section end-->
 									<!--/404-->

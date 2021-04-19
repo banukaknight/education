@@ -102,11 +102,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				?>
 
 
+                <hr style="height:1em; ">
 
                 <!--footer section start-->
                 <footer>
-                    <p>&copy 2018 Augment . All Rights Reserved | Design by <a href="https://w3layouts.com/"
-                            target="_blank">W3layouts.</a> and Develop By Ravi Khadka</p>
+                    <p>
+                        <?php $ip = $_SERVER['REMOTE_ADDR'];
+					if ($ip != '127.0.0.1'){
+					$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+                        //code for getting location of user using ip address
+					echo "User ID: $t_username | Logged in from: "; 
+					echo "$details->city, $details->region, $details->country with IP address: $details->ip" ;
+										}else{
+											echo "Admin ID: $meadmin_info";
+                                       }
+					?>
+                        <a class=" btn-danger btn-sm float-right " href="logouts.php"><span> Log out </span><i
+                                class="lnr lnr-power-switch"></i></a>
+                        <a class=" btn-primary btn-sm float-right " href="../"><span> Home </span><i
+                                class="lnr lnr-arrow-left"></i></a>
+
+                    </p>
                 </footer>
                 <!--footer section end-->
             </div>
@@ -172,8 +188,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     Website Information</a></li>
                             <li id="menu-academico-avaliacoes" style="display:none"><a
                                     href="home.php?at=edit-general-information">Edit General Information</a></li>
-                            <li id="menu-academico-boletim"><a href="home.php?at=add-table">Add Database</a></li>
-                        </ul>
+                            
+                          </ul>
                     </li>
 
                 </ul>
@@ -202,26 +218,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
     </script>
 
-    
-<script>
-//bootstrap validation code -banuka
-(function() {
-    'use strict'
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-        .forEach(function(form) {
-            form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
-</script>
+
+    <script>
+    //bootstrap validation code -banuka
+    (function() {
+        'use strict'
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+    </script>
 
     <!--js -->
     <link rel="stylesheet" href="css/vroom.css">

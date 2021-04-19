@@ -199,7 +199,6 @@
                             </ul>
 
 
-
                         </section>
 
                     </div>
@@ -211,5 +210,6 @@
         </div>
         <!--/charts-inner-->
     </div>
-    <!--//outer-wp-->
+
 </div>
+<!--//outer-wp-->

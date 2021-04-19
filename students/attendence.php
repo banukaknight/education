@@ -30,8 +30,9 @@
         //$st_username
 
         $get_attendence = $ravi->st_view_attendence($st_atten_file,$st_username);
-           
-            if($get_attendence->num_rows>0){
+        //echo $get_attendenc; //debugging only
+        
+            if(($get_attendence) && $get_attendence->num_rows>0){
 			?>
 
         <div class="tables">

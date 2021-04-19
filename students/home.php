@@ -96,6 +96,9 @@ Project Guidence: Ms. Sonam Kaler
 				?>
 
 
+                <hr style="height:1em; ">
+
+
                 <!--footer section start-->
                 <footer>
                     <p>
@@ -159,7 +162,7 @@ Project Guidence: Ms. Sonam Kaler
 
                 <ul id="menu">
                     <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-                    
+
                     <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span>Assignments</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
@@ -173,7 +176,7 @@ Project Guidence: Ms. Sonam Kaler
 
                         </ul>
                     </li>
-                
+
 
                     <li><a href="home.php?at=attendence"><i class="fa fa-check-circle"></i>
                             <span>Attendence</span></a></li>

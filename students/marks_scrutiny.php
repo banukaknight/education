@@ -122,7 +122,7 @@
                                     value="<?php echo $row['final_marks']?>" readonly></td>
 
                             <td><input name="scrutiny_req" class="form-control" type="text" maxlength="50"
-                                    value="<?php echo $row['scrutiny_req']?>" required></td>
+                                    value="<?php echo $row['scrutiny_req']?>" required pattern="^[A-Za-z0-9 ,-.']{1,50}$"></td>
 
                             <td> <input type="hidden" name="get_sub_id" value="<?php echo $row['sub_id'] ?>">
                                 <button type="submit" name="btn_scrut" class="btn btn-danger btn-sm">Request</button>

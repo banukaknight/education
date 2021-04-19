@@ -19,12 +19,12 @@
 
     <div class="bkbox">
         <h2 class="inner-tittle">REVIEW ATTENDENCE by: <?php echo $t_username; ?></h2>
-        <div class="row  border rounded">
-            <div class='col-3 bg-secondary'>Color Codes:</div>
-            <div class='col-2 bg-success'>Present</div>
-            <div class='col-2 bg-danger'>Absent</div>
-            <div class='col-2 bg-warning'>N/A</div>
-        </div>
+        <h4>
+            <span class=' p-1 m-3 border border-info rounded bg-secondary'>Color Codes: </span>
+            <span class=' p-1 border border-info rounded bg-success'>Present</span>
+            <span class=' p-1 border border-info rounded bg-danger'>Absent</span>
+            <span class=' p-1 border border-info rounded bg-warning'>N/A</span>
+            </h4>
         <hr>
 
         <div class="clearfix"> </div>

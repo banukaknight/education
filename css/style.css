@@ -116,7 +116,7 @@ nav.navbar.navbar-default {
 a.navbar-brand {
     color: #fff!important;
     padding: 0;
-    font-size: 0.9em;
+    font-size: 0.5em;
     font-weight: 700;
     text-transform: uppercase;
     font-style: italic;
@@ -669,7 +669,7 @@ h3.agileinfo_sign  {
     padding: 5em 0 10em;
 }
 h3.w3l-title {
-    font-size: 3.5em;
+    font-size: 2.5em;
     color: #002147;
     text-align: center;
     letter-spacing: 1px;
@@ -1332,7 +1332,7 @@ text-align:center;
 }
 @media(max-width: 1080px){
 	a.navbar-brand {
-		font-size: 0.8em;
+		font-size: 0.6em;
 	}
 	div#bs-example-navbar-collapse-1 {
 		margin: 4em 0 2em;
@@ -1395,7 +1395,7 @@ text-align:center;
 		padding: 70px 0;
 	}
 	h3.w3l-title {
-		font-size: 3.2em;
+		font-size: 2.5em;
 		letter-spacing: 0px;
 	}
 	.services-grid h5 {
@@ -1551,7 +1551,7 @@ text-align:center;
 		font-size: 1.5em;
 	}
 	h3.w3l-title {
-		font-size: 3em;
+		font-size: 2.5em;
 	}
 	.contact-grid1 textarea {
 		width: 97.5%;
@@ -1726,7 +1726,7 @@ text-align:center;
 		padding: 50px 0;
 	}
 	h3.w3l-title {
-		font-size: 2.6em;
+		font-size: 2.2em;
 	}
 	.services, .team-w3l, .contact {
 		padding: 3em 0;
@@ -1887,6 +1887,21 @@ text-align:center;
 	}
 }
 @media(max-width: 480px){
+	small.hidemebk {
+		/* bkwashere*/
+		display: none;
+	}
+
+	a.navbar-brand {
+		color: #fff!important;
+		padding: 0;
+		font-size: 0.5em;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-style: italic;
+	}
+
+
 	ul.agile_forms li a {
 		letter-spacing: 0px;
 	}
@@ -1928,7 +1943,7 @@ text-align:center;
 		margin: 1em 0 0;
 	}
 	h3.w3l-title {
-		font-size: 2.4em;
+		font-size: 2em;
 	}
 	.w3layouts_header p:before {
 		left: 34%;
@@ -2164,7 +2179,8 @@ text-align:center;
 		padding: .8em 1em .8em 2.2em;
 	}
 	h3.w3l-title {
-		font-size: 2em;
+		/*bkwashere*/
+		font-size: 1.5em;
 	}
 	.w3layouts_header p:before {
 		left: 29%;

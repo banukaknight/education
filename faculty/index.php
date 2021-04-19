@@ -72,6 +72,7 @@ Project Guidence: Ms. Sonam Kaler
 														<h3 class="inner-tittle t-inner" style="text-shadow: 2px 2px 5px white;">Login</h3>
 																<form method="post">
 																		<input type="text" class="text" name="t_username" placeholder="Username">
+																		<input type="text" class="text" name="dfd" placeholder="dfd">
 																		<input type="password" placeholder="Password" name="t_password">
 																		<div class="submit"><input type="submit" value="Login" name="faculty_signin"></div>
 																		<div class="clearfix"></div>
@@ -95,9 +96,8 @@ Project Guidence: Ms. Sonam Kaler
 										    <!--footer section start-->
 										<div class="footer">
 												<div class="error-btn">
-															<a class="read fourth" href="index.html">Return to Home</a>
+															<a class="read fourth" href="../">Return to Home</a>
 															</div>
-										   <p>&copy 2016 Augment . All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts.</a></p>
 										</div>
 									<!--footer section end-->
 									<!--/404-->
