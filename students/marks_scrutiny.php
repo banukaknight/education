@@ -111,10 +111,10 @@
                         <td><?php echo $row['assi_subject']?></td>
                         <td><?php echo $row['assi_title']?></td>
 
-                        <td><input type="number" class="form-control form-control-sm"
+                        <td><input type="number" class="form-control"
                                 value="<?php echo $row['initial_marks']?>" readonly></td>
 
-                        <td><input name="fc_response" class="form-control" type="text" maxlength="50"
+                        <td><input name="fc_response" class="form-control-plaintext" type="text" maxlength="50"
                                 value="<?php echo $row['fc_response']?>" readonly></td>
 
                         <form class="form-inline" method="post">

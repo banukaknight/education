@@ -130,7 +130,7 @@ if (isset($_POST['btn_remove'])){
                             <span class="label label-warning">Due Today</span>
                             <span class="label label-danger">Overdue</span>
                         </th>
-                        <th>Deadline</th>
+                        <th>Last date of Submission</th>
                     </tr>
                 </thead>
                 <tbody>

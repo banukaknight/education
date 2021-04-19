@@ -271,12 +271,9 @@ Project Guidence: Ms. Sonam Kaler
                             <li id="menu-academico-avaliacoes"><a href="home.php?at=attendence"><i
                                         class="fa fa-file-text"></i>
                                     <span>Mark Attendence</span></a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at="><i
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=attendence-review"><i
                                         class="fa fa-file-text"></i>
-                                    <span>-</span></a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at="><i
-                                        class="fa fa-file-text"></i>
-                                    <span>-</span></a></li>
+                                    <span>Review Attendence</span></a></li>
 
                         </ul>
                     </li>

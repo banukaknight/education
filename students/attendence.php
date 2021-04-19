@@ -18,71 +18,70 @@
     <!--//sub-heard-part-->
 
     <div class="bkbox">
-        <h2 class="inner-tittle">DISPLAY STUDENT ATTENDENCE</h2>
+        <h2 class="inner-tittle">DISPLAY STUDENT ATTENDENCE: <?php echo $st_username; ?></h2>
 
 
         <div class="clearfix"> </div>
 
         <?php					
-          if(isset($_POST['students_info'])){
-                $std_grade = $_POST['std_grade'];
-                $student_dis_admin=	$ravi->student_info_display_admin($std_grade);
-                echo "<h2 class='inner-tittle'>Grade - $std_grade : Students' Information</h2>";
-            // }elseif(isset($_POST['all_st'])){
-            }else{
-                //all_student_info_display_admin (DEFAULT)
-                $student_dis_admin=	$ravi->all_student_info_display_admin();
-                echo "<h2 class='inner-tittle'>All Student Information</h2>";
-            }
-            $s_sn = 1;
+         
+        $st_grade = $student_display['st_grade'];
+        $st_atten_file = "at_g_".$st_grade;
+        //$st_username
 
-            if($student_dis_admin->num_rows>0){
+        $get_attendence = $ravi->st_view_attendence($st_atten_file,$st_username);
+           
+            if($get_attendence->num_rows>0){
 			?>
 
         <div class="tables">
-            <table class=" table table-bordered table-sm table-responsive mytbl">
+            <table class=" table table-bordered table-sm table-responsive table-striped  mytbl">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Gender</th>
-                        <th>Full Name</th>
-                        <th>DOB</th>
-                        <th>Grade</th>
-                        <th>Roll No</th>
-                        <th>Contact</th>
+                    <th colspan="3" class="text-center">Session</th>
+                    <th colspan="3" class="text-center">Attendence Marked </th>
+                    </tr>
+                    <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Info</th>
+                    <th>by Faculty</th>
+                    <th>at</th>
+                    <th>as</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    $a_sn = 1;
+                    $total_attended = 0;
+                    $total_classes_held = 0;
 
-                    <?php while($student_info_admin =$student_dis_admin->fetch_assoc())	{ ?>
-
+                    while($row =$get_attendence->fetch_assoc()){ 
+                        $total_classes_held++;
+                        
+                    ?>
                     <tr>
-                        <td><?php echo $s_sn; ?></td>
-                        <td>
-                            <?php
-                                $st_gender = $student_info_admin['st_gender'];
-                                if($st_gender == 'Male'){
-                                    echo "<img class='gendpic' src='images/bk/picm.png'> ";
-                                }else if($st_gender == 'Female'){
-                                    echo "<img class='gendpic' src='images/bk/picf.png'> ";
-                                }else{
-                                    echo "<img class='gendpic' src='images/bk/pice.png'> ";
-                                }
-                                echo $st_gender;
-                            ?>
-                        </td>
-                        <td><?php echo $student_info_admin['st_fullname']; ?></td>
-                        <td><?php echo $student_info_admin['st_dob']; ?></td>
-                        <td><?php echo $student_info_admin['st_grade'] ?></td>
-                        <td><?php echo $student_info_admin['roll_no'] ?></td>
-                        <td><?php echo $student_info_admin['st_parents_contact']; ?></td>
+                    <td><?php echo $row['sesh_id']?></td>
+                    <td><?php echo $row['sesh_date']?></td>
+                    <td><?php echo $row['sesh_info']?></td>
+                    <td><?php echo $row['t_username']?></td>
+                    <td><?php echo $row['sesh_datetime']?></td>
+                    <?php 
+                    if($row["$st_username"] == 1){
+                        $total_attended++;
+                        echo "<td class='bg-success'>Present</td>";
+                    }else{
+                        echo "<td class='bg-danger'>Absent</td>";
+                    }
+                    
+                    ?>
                     </tr>
-                    <?php $s_sn++; } ?>
+                    <?php $a_sn++; }   ?>
                 </tbody>
             </table>
             <?php    } else {	 ?>
             <br>
-            <h3>No Student information in selected class</h3>
+            <h3>No Attendence Information Found</h3>
             <?php 	} ?>
 
         </div>

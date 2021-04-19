@@ -87,6 +87,34 @@ class project2
 		//INSERT INTO `at_g_1` (`sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `10000000`, `10000001`, `10000007`) VALUES ('1', '1000', '2021-04-11', '2021-04-12 23:13:57', 'test2', '1', '0', '1');
 	}
 
+	//attendence view by student
+	public function st_view_attendence($st_atten_file,$st_username)
+	{
+		$view_attendence = "SELECT `sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `$st_username` FROM `$st_atten_file` WHERE `$st_username` <> 2 ";
+		//echo $view_attendence; //debug only
+		$view_attendence_run = $this->connectdb->query($view_attendence);
+		return $view_attendence_run;
+	}
+
+	//attendence view by faculty
+	public function fc_view_attendence($st_atten_file,$t_username)
+	{
+		$view_attendence = "SELECT * FROM `$st_atten_file` WHERE `t_username` = $t_username ";
+		//echo $view_attendence; //debug only
+		$view_attendence_run = $this->connectdb->query($view_attendence);
+		return $view_attendence_run;
+	}
+	//attendence-cols view by faculty
+	public function fc_view_attendence_cols($st_atten_file)
+	{
+		$view_cols = "SELECT COLUMN_NAME
+		FROM INFORMATION_SCHEMA.COLUMNS
+		WHERE TABLE_NAME = '$st_atten_file'
+		ORDER BY ORDINAL_POSITION";
+		$view_cols_run = $this->connectdb->query($view_cols);
+		return $view_cols_run;
+	}
+
 	/////////////////////////////// ADMINNNNNNNNNNNNNNNNN--------------------------
 	
 	public function meadmin_check($admin_username,$admin_password)

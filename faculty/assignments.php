@@ -86,7 +86,7 @@ if (isset($_POST['btn_remove'])){
                 </div>
 
                 <div class="col-lg-4 ">
-                    <label class="form-label">Deadline*</label>
+                    <label class="form-label">Last date of Submission*</label>
                     <input type="date" placeholder="Assignment Deadline" name="assi_deadline" class="form-control"
                         value="<?php $ddate = date("Y-m-d", strtotime("+7 day")); echo $ddate; ?>" required
                         title="Deadline Expected"
@@ -149,7 +149,7 @@ if (isset($_POST['btn_remove'])){
                         <th>Grade</th>
                         <th>Subject</th>
                         <th>Uploaded @</th>
-                        <th>Deadline</th>
+                        <th>Last date of Submission</th>
                         <th>Download</th>
                         <th>Remove</th>
                     </tr>
