@@ -145,8 +145,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <a href="index.php"><span class=" name-caret"><?php echo $info_display['t_fullname']; ?></span></a>
                 <p>System Admin</p>
                 <ul>
-                    <li><a class="tooltips" href="index.html"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-                    <li><a class="tooltips" href="index.html"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+                    <li><a class="tooltips" href="home.php"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+                    <li><a class="tooltips" href="home.php"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
                     <li><a class="tooltips" href="logouts.php"><span>Log out</span><i
                                 class="lnr lnr-power-switch"></i></a></li>
                 </ul>
@@ -155,7 +155,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="menu">
                 <ul id="menu">
                     <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-                    <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span>Students</span> <span
+                    <li id="menu-academico"><a href="#"><i class="fa fa-user"></i> <span>Students</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
                             <li id="menu-academico-avaliacoes"><a href="home.php?at=student-information">View Student
@@ -167,29 +167,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
 
 
-                    <li id="menu-academico"><a href="#"><i class="fa fa-file-text-o"></i> <span>Teachers</span> <span
+                    <li id="menu-academico"><a href="#"><i class="fa fa-group"></i> <span>Teachers</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
 
                         <ul id="menu-academico-sub">
                             <li id="menu-academico-avaliacoes"><a href="home.php?at=teacher-information">View Teacher
                                     Information</a></li>
                             <li id="menu-academico-boletim"><a href="home.php?at=teacher-add">Add New Teacher</a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at=teacher-edit">Edit Teachers</a>
-                            </li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=teacher-edit">Edit Teachers</a></li>
 
                         </ul>
                     </li>
 
 
-                    <li id="menu-academico"><a href="#"><i class="fa fa-file-text-o"></i> <span>Settings</span> <span
+                    <li id="menu-academico"><a href="#"><i class="fa fa-gears"></i> <span>Other</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
                             <li id="menu-academico-avaliacoes"><a href="home.php?at=general-information">Update
                                     Website Information</a></li>
                             <li id="menu-academico-avaliacoes" style="display:none"><a
                                     href="home.php?at=edit-general-information">Edit General Information</a></li>
-                            
-                          </ul>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=received_mail">
+                                    Received Mail</a></li>
+                        </ul>
                     </li>
 
                 </ul>

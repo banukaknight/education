@@ -26,7 +26,7 @@
             <h2 class="inner-tittle ">EVALUATE ASSIGNMENTS</h2>
 
 
-<?php
+            <?php
     if(isset($_POST['btn_eval'])){
         $sub_id = $_POST['get_sub_id'];
         $initial_marks = $_POST['initial_marks'];
@@ -82,8 +82,11 @@
                         </td>
 
                         <form class="form-inline" method="post">
-                            <td><input name="initial_marks" class="form-control" type="number" min="0" max="100" value="<?php echo $row['initial_marks']?>" required></td>
-                            <td><input name="fc_response" class="form-control" type="text" maxlength="50" value="<?php echo $row['fc_response']?>" required pattern="^[A-Za-z0-9 ,-.']{1,50}$"></td>
+                            <td><input name="initial_marks" class="form-control" type="number" min="0" max="100"
+                                    value="<?php echo $row['initial_marks']?>" required></td>
+                            <td><input name="fc_response" class="form-control" type="text" maxlength="50"
+                                    value="<?php echo $row['fc_response']?>" required
+                                    pattern="^[A-Za-z0-9 ,-.']{1,50}$"></td>
                             <td>
                                 <input type="hidden" name="get_sub_id" value="<?php echo $row['sub_id'] ?>">
                                 <input type="hidden" name="get_assi_id" value="<?php echo $get_assi_id ?>">

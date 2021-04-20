@@ -241,4 +241,3 @@ if(isset($_POST['std_delete_now'])){
 
     </div>
 </div>
-

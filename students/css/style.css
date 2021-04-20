@@ -190,11 +190,11 @@ a:hover { transition: all 200ms ease-in-out; }
     color: #fff;
     white-space: nowrap;
     z-index: 2;
-    background-color: #021F4E;
+    background-color: #033483;
     font-size:0.9em;
     font-family: 'Roboto', sans-serif;
 	border:none;
-	    border-left: 4px solid #021F4E;
+	    border-left: 4px solid #033483;
 }
 
 #menu li a:hover {
@@ -561,7 +561,7 @@ z-index:9999;
 
 }
 li#menu-mensagens-enviadas,li#menu-mensagens,li#menu-academico-avaliacoes,li#menu-mensagens-recebidas,li#menu-academico-boletim{
-    background-color: #021F4E;
+    background-color: #033483;
 	    border-bottom: 1px ridge #002561;
 		z-index:9999;
 }
@@ -3198,8 +3198,8 @@ h3.inner-tittle.t-inner {
 }
 .panel-primary>.panel-heading {
     color: #fff;
-    background-color: #021F4E;
-    border-color: #021F4E;
+    background-color: #033483;
+    border-color: #033483;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     padding: 15px 15px;
@@ -3383,7 +3383,7 @@ h3.inner-tittle.t-inner {
      display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    background: #021F4E;
+    background: #033483;
     color: #fff;
   width: 150px;
 }
@@ -5000,7 +5000,7 @@ div.both_ribbon::after{
 .ribbon1 {
 	    width: 665px;
     position: relative;
-    background: #021F4E;
+    background: #033483;
     height: 80px;
     margin: 0px auto;
     left: -25px;
@@ -5011,7 +5011,7 @@ div.both_ribbon::after{
   position: absolute;
   display: block;
   bottom: -25px;
-  border: 40px solid #021F4E;
+  border: 40px solid #033483;
   z-index:999;
 }
 
@@ -6715,7 +6715,7 @@ footer  p a:hover ,.footer p a:hover{
 		display: flex;
 		flex-wrap: wrap;
 		align-items: stretch;
-		background: #021F4E;
+		background: #033483;
 		color: #fff;
 		width: 92px;
 	}
@@ -7670,7 +7670,7 @@ footer  p a:hover ,.footer p a:hover{
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    background: #021F4E;
+    background: #033483;
     width:68px;
 	}
 	.tabs nav.second a {

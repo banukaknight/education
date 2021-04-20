@@ -18,7 +18,7 @@
                         <ul>
                             <li><a href="#section-1" class="icon-shop"><i class="lnr lnr-briefcase"></i>
                                     <span>Information</span></a></li>
-                            <li><a href="#section-2" class="icon-food"><i class="fa fa-cutlery"></i>
+                            <li><a href="#section-2" class="icon-food"><i class="fa fa-group"></i>
                                     <span>Teachers</span></a></li>
 
                         </ul>

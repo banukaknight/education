@@ -139,8 +139,9 @@
 
                 <div class="col-md-6 ">
                     <label class="form-label">Address</label>
-                    <input type="text" placeholder="Address" name="std_address" value="Address Here" class="form-control"
-                        required pattern="^[A-Za-z\d @-_/,.]{2,100}$" title="Address expected length(2-100)">
+                    <input type="text" placeholder="Address" name="std_address" value="Address Here"
+                        class="form-control" required pattern="^[A-Za-z\d @-_/,.]{2,100}$"
+                        title="Address expected length(2-100)">
                     <div class="invalid-feedback"> Address Required! </div>
                 </div>
 
@@ -166,4 +167,3 @@
     <!--//bkbox-->
 </div>
 <!-- //outter-wp" -->
-

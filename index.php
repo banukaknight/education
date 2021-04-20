@@ -31,6 +31,7 @@ Project Guidence: Ms. Sonam Kaler
     <link rel="stylesheet" href="css/swipebox.css">
     <link rel="stylesheet" href="css/jquery-ui.css" />
     <link rel="stylesheet" href="css/banukacss.css" type="text/css" media="all" /> <!-- Style-CSS -->
+    <script src="https://kit.fontawesome.com/377c5d37c3.js" crossorigin="anonymous"></script>
     <!-- //css files -->
     <!-- online-fonts -->
     <link
@@ -99,8 +100,6 @@ Project Guidence: Ms. Sonam Kaler
         </div>
     </div>
 
-
-
     <!-- about -->
     <div class="about-top" id="about">
         <div class="container">
@@ -120,9 +119,11 @@ Project Guidence: Ms. Sonam Kaler
             </div>
             <div class="col-md-5 wthree-about-grids">
                 <h1>Welcome to Yudaganawa Vidyalaya</h1>
+                <span class="hidemebk">
                 <hr>
                 <h3>මො/යුදගනාව විද්‍යාලය, බුත්තල</h3>
                 <h3>மொ/யுதகனாவ வித்தியாலயம்</h3>
+                </span>
                 <hr>
                 <a href="#" class="trend-w3l" data-toggle="modal" data-target="#myModal"><span>Read More</span></a>
                 <a href="#mail" class="trend-w3l scroll"><span>Get In Touch</span></a>
@@ -152,30 +153,30 @@ Project Guidence: Ms. Sonam Kaler
         <div class="container">
             <div class="stats-info">
                 <div class="col-md-3 col-xs-3 stats-grid slideanim">
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='25'
-                        data-delay='.5' data-increment="1">25</div>
+                    <i class="fa fa-bank" aria-hidden="true"></i>
+                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='1500' data-max='1958'
+                        data-delay='.5' data-increment="1">1958</div>
 
-                    <h4 class="stats-info">WEBSITE VISITORS</h4>
+                    <h4 class="stats-info">FOUNDED IN</h4>
                 </div>
                 <div class="col-md-3 col-xs-3 stats-grid slideanim">
                     <i class="fa fa-book" aria-hidden="true"></i>
-                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5'
-                        data-delay='.1' data-increment="1">5</div>
+                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='11'
+                        data-delay='.1' data-increment="1">11</div>
 
                     <h4 class="stats-info">CLASSES HELD</h4>
                 </div>
                 <div class="col-md-3 col-xs-3 stats-grid slideanim">
-                    <i class="fa fa-trophy" aria-hidden="true"></i>
-                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1500'
-                        data-delay='.1' data-increment="1">1500</div>
+                    <i class="fa fa-group" aria-hidden="true"></i>
+                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='547'
+                        data-delay='.1' data-increment="1">547</div>
 
                     <h4 class="stats-info">STUDENTS ENROLLED</h4>
                 </div>
                 <div class="col-md-3 col-xs-3 stats-grid slideanim">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='50'
-                        data-delay='.1' data-increment="1">50</div>
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='33'
+                        data-delay='.1' data-increment="1">33</div>
 
                     <h4 class="stats-info">CERTIFIED TEACHERS</h4>
                 </div>
@@ -406,7 +407,37 @@ Project Guidence: Ms. Sonam Kaler
     <!-- //team -->
     <!-- contact -->
     <?php
-	 include "setting/config.php";
+	include "setting/config.php";
+
+    //handle contact form
+    if (isset($_POST['btn_send'])) {
+        $cn_name = $_POST['cn_name'];
+        $cn_name = ucwords( trim( $cn_name )); //trim & capitalize
+        $cn_email = $_POST['cn_email'];
+        $cn_phone = $_POST['cn_phone'];
+        $cn_phone = preg_replace("/[^0-9]/", '', $cn_phone); //remove non-alphabet char
+        $cn_subject = $_POST['cn_subject'];
+        $cn_msg = $_POST['cn_msg'];
+    
+        if($cn_name=="" or $cn_email=="" or $cn_phone=="" or $cn_subject=="" or $cn_msg=="" )
+        {
+           $ravi->alert_danger("Please fill all fields accurately!");
+        }
+        else
+        {
+            $contactus_done = $ravi->set_contact_us($cn_name,$cn_email,$cn_phone,$cn_subject,$cn_msg);
+            if($contactus_done==true){
+                $ravi->alert_success("Message Sent!");
+            }else{
+                $ravi->alert_danger("Message Not Sent!");
+            }
+            
+        }
+    }
+
+
+
+    //extract general info from db
 	$general = $ravi->general_setting_check();
 	
 	$general_fetch = $general->fetch_assoc();
@@ -468,21 +499,21 @@ Project Guidence: Ms. Sonam Kaler
                         <form action="#" method="post">
                             <div class="col-md-6 col-xs-6 wthree_contact_left_grid">
                                 <label>Name*</label>
-                                <input type="text" name="Name" placeholder="Name" required="">
+                                <input type="text" name="cn_name" placeholder="Name" required="" maxlength="50">
                                 <label>E-mail*</label>
-                                <input type="email" name="E-mail" placeholder="E-mail" required="">
+                                <input type="email" name="cn_email" placeholder="E-mail" required="" maxlength="50">
                             </div>
                             <div class="col-md-6 col-xs-6 wthree_contact_left_grid">
                                 <label>Phone Number*</label>
-                                <input type="text" name="number" placeholder="Phone Number" required="">
+                                <input type="text" name="cn_phone" placeholder="Phone Number" required="" pattern="^[0-9]{1,12}$" title="Enter Number under 12 length">
                                 <label>Subject*</label>
-                                <input type="text" name="subject" placeholder="Subject" required="">
+                                <input type="text" name="cn_subject" placeholder="Subject" required="" maxlength="30" pattern="^[A-Za-z ,-.'@]{1,30}$" title="Special Characters Not Allowed">
                             </div>
                             <div class="form-group">
                                 <label>Message*</label>
-                                <textarea placeholder name="Message" required=""></textarea>
+                                <textarea placeholder="Message" name="cn_msg" required="" pattern="^[A-Za-z ,-.'!£$%&?@#]{1,100}$" title="Special Characters Not Allowed"></textarea>
                             </div>
-                            <input type="submit" value="Send">
+                            <input type="submit" name="btn_send" value="Send">
                         </form>
                     </div>
                 </div>

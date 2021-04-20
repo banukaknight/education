@@ -27,9 +27,7 @@
                                     <span>Teachers</span></a></li>
                        
                        
-                            <li><a href="#section-5"><i class="lnr lnr-chart-bars"></i>
-                                    <span>Results</span></a></li>
-                            <li><a href="#section-6"><i class="lnr lnr-calendar-full"></i> <span>Time
+                            <li><a href="#section-4"><i class="lnr lnr-calendar-full"></i> <span>Time
                                         table</span></a></li>
                         
                         </ul>
@@ -106,6 +104,7 @@
 										
 												?>
                                 <form method="post" class="form-inline" >
+                                    <h3>Change Password</h3>
                                     <div class="input-group input-icon">
                                         <span class="input-group-addon">
                                             <i class="fa fa-key"></i> </span>
@@ -163,19 +162,8 @@
 
                         </section>
                        
-                        <section id="section-5">
-                            <div class="mediabox">
-                                <h1>Results to be done</h1>
-                            </div>
-                            <div class="mediabox">
 
-                            </div>
-                            <div class="mediabox">
-
-                            </div>
-                        </section>
-
-                        <section id="section-6">
+                        <section id="section-4">
                             <div class="graph" id="ttbg">
                                 <div class="tables">
                                 <h2 class="inner-tittle ">Time Table for Grade:
@@ -245,90 +233,6 @@
     </div>
     <!--//tabs-inner-->
 
-
-    <!--custom-widgets-->
-    <div class="custom-widgets">
-        <div class="row-one">
-            <div class="col-md-3 widget">
-                <div class="stats-left ">
-                    <h5>Today</h5>
-                    <h4> Users</h4>
-                </div>
-                <div class="stats-right">
-                    <label>90</label>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="col-md-3 widget states-mdl">
-                <div class="stats-left">
-                    <h5>Today</h5>
-                    <h4>Visitors</h4>
-                </div>
-                <div class="stats-right">
-                    <label> 85</label>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="col-md-3 widget states-thrd">
-                <div class="stats-left">
-                    <h5>Today</h5>
-                    <h4>Tasks</h4>
-                </div>
-                <div class="stats-right">
-                    <label>51</label>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="col-md-3 widget states-last">
-                <div class="stats-left">
-                    <h5>Today</h5>
-                    <h4>Alerts</h4>
-                </div>
-                <div class="stats-right">
-                    <label>30</label>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <!--//custom-widgets-->
-
-    <!--/charts-->
-    <div class="charts">
-        <div class="chrt-inner">
-            <!--//weather-charts-->
-            <div class="graph-visualization">
-                <div class="col-md-6 map-1">
-                    <h3 class="sub-tittle">Profile </h3>
-
-
-                </div>
-                <div class="col-md-6 map-2">
-                    <div class="profile-nav alt">
-                        <section class="panel">
-                            <div class="user-heading alt clock-row terques-bg">
-                                <h3 class="sub-tittle clock">Easy Clock </h3>
-                            </div>
-                            <ul id="clock">
-                                <li id="sec"></li>
-                                <li id="hour"></li>
-                                <li id="min"></li>
-                            </ul>
-
-
-
-                        </section>
-
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-
-
-        </div>
-        <!--/charts-inner-->
-    </div>
 
 </div>
 <!--//outer-wp-->

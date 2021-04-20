@@ -205,21 +205,21 @@ class project2
 	
 
 
+	// submit contact-us form in home page
+	public function set_contact_us($cn_name,$cn_email,$cn_phone,$cn_subject,$cn_msg){
+		$cn_ip = getenv("REMOTE_ADDR"); //get ip address of visitor		
+		$add_contact_us = "INSERT INTO contact_us_data(cn_name,cn_email,cn_phone,cn_subject,cn_msg,cn_ip) 
+		VALUES('$cn_name','$cn_email','$cn_phone','$cn_subject','$cn_msg','$cn_ip') ";
+		//echo $add_contact_us; //debug only
+		$add_contact_us_run = $this->connectdb->query($add_contact_us);
+		return $add_contact_us_run;
+	}
 
-	//// ----- automated attendance marking code by banuka----///
-
-	public function st_attendance($st_username)
-	{
-		$st_ip = getenv("REMOTE_ADDR"); //get ip address of visitor										
-		date_default_timezone_set("Asia/Colombo");
-		$at_iddateh = $st_username ."_".  date("Y-m-d_H");
-		$at_date = date("Y-m-d");
-		$at_time = date("H:i:s");
-		$add_attendance = "insert into st_attendance(st_username,st_ip,at_iddateh,at_date,at_time) value('$st_username','$st_ip','$at_iddateh','$at_date','$at_time')";							
-		$add_attendance_run = $this->connectdb->query($add_attendance);
-		
-		return $add_attendance_run;
-		 
+	//get data from contact_us_data table
+	public function get_contact_us(){
+		$view_contact_us = "SELECT * FROM contact_us_data";
+		$view_contact_us_run = $this->connectdb->query($view_contact_us);
+		return $view_contact_us_run;
 	}
 
 	public function get_attendance($st_username)
@@ -342,7 +342,7 @@ class project2
 	///////////// General Information about website ///////////
 	public function general_setting($web_name,$web_address,$web_phone1,$web_phone2,$web_email1,$web_email2,$web_start,$web_about)
 	{
-		$general_setting_insert = "insert into general_setting(website_name,website_address,website_phone1,website_phone2,website_email1,website_email2,website_start,web_about) value('$web_name','$web_address','$web_phone1','$web_phone2','$web_email1','$web_email2','$web_start','$web_about')";
+		$general_setting_insert = "insert into general_setting(website_name,website_address,website_phone1,website_phone2,website_email1,website_email2,website_start,web_about) values('$web_name','$web_address','$web_phone1','$web_phone2','$web_email1','$web_email2','$web_start','$web_about')";
 		$general_setting_run = $this->connectdb->query($general_setting_insert);
 		return $general_setting_run;
 	}

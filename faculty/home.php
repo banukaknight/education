@@ -151,8 +151,8 @@ Project Guidence: Ms. Sonam Kaler
                 <span class=" name-caret"><?php echo $faculty_display['t_fullname']; ?></span>
                 <p>Faculty</p>
                 <ul>
-                    <li><a class="tooltips" href="#"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-                    <li><a class="tooltips" href="#"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+                    <li><a class="tooltips" href="home.php"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+                    <li><a class="tooltips" href="home.php"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
                     <li><a class="tooltips" href="logouts.php"><span>Log out</span><i
                                 class="lnr lnr-power-switch"></i></a></li>
                 </ul>
@@ -169,15 +169,12 @@ Project Guidence: Ms. Sonam Kaler
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
 
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at=assignments"><i
-                                        class="fa fa-file-text"></i>
-                                    <span>Distribution</span></a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at=evaluation"><i
-                                        class="fa fa-file-text"></i>
-                                    <span>Evaluation</span></a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at=scrutiny"><i
-                                        class="fa fa-file-text"></i>
-                                    <span>Scrutiny</span></a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=assignments">
+                                    Assignment Distribution</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=evaluation">
+                                    Evaluation</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=scrutiny">
+                                    Scrutiny</a></li>
 
                         </ul>
                     </li>
@@ -185,12 +182,10 @@ Project Guidence: Ms. Sonam Kaler
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
 
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at=attendence"><i
-                                        class="fa fa-file-text"></i>
-                                    <span>Mark Attendence</span></a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at=attendence-review"><i
-                                        class="fa fa-file-text"></i>
-                                    <span>Review Attendence</span></a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=attendence">
+                                    Mark Attendence</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=attendence-review">
+                                    Review Attendence</a></li>
 
                         </ul>
                     </li>

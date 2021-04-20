@@ -75,7 +75,7 @@ if (isset($_POST['btn_remove'])){
                 <div class=" col-md-2">
                     <select name="assi_subject" class="form-select" required>
                         <option value="All Subjects"
-                            <?php if(isset($_POST['grade_assi']) && $_POST['assi_subject']=="All Subjects" ) { echo 'selected="selected"';} ?> >
+                            <?php if(isset($_POST['grade_assi']) && $_POST['assi_subject']=="All Subjects" ) { echo 'selected="selected"';} ?>>
                             All Subjects</option>
                         <?php						
 						foreach($ravi->subjectlist as $g){

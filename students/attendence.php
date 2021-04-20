@@ -39,16 +39,16 @@
             <table class=" table table-bordered table-sm table-responsive table-striped  mytbl">
                 <thead>
                     <tr>
-                    <th colspan="3" class="text-center">Session</th>
-                    <th colspan="3" class="text-center">Attendence Marked </th>
+                        <th colspan="3" class="text-center">Session</th>
+                        <th colspan="3" class="text-center">Attendence Marked </th>
                     </tr>
                     <tr>
-                    <th>ID</th>
-                    <th>Date</th>
-                    <th>Info</th>
-                    <th>by Faculty</th>
-                    <th>at</th>
-                    <th>as</th>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Info</th>
+                        <th>by Faculty</th>
+                        <th>at</th>
+                        <th>as</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,12 +62,12 @@
                         
                     ?>
                     <tr>
-                    <td><?php echo $row['sesh_id']?></td>
-                    <td><?php echo $row['sesh_date']?></td>
-                    <td><?php echo $row['sesh_info']?></td>
-                    <td><?php echo $row['t_username']?></td>
-                    <td><?php echo $row['sesh_datetime']?></td>
-                    <?php 
+                        <td><?php echo $row['sesh_id']?></td>
+                        <td><?php echo $row['sesh_date']?></td>
+                        <td><?php echo $row['sesh_info']?></td>
+                        <td><?php echo $row['t_username']?></td>
+                        <td><?php echo $row['sesh_datetime']?></td>
+                        <?php 
                     if($row["$st_username"] == 1){
                         $total_attended++;
                         echo "<td class='bg-success'>Present</td>";
@@ -90,6 +90,4 @@
 
 
 </div>
-<!--//graph-visual-->
-</div>
-</div>
+<!--//outer-wp-->

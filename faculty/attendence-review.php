@@ -24,7 +24,7 @@
             <span class=' p-1 border border-info rounded bg-success'>Present</span>
             <span class=' p-1 border border-info rounded bg-danger'>Absent</span>
             <span class=' p-1 border border-info rounded bg-warning'>N/A</span>
-            </h4>
+        </h4>
         <hr>
 
         <div class="clearfix"> </div>
@@ -96,9 +96,4 @@
 
     </div>
 </div>
-
-
-</div>
-<!--//graph-visual-->
-</div>
-</div>
+<!--//outer-wp-->

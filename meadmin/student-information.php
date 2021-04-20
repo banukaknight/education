@@ -111,8 +111,5 @@
         </div>
     </div>
 
-
 </div>
-<!--//graph-visual-->
-</div>
-</div>
+<!--//outer-wp-->

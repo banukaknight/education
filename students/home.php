@@ -149,8 +149,8 @@ Project Guidence: Ms. Sonam Kaler
                 <span class=" name-caret"><?php echo $student_display['st_fullname']; ?></span>
                 <p>Student</p>
                 <ul>
-                    <li><a class="tooltips" href="#"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-                    <li><a class="tooltips" href="#"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+                    <li><a class="tooltips" href="home.php"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+                    <li><a class="tooltips" href="home.php"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
                     <li><a class="tooltips" href="logouts.php"><span>Log out</span><i
                                 class="lnr lnr-power-switch"></i></a></li>
                 </ul>
@@ -165,14 +165,12 @@ Project Guidence: Ms. Sonam Kaler
 
                     <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span>Assignments</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
+                        
                         <ul id="menu-academico-sub">
-
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at=assignments"><i
-                                        class="fa fa-file-text"></i>
-                                    <span>Download | Upload</span></a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at=marks_scrutiny"><i
-                                        class="fa fa-file-text"></i>
-                                    <span>Marks | Scrutiny</span></a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=assignments">
+                                    Download | Upload</a></li>
+                            <li id="menu-academico-boletim"><a href="home.php?at=marks_scrutiny">
+                                    Marks | Scrutiny</a></li>
 
                         </ul>
                     </li>
