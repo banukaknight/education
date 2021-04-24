@@ -1,4 +1,5 @@
-<?php 
+<?php
+ob_start();
 include "../setting/config.php";
 session_start();
 if(!$_SESSION['meadmin'])
@@ -111,8 +112,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					if ($ip != '127.0.0.1'){
 					$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
                         //code for getting location of user using ip address
-					echo "User ID: $t_username | Logged in from: "; 
-					echo "$details->city, $details->region, $details->country with IP address: $details->ip" ;
+					echo "User ID: $meadmin_info | Logged in from: "; 
+					echo "$details->city, $details->region, $details->country with IP address: $ip" ;
 										}else{
 											echo "Admin ID: $meadmin_info";
                                        }
@@ -140,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </header>
             <div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
             <!--/down-->
-            <div class="down">
+            <div class="down"  id="sidebarbg">
                 <a href="index.html"><img src="images/admin.jpg"></a>
                 <a href="index.php"><span class=" name-caret"><?php echo $info_display['t_fullname']; ?></span></a>
                 <p>System Admin</p>
@@ -187,8 +188,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     Website Information</a></li>
                             <li id="menu-academico-avaliacoes" style="display:none"><a
                                     href="home.php?at=edit-general-information">Edit General Information</a></li>
-                            <li id="menu-academico-avaliacoes"><a href="home.php?at=received_mail">
+                                    <li id="menu-academico-avaliacoes"><a href="home.php?at=received_mail">
                                     Received Mail</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=news-portal">
+                                    News Portal</a></li>
                         </ul>
                     </li>
 

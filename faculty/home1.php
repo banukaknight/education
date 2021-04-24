@@ -19,6 +19,8 @@
                 <div class="graph">
                     <nav>
                         <ul>
+                            <li><a href="#section-0"><i class="lnr lnr-bullhorn"></i>
+                                    <span>Announcements</span></a></li>
                             <li><a href="#section-1"><i class="lnr lnr-briefcase"></i>
                                     <span>Information</span></a></li>
                             <li><a href="#section-2"><i class="lnr lnr-lighter"></i> <span>Change
@@ -30,6 +32,36 @@
                         </ul>
                     </nav>
                     <div class="content tab">
+                    <section id="section-0">
+                            <div class="row">
+                                <?php 
+                                $got_news = $ravi->get_news('Faculty');
+                                if( $got_news->num_rows>0){
+                                    echo "<h3>NEWS & UPDATES</h3>";
+                                    while($news_item = $got_news->fetch_assoc())	{
+                                ?>
+                                        <div class="card col-md-6 col-lg-4">
+                                            
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?php echo $news_item['n_head']; ?></h5>
+                                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $news_item['n_shead']; ?></h6>
+                                                <img class="card-img-top" src="<?php echo $news_item['n_image']; ?>" style="max-height:10em; max-width:100%">
+                                                <p class="card-text"><?php echo $news_item['n_details']; ?></p>
+                                                <p style="font-size:0.6em; float: right;">Published by: <?php echo $news_item['n_author'] ." <br>on: ". $news_item['n_date']; ?> </p>
+                                            </div>
+                                        </div>
+
+                                <?php
+                                    }//end while
+
+                                }else{
+                                    echo "<h3>No Announcements!</h3>";
+                                }
+                                ?>
+                            </div>
+                        </section>
+
+
                         <section id="section-1">
                             <div class="mediabox">
 

@@ -119,7 +119,7 @@
                             }
                     ?>
                     <tr>
-                        <th><?php echo $a_sn ?></th>
+                        <th><?php echo $row['assi_id'] ?></th>
                         <td><?php echo $row['assi_title']?></td>
                         <td><?php echo $row['assi_grade']?></td>
                         <td><?php echo $row['assi_subject']?></td>

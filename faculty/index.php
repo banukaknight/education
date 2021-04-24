@@ -59,8 +59,8 @@ Project Guidence: Ms. Sonam Kaler
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-				<a href="../"><h2 class="heading-section">Mo/Yudaganawa Vidyalaya</h2></a>
+			<div class="col-md-6 text-center mb-5">
+				<a href="../"><h2 class="heading-section"><img src="../images/bk/logo1.png" style="height:2em;">  Mo/Yudaganawa Vidyalaya</h2></a>
 				</div>
 			</div>
 			<div class="row justify-content-center">

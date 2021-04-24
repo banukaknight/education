@@ -1,6 +1,7 @@
-<?php 
+<?php
+ob_start();
 include "../setting/config.php";
- session_start();
+session_start();
 if(!$_SESSION['st_user'])
 {
 	

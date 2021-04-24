@@ -1,5 +1,5 @@
-
 /* since bootstrap 5 is messing with a link underlines  */
+
 a:not([class]) {
     text-decoration: none;
 }
@@ -8,35 +8,34 @@ a:not([class]):hover {
     text-decoration: underline;
 }
 
-.banukastform > div > input.form-control {
-    background-color:#190052!important;
-    color:#ffffff!important;
+.banukastform>div>input.form-control {
+    background-color: #190052!important;
+    color: #ffffff!important;
 }
 
-.banukastform > div > select.form-select {
-    background-color:#240274!important;
-    color:#ffffff!important;
+.banukastform>div>select.form-select {
+    background-color: #240274!important;
+    color: #ffffff!important;
 }
 
-
-.gendercls > div > label.btn {
+.gendercls>div>label.btn {
     padding: 5px 10px;
     margin: 0;
     font-size: 1em;
 }
 
 .gendpic {
-    height:20px;
+    height: 20px;
 }
 
-
-.mytbl > tbody > tr > td , .mytbl > tbody > tr > th{
-    border-spacing:0; /* Removes the cell spacing via CSS */
-    border-collapse: collapse; 
-    margin:0px !important;
-    padding:5px !important;
+.mytbl>tbody>tr>td,
+.mytbl>tbody>tr>th {
+    border-spacing: 0;
+    /* Removes the cell spacing via CSS */
+    border-collapse: collapse;
+    margin: 0px !important;
+    padding: 5px !important;
 }
-
 
 .actbtn {
     padding: 2px 15px;
@@ -46,10 +45,17 @@ a:not([class]):hover {
 
 .bkbox {
     background-color: #dff8ff;
-    padding: 1.8em;
-   box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    -o-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    padding: 2vw;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     border: 1px solid #E7E7E8;
+}
+
+#sidebarbg {
+    background-image: url('../images/bk/logo2.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #010E24;
 }

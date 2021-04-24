@@ -37,20 +37,6 @@ if (isset($_POST['btn_submit'])) {
     }
 }//post add
 
-//code to remove assignment from server & database
-if (isset($_POST['btn_remove'])){
-    $rem_assi_location = $_POST['rem_assi_location'];
-    $rem_assi_id = $_POST['rem_assi_id'];
-    if(unlink($rem_assi_location)){
-        //unlink removes file from sever storage
-    }
-    $remove_success = $ravi->assi_rem_faculty($rem_assi_id);
-    if ($remove_success) {
-    $ravi->alert_success("File has been Removed!");
-    }else{
-    $ravi->alert_danger("Unable to update Database!");
-    }
-}//post remove
 ?>
 
 <div class="outter-wp">
@@ -150,7 +136,7 @@ if (isset($_POST['btn_remove'])){
                         ?>
 
                     <tr>
-                        <th><?php echo $a_sn ?></th>
+                        <th><?php echo $row['assi_id'] ?></th>
                         <td><?php echo $row['assi_title']?></td>
                         <td><?php echo $row['assi_subject']?></td>
                         <td><?php echo $row['assi_dateup']?></td>
@@ -164,8 +150,6 @@ if (isset($_POST['btn_remove'])){
                                 <input type="hidden" name="sub_assi_id" value="<?php echo $row['assi_id'] ?>">
 
                                 <input type="file" name="myfile" class="form-control  form-control-sm" required>
-                                <div class="invalid-feedback">File required! </div>
-
                                 <button type="submit" name="btn_submit" class="btn btn-success btn-sm"
                                     <?php if(!$overdue){echo "disabled";}?>><i class="fa fa-upload fw-fa"></i>
                                     Submit</button>

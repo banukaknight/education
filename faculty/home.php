@@ -1,4 +1,5 @@
-<?php 
+<?php
+ob_start();
 include "../setting/config.php";
  session_start();
 if(!$_SESSION['t_user'])
@@ -81,8 +82,6 @@ Project Guidence: Ms. Sonam Kaler
                     <div class="clearfix"></div>
                 </div>
                 <!-- //header-ends -->
-
-
 
                 <?php 
                 //-----------------------------------------
@@ -189,7 +188,8 @@ Project Guidence: Ms. Sonam Kaler
 
                         </ul>
                     </li>
-
+                    <li><a href="home.php?at=news-portal"><i class="lnr lnr-bullhorn"></i>
+                            <span>News Portal</span></a></li>
 
                     <li><span>
                             <div class="dark ">

@@ -14,7 +14,7 @@
 	 $std_fullname = $_POST['std_fullname'];
 	 $std_username = $_POST['std_username'];
 	 $std_password = $_POST['std_password'];
-	 $std_grade = $_POST['std_grade'];
+	 //$std_grade = $_POST['std_grade'];
 	 $std_roll = $_POST['std_roll'];
 	 $std_dob = $_POST['std_dob'];
 	 $std_address = $_POST['std_address'];
@@ -31,14 +31,14 @@
     $std_address = ucwords( trim( $std_address )); //trim & capitalize 1st letters
 
 
-	 if($std_fullname=="" or $std_username=="" or $std_password=="" or $std_grade=="" or $std_gender=="" or $std_roll=="" or $std_dob=="" or $std_address=="" or $std_parent_contact=="")
+	 if($std_fullname=="" or $std_username=="" or $std_password=="" or $std_gender=="" or $std_roll=="" or $std_dob=="" or $std_address=="" or $std_parent_contact=="")
 	 {
         $ravi->alert_danger("Form not filled properly!");
 	 }
 	 else
 	 {
 		 
-		 $add_student_done = $ravi->update_student_adm($std_fullname,$std_username,$std_password,$std_grade,$std_roll,$std_dob,$std_address,$std_gender,$std_parent_contact);
+		 $add_student_done = $ravi->update_student_adm($std_fullname,$std_username,$std_password,$std_roll,$std_dob,$std_address,$std_gender,$std_parent_contact);
 		 if($add_student_done==true)
 		 {
             $ravi->alert_success("Student Edit SUCCESFUL!");
@@ -59,7 +59,7 @@ if(isset($_POST['std_delete_now'])){
     $del_done = $ravi->delete_student($std_username);
     if($del_done==true)
     {
-        echo "<script>window.location = 'home.php?at=student-information'; alert('Deleted Student Record');</script>";	
+        echo "<script>window.location = 'home.php?at=student-edit'; alert('Deleted Student Record');</script>";	
     }
     else
     {
@@ -176,7 +176,7 @@ if(isset($_POST['std_delete_now'])){
 
                     <div class="col-md-4 ">
                         <label class="form-label">Grade*</label>
-                        <select name="std_grade" class="form-select" required>
+                        <select name="std_grade" class="form-select" disabled>
                             <?php
 						foreach($ravi->gradelist as $g){
 						?>

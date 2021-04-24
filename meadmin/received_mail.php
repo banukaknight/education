@@ -39,7 +39,7 @@
                         <th>E-Mail</th>
                         <th>Phone No</th>
                         <th>Subject</th>
-                        <th>Message</th>
+
                         <th>IP</th>
                         <th>Logged Time</th>
                     </tr>
@@ -49,15 +49,16 @@
                     <?php while($row =$done_get_contact_us->fetch_assoc())	{ ?>
 
                     <tr>
-                        <td><?php echo $s_sn; ?></td>
+                        <th rowspan="2"><?php echo $s_sn; ?></th>
                         <td><?php echo $row['cn_name']; ?></td>
                         <td><?php echo $row['cn_email']; ?></td>
                         <td><?php echo $row['cn_phone']; ?></td>
                         <td><?php echo $row['cn_subject']; ?></td>
-                        <td><?php echo $row['cn_msg']; ?></td>
                         <td><?php echo $row['cn_ip']; ?></td>
                         <td><?php echo $row['cn_time']; ?></td>
-
+                    </tr>
+                    <tr>
+                        <td colspan="6"><?php echo $row['cn_msg']; ?></td>
                     </tr>
                     <?php $s_sn++; } ?>
                 </tbody>

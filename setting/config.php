@@ -12,7 +12,7 @@ class project2
 	
 {
 	public $username = "username"; //id16616954_username
-	public $password = "password"; //<krvSOTODP}n3P@h
+	public $password = "password"; //<krvSOTODP}n3P@h //Password123#
 
 	// public $username = "root";
 	// public $password = "";
@@ -25,6 +25,7 @@ class project2
 	public $gradelist = array(1,2,3,4,5); //list of grades in school
 	public $stafflist = array("Teacher","Admin"); //list of faculty types
 	public $subjectlist = array("Maths","Science", "English", "Tamil", "Sinhala");
+	public $audiencelist = array("Public","Faculty","Student"); //for news visibility
 	
 	function __construct()
 	{
@@ -52,6 +53,7 @@ class project2
 	{
 		$student_info_sel = "select * from st_info where st_username='$st_username'";
 		$student_info_run = $this->connectdb->query($student_info_sel);
+		// echo $student_info_run; //debug only
 		return $student_info_run;
 	}
 	
@@ -327,9 +329,9 @@ class project2
 	}
 
 	/////////// UPDATE student from admin panel - banuka /////////////////////
-	public function update_student_adm($std_fullname,$std_username,$std_password,$std_grade,$std_roll,$std_dob,$std_address,$std_gender,$std_parent_contact)
+	public function update_student_adm($std_fullname,$std_username,$std_password,$std_roll,$std_dob,$std_address,$std_gender,$std_parent_contact)
 	{
-		$add_student_insert = "update st_info set st_fullname='$std_fullname', st_password='$std_password',st_grade='$std_grade', 
+		$add_student_insert = "update st_info set st_fullname='$std_fullname', st_password='$std_password', 
 		roll_no='$std_roll', st_dob='$std_dob', st_address='$std_address', st_gender='$std_gender', st_parents_contact='$std_parent_contact' 
 		where st_username='$std_username' ";
 		//echo $add_student_insert; //debugging purpose only
@@ -383,13 +385,13 @@ class project2
 	}
 	public function assi_list_grade($st_grade)
 	{ 
-		$assi_get = "SELECT * FROM `fc_assignments` WHERE assi_grade='$st_grade'";
+		$assi_get = "SELECT * FROM `fc_assignments` WHERE assi_grade='$st_grade' ORDER BY assi_id DESC";
 		$assi_run =  $this->connectdb->query($assi_get);
 		return $assi_run;
 	}
 	public function assi_list_subject($st_grade,$assi_subject)
 	{ 
-		$assi_get = "SELECT * FROM `fc_assignments` WHERE assi_grade='$st_grade' AND assi_subject='$assi_subject'";
+		$assi_get = "SELECT * FROM `fc_assignments` WHERE assi_grade='$st_grade' AND assi_subject='$assi_subject' ORDER BY assi_id DESC";
 		$assi_run =  $this->connectdb->query($assi_get);
 		return $assi_run;
 	}
@@ -461,6 +463,37 @@ class project2
 		//echo $sub_get; //debugging only
 		$sub_run =  $this->connectdb->query($sub_get);
 		return $sub_run;
+	}
+
+	//add announcenemts to db
+	public function add_news($n_head,$n_shead,$n_details,$n_image,$n_audience,$n_author){
+		$add_news = "INSERT INTO news_data (n_head,n_shead,n_details,n_image,n_audience,n_author) 
+		VALUES ('$n_head','$n_shead','$n_details','$n_image','$n_audience','$n_author')";
+		$add_news_run = $this->connectdb->query($add_news);
+		//echo $add_news; //debug only
+		return $add_news_run;
+	}
+
+	public function get_news($user){
+		switch($user){
+			case 'Student':
+				$get_news = "SELECT * FROM news_data WHERE n_audience='Student' OR n_audience='Public' ORDER BY n_id DESC LIMIT 9";
+				break;
+			case 'Faculty':
+				$get_news = "SELECT * FROM news_data WHERE n_audience='Faculty' OR n_audience='Public' ORDER BY n_id DESC LIMIT 9";
+				break;
+			case 'Public':
+				$get_news = "SELECT * FROM news_data WHERE n_audience='Public' ORDER BY n_id DESC LIMIT 9";
+				break;
+			case 'Admin':
+				$get_news = "SELECT * FROM news_data ORDER BY n_id DESC LIMIT 9";
+				break;
+			default:
+				$get_news = "SELECT * FROM news_data WHERE n_audience='Public' ORDER BY n_id DESC LIMIT 9";
+				break;
+		}
+		$get_news_run = $this->connectdb->query($get_news);
+		return $get_news_run;
 	}
 
 

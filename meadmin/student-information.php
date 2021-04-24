@@ -68,6 +68,7 @@
                     <tr>
                         <th>#</th>
                         <th>Gender</th>
+                        <th>Registration</th>
                         <th>Full Name</th>
                         <th>DOB</th>
                         <th>Grade</th>
@@ -94,6 +95,7 @@
                                 echo $st_gender;
                             ?>
                         </td>
+                        <td><?php echo $student_info_admin['st_username']; ?></td>
                         <td><?php echo $student_info_admin['st_fullname']; ?></td>
                         <td><?php echo $student_info_admin['st_dob']; ?></td>
                         <td><?php echo $student_info_admin['st_grade'] ?></td>

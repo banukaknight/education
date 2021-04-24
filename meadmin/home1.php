@@ -16,6 +16,8 @@
                 <div class="graph">
                     <nav>
                         <ul>
+                            <li><a href="#section-0" class="icon-shop"><i class="lnr lnr-bullhorn"></i>
+                                    <span>Announcements</span></a></li>
                             <li><a href="#section-1" class="icon-shop"><i class="lnr lnr-briefcase"></i>
                                     <span>Information</span></a></li>
                             <li><a href="#section-2" class="icon-food"><i class="fa fa-group"></i>
@@ -24,6 +26,38 @@
                         </ul>
                     </nav>
                     <div class="content tab">
+
+                        <section id="section-0">
+                            <div class="row">
+
+                                <?php 
+                                $got_news = $ravi->get_news('Admin');
+                                if( $got_news->num_rows>0){
+                                    echo "<h3>NEWS & UPDATES</h3>";
+                                    while($news_item = $got_news->fetch_assoc())	{
+                                ?>
+                                        <div class="card col-md-6 col-lg-4">
+                                            
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?php echo $news_item['n_head']; ?></h5>
+                                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $news_item['n_shead']; ?></h6>
+                                                <img class="card-img-top" src="<?php echo $news_item['n_image']; ?>" style="max-height:10em; max-width:100%">
+                                                <p class="card-text"><?php echo $news_item['n_details']; ?></p>
+                                                <p style="font-size:0.6em; float: right;">Published by: <?php echo $news_item['n_author'] ." <br>on: ". $news_item['n_date']; ?> </p>
+                                            </div>
+                                        </div>
+
+                                <?php
+                                    }//end while
+
+                                }else{
+                                    echo "<h3>No Announcements!</h3>";
+                                }
+                                ?>
+                            </div>
+                        </section>
+
+
                         <section id="section-1">
                             <div class="mediabox">
                                 <strong>Personal Information</strong>
@@ -137,7 +171,7 @@
                     <h4> Students</h4>
                 </div>
                 <div class="stats-right">
-                    <label>90</label>
+                    <label>547</label>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -147,7 +181,7 @@
                     <h4>Teachers</h4>
                 </div>
                 <div class="stats-right">
-                    <label> 85</label>
+                    <label> 33</label>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -157,17 +191,17 @@
                     <h4>Courses</h4>
                 </div>
                 <div class="stats-right">
-                    <label>51</label>
+                    <label>11</label>
                 </div>
                 <div class="clearfix"> </div>
             </div>
             <div class="col-md-3 widget states-last">
                 <div class="stats-left">
-                    <h5>Total</h5>
-                    <h4>Passout</h4>
+                    <h5>Open</h5>
+                    <h4>Since</h4>
                 </div>
                 <div class="stats-right">
-                    <label>30</label>
+                    <label>1958</label>
                 </div>
                 <div class="clearfix"> </div>
             </div>
