@@ -68,7 +68,7 @@
                             <a href="home.php?at=teacher-editnow&teacherid=<?php echo $teacher_info_admin['t_id']; ?>"
                                 class="btn btn-warning actbtn">Edit</a>
                             <a href="home.php?at=teacher-del&teacherid=<?php echo $teacher_info_admin['t_id']; ?>"
-                                class="btn btn-danger actbtn">Delete</a>
+                                class="btn btn-danger actbtn" disabled >Delete</a>
 
                         </td>
                     </tr>

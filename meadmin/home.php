@@ -63,15 +63,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="js/serial.js"></script>
     <script src="js/light.js"></script>
     <script src="js/radar.js"></script>
-    <link href="css/barChart.css" rel='stylesheet' type='text/css' />
     <link href="css/fabochart.css" rel='stylesheet' type='text/css' />
     <!--clock init-->
     <script src="js/css3clock.js"></script>
     <!--Easy Pie Chart-->
     <!--skycons-icons-->
     <script src="js/skycons.js"></script>
-
-    <script src="js/jquery.easydropdown.js"></script>
 
     <!--//skycons-icons-->
 </head>
@@ -155,7 +152,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--//down-->
             <div class="menu">
                 <ul id="menu">
-                    <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
                     <li id="menu-academico"><a href="#"><i class="fa fa-user"></i> <span>Students</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
@@ -176,6 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     Information</a></li>
                             <li id="menu-academico-boletim"><a href="home.php?at=teacher-add">Add New Teacher</a></li>
                             <li id="menu-academico-avaliacoes"><a href="home.php?at=teacher-edit">Edit Teachers</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=teacher-allocation">Allocate Subjects</a></li>
 
                         </ul>
                     </li>
@@ -191,10 +188,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li id="menu-academico-avaliacoes"><a href="home.php?at=received_mail">
                                     Received Mail</a></li>
                             <li id="menu-academico-avaliacoes"><a href="home.php?at=news-portal">
-                                    News Portal</a></li>
+                            News Portal</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="home.php?at=text-books">
+                            Allocate Text Books</a></li>
+                            
                         </ul>
                     </li>
 
+                    <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+                   
                 </ul>
             </div>
         </div>

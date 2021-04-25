@@ -39,10 +39,9 @@
                     <tbody>
 
                         <?php $teacher_dis_admin = $ravi->teacher_info_display_admin();
-													$t_sn = 1;
-													while($teacher_info_admin =$teacher_dis_admin->fetch_assoc())					{
-																																?>
-
+                        $t_sn = 1;
+                        while($teacher_info_admin = $teacher_dis_admin->fetch_assoc())		{
+                          ?>
 
                         <tr>
                             <th scope="row"><?php echo $t_sn; ?></th>

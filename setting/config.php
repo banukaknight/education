@@ -12,7 +12,7 @@ class project2
 	
 {
 	public $username = "username"; //id16616954_username
-	public $password = "password"; //<krvSOTODP}n3P@h //Password123#
+	public $password = "password"; //Password123#
 
 	// public $username = "root";
 	// public $password = "";
@@ -22,9 +22,9 @@ class project2
 	public $connectdb;
 
 	//-- global variables for use
-	public $gradelist = array(1,2,3,4,5); //list of grades in school
+	public $gradelist = array(1,2,3,4,5,6,7,8,9,10,11); //list of grades in school
 	public $stafflist = array("Teacher","Admin"); //list of faculty types
-	public $subjectlist = array("Maths","Science", "English", "Tamil", "Sinhala");
+	public $subjectlist = array("Maths","Science", "English", "Tamil", "Sinhala", "Buddhism", "Catholicism", "Christianity", "Ismailism");
 	public $audiencelist = array("Public","Faculty","Student"); //for news visibility
 	
 	function __construct()
@@ -60,7 +60,7 @@ class project2
 	//////////// TimeTable retrieval ----------
 	public function get_timetable($st_grade)
 	{
-		$st_timetable = "select * from table_name where st_grade='$st_grade'";
+		$st_timetable = "select * from timetables where st_grade='$st_grade' LIMIT 9";
 		$st_timetable_run = $this->connectdb->query($st_timetable);
 		return $st_timetable_run;
 	}
@@ -167,30 +167,7 @@ class project2
 		$teacher_info_admin_run = $this->connectdb->query($teacher_info_admin);
 		return $teacher_info_admin_run;
 	}
-	///// display teacher info in  student panel
-	// public function teacher_info_instudent($st_grade)
-	// {
-	// 	$teacher_info_instudent_select = "select * from subjects_info where grade='$st_grade'";
-	// 	$teacher_info_instudent_run = $this->connectdb->query($teacher_info_instudent_select);
-	// 	return $teacher_info_instudent_run;
-		
-	// }
-
-	// student - get gradevise teachers
-	public function st_sub_info($st_grade)
-	{
-		$sub_info_select = "SELECT * FROM `sub_info` WHERE `st_grade`='$st_grade'";
-		$sub_info_run = $this->connectdb->query($sub_info_select);
-		return $sub_info_run;
-	}
-	// faculty - get facultyvise subjects
-	public function fc_sub_info($t_username)
-	{
-		$sub_info_select = "SELECT * FROM `sub_info` WHERE `t_username`='$t_username'";
-		$sub_info_run = $this->connectdb->query($sub_info_select);
-		return $sub_info_run;
-	}
-
+	
 
 	////////////////////////End Teacher Info ------------//////////////////////
 	
@@ -268,6 +245,31 @@ class project2
 	return $delete_teacher_info_run;
 	}
 
+	public function allocate_teacher($t_username,$sub_name,$st_grade){
+		$alloc_teacher = "INSERT INTO sub_info(t_username,sub_name,st_grade) VALUES('$t_username','$sub_name','$st_grade')";
+		$alloc_teacher_run = $this->connectdb->query($alloc_teacher);
+		return $alloc_teacher_run;
+	}
+
+	public function get_allocations($t_username="Student",$st_grade="All"){
+		$allocations = "SELECT * FROM sub_info
+		INNER JOIN teacher_info ON sub_info.t_username = teacher_info.t_username";
+
+		// $sub_get = "SELECT *
+		// FROM st_submissions
+		// INNER JOIN fc_assignments ON st_submissions.assi_id = fc_assignments.assi_id WHERE fc_assignments.t_username=$t_username ORDER BY `st_submissions`.`sub_id` ASC";
+		
+		if($t_username != "Student"){
+			$allocations = "SELECT * FROM sub_info WHERE t_username = '$t_username'";
+		}elseif($st_grade != "All"){
+			$allocations = "SELECT * FROM sub_info 
+			INNER JOIN teacher_info ON sub_info.t_username = teacher_info.t_username
+			WHERE sub_info.st_grade = '$st_grade'";
+		}
+		$allocations_run = $this->connectdb->query($allocations);
+		return $allocations_run;
+	}
+
 	//////// delete student form admin -banuka //////////////////////
 	public function delete_student($del_st)
 	{
@@ -277,21 +279,6 @@ class project2
 	}
 
 	
-	////////////////////// looping class from subject info table////////////////
-	public function grade($grade)
-	{
-		$grade_select = "select class from sub_class_name";
-		$grade_run = $this->connectdb->query($grade_select);
-		return $grade_run;
-	}
-	
-	///////////// display data from st_info select st-grade - REMOVE ///////////
-	// public function grade_st_info($grade_st_data)
-	// {
-	// 	$grade_st_info_select = "select * from st_info where st_grade='$grade_st_data'";
-	// 	$grade_st_info_run = $this->connectdb->query($grade_st_info_select);
-	// 	return $grade_st_info_run;
-	// }
 	////////// student info display (by grade) by admin //////////////////////////
 	public function student_info_display_admin($class_students_data)
 	{
@@ -477,23 +464,39 @@ class project2
 	public function get_news($user){
 		switch($user){
 			case 'Student':
-				$get_news = "SELECT * FROM news_data WHERE n_audience='Student' OR n_audience='Public' ORDER BY n_id DESC LIMIT 9";
+				$get_news = "SELECT * FROM news_data WHERE n_audience='Student' OR n_audience='Public' ORDER BY n_id DESC LIMIT 8";
 				break;
 			case 'Faculty':
-				$get_news = "SELECT * FROM news_data WHERE n_audience='Faculty' OR n_audience='Public' ORDER BY n_id DESC LIMIT 9";
+				$get_news = "SELECT * FROM news_data WHERE n_audience='Faculty' OR n_audience='Public' ORDER BY n_id DESC LIMIT 8";
 				break;
 			case 'Public':
-				$get_news = "SELECT * FROM news_data WHERE n_audience='Public' ORDER BY n_id DESC LIMIT 9";
+				$get_news = "SELECT * FROM news_data WHERE n_audience='Public' ORDER BY n_id DESC LIMIT 3";
 				break;
 			case 'Admin':
-				$get_news = "SELECT * FROM news_data ORDER BY n_id DESC LIMIT 9";
+				$get_news = "SELECT * FROM news_data ORDER BY n_id DESC LIMIT 8";
 				break;
 			default:
-				$get_news = "SELECT * FROM news_data WHERE n_audience='Public' ORDER BY n_id DESC LIMIT 9";
+				$get_news = "SELECT * FROM news_data WHERE n_audience='Public' ORDER BY n_id DESC LIMIT 8";
 				break;
 		}
 		$get_news_run = $this->connectdb->query($get_news);
 		return $get_news_run;
+	}
+
+	public function add_textbook($b_grade,$b_subject,$b_url){
+		$add_book = "INSERT INTO text_books(b_grade,b_subject,b_url) 
+		VALUES ('$b_grade','$b_subject','$b_url')";
+		$add_book_run = $this->connectdb->query($add_book);
+		return $add_book_run;
+	}
+
+	public function get_textbooks($b_grade="All"){
+		$get_books = "SELECT * FROM text_books ORDER BY b_grade";
+		if($b_grade!="All"){
+			$get_books = "SELECT * FROM text_books WHERE b_grade='$b_grade'";
+		}
+		$get_books_run = $this->connectdb->query($get_books);
+		return $get_books_run;
 	}
 
 
@@ -532,6 +535,6 @@ class project2
 
 
 
-	}
-$ravi = new project2;
+}
+$ravi = new project2; //object of class is created.
 ?>

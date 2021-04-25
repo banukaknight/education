@@ -27,37 +27,108 @@
                                     <span>Teachers</span></a></li>
                             <li><a href="#section-4"><i class="lnr lnr-calendar-full"></i> <span>Time
                                         table</span></a></li>
-                        
+
                         </ul>
                     </nav>
                     <div class="content tab">
 
-                    <section id="section-0">
+                        <section id="section-0">
                             <div class="row">
+
                                 <?php 
                                 $got_news = $ravi->get_news('Student');
                                 if( $got_news->num_rows>0){
-                                    echo "<h3>NEWS & UPDATES</h3>";
+                                    echo "<h3>NEWS & UPDATES</h3>"; ?>
+
+                                <div class="card col-md-6 col-lg-4">
+                                    <div class="dark ">
+                                        <div class="calendar ">
+                                            <div class="calendar-header">
+                                                <span class="month-picker" id="month-picker">February</span>
+                                                <div class="year-picker">
+                                                    <span class="year-change" id="prev-year">
+                                                        <pre><</pre>
+                                                    </span>
+                                                    <span id="year">2021</span>
+                                                    <span class="year-change" id="next-year">
+                                                        <pre>></pre>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="calendar-body">
+                                                <div class="calendar-week-day">
+                                                    <div>Sun</div>
+                                                    <div>Mon</div>
+                                                    <div>Tue</div>
+                                                    <div>Wed</div>
+                                                    <div>Thu</div>
+                                                    <div>Fri</div>
+                                                    <div>Sat</div>
+                                                </div>
+                                                <div class="calendar-days"></div>
+                                            </div>
+                                            <div class="month-list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <?
                                     while($news_item = $got_news->fetch_assoc())	{
                                 ?>
-                                        <div class="card col-md-6 col-lg-4">
-                                            
-                                            <div class="card-body">
-                                                <h5 class="card-title"><?php echo $news_item['n_head']; ?></h5>
-                                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $news_item['n_shead']; ?></h6>
-                                                <img class="card-img-top" src="<?php echo $news_item['n_image']; ?>" style="max-height:10em; max-width:100%">
-                                                <p class="card-text"><?php echo $news_item['n_details']; ?></p>
-                                                <p style="font-size:0.6em; float: right;">Published by: <?php echo $news_item['n_author'] ." <br>on: ". $news_item['n_date']; ?> </p>
-                                            </div>
-                                        </div>
+                                <div class="card col-md-6 col-lg-4">
+
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $news_item['n_head']; ?></h5>
+                                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $news_item['n_shead']; ?>
+                                        </h6>
+                                        <img class="card-img-top" src="<?php echo $news_item['n_image']; ?>"
+                                            style="max-height:10em; max-width:100%">
+                                        <p class="card-text"><?php echo $news_item['n_details']; ?></p>
+                                        <p style="font-size:0.6em; float: right;">Published by:
+                                            <?php echo $news_item['n_author'] ." <br>on: ". $news_item['n_date']; ?>
+                                        </p>
+                                    </div>
+                                </div>
 
                                 <?php
                                     }//end while
 
                                 }else{
-                                    echo "<h3>No Announcements!</h3>";
-                                }
-                                ?>
+                                    echo "<h3>No Announcements!</h3>"; ?>
+
+                                <div class="card col-md-6 col-lg-4">
+                                    <div class="dark ">
+                                        <div class="calendar ">
+                                            <div class="calendar-header">
+                                                <span class="month-picker" id="month-picker">February</span>
+                                                <div class="year-picker">
+                                                    <span class="year-change" id="prev-year">
+                                                        <pre><</pre>
+                                                    </span>
+                                                    <span id="year">2021</span>
+                                                    <span class="year-change" id="next-year">
+                                                        <pre>></pre>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="calendar-body">
+                                                <div class="calendar-week-day">
+                                                    <div>Sun</div>
+                                                    <div>Mon</div>
+                                                    <div>Tue</div>
+                                                    <div>Wed</div>
+                                                    <div>Thu</div>
+                                                    <div>Fri</div>
+                                                    <div>Sat</div>
+                                                </div>
+                                                <div class="calendar-days"></div>
+                                            </div>
+                                            <div class="month-list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <?php }  ?>
                             </div>
                         </section>
 
@@ -132,7 +203,7 @@
 												}
 										
 												?>
-                                <form method="post" class="form-inline" >
+                                <form method="post" class="form-inline">
                                     <h3>Change Password</h3>
                                     <div class="input-group input-icon">
                                         <span class="input-group-addon">
@@ -160,20 +231,23 @@
                             <div class="graph">
                                 <div class="tables">
 
-                                <h2 class="inner-tittle ">Teachers Assigned to Subjects</h2>
+                                    <h2 class="inner-tittle ">Teachers Allocated to Subjects</h2>
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
                                                 <th>Subject</th>
-                                                <th>Teacher ID</th>
+                                                <th>Faculty ID</th>
+                                                <th>Faculty Name</th>
+                                                <th>E-mail</th>
+                                                <th>Contact</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php 
 															$st_grade = $student_display['st_grade'];
 															$sn = 1;
-															$teacher_info_in_student = $ravi->st_sub_info($st_grade);
+															$teacher_info_in_student = $ravi->get_allocations("Student",$st_grade);
 																while($t_info = $teacher_info_in_student->fetch_assoc())		{ 
 																		?>
 
@@ -181,6 +255,10 @@
                                                 <th scope="row"><?php echo $sn; ?></th>
                                                 <td><?php echo ucwords($t_info['sub_name']); ?></td>
                                                 <td><?php echo ucwords($t_info['t_username']); ?></td>
+                                                <td><?php echo $t_info['t_gender'] == "Male" ? "Mr. " : "Ms. "; echo ucwords($t_info['t_fullname']); ?>
+                                                </td>
+                                                <td><?php echo ucwords($t_info['t_email']); ?></td>
+                                                <td><?php echo ucwords($t_info['t_contact']); ?></td>
                                             </tr>
                                             <?php $sn++; } ?>
                                         </tbody>
@@ -190,17 +268,17 @@
                             </div>
 
                         </section>
-                       
+
 
                         <section id="section-4">
                             <div class="graph" id="ttbg">
                                 <div class="tables">
-                                <h2 class="inner-tittle ">Time Table for Grade:
-                                                    <?php echo  $student_display['st_grade']; ?>
-                                                </h2>
+                                    <h2 class="inner-tittle ">Time Table for Grade:
+                                        <?php echo  $student_display['st_grade']; ?>
+                                    </h2>
                                     <table class="table table-hover table-condensed table-sm table-responsive">
-                                   
-                                           <thead>
+
+                                        <thead>
                                             <tr class="info">
                                                 <th>#</th>
                                                 <th>Time</th>
@@ -210,7 +288,7 @@
                                                 <th>Thursday</th>
                                                 <th>Friday</th>
                                             </tr>
-                                            
+
                                         </thead>
                                         <tbody>
                                             <?php 
@@ -243,7 +321,7 @@
                         </section>
 
 
-                        
+
 
 
 

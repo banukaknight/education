@@ -31,7 +31,7 @@ Project Guidence: Ms. Sonam Kaler
     <link rel="stylesheet" href="css/swipebox.css">
     <link rel="stylesheet" href="css/jquery-ui.css" />
     <link rel="stylesheet" href="css/banukacss.css" type="text/css" media="all" /> <!-- Style-CSS -->
-    <script src="https://kit.fontawesome.com/377c5d37c3.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/377c5d37c3.js" crossorigin="anonymous"></script> -->
     <!-- //css files -->
     <!-- online-fonts -->
     <link
@@ -86,11 +86,12 @@ Project Guidence: Ms. Sonam Kaler
                     <nav class="link-effect-2" id="link-effect-2">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="index.html" class="effect-3">About Us</a></li>
-                            <li><a href="#services" class="effect-3 scroll">Services</a></li>
+                            <li><a href="#services" class="effect-3 scroll">Our Goals</a></li>
+                            <li><a href="#news" class="effect-3 scroll">News</a></li>
                             <li><a href="#team" class="effect-3 scroll">Team</a></li>
                             <li><a href="#gallery" class="effect-3 scroll">Gallery</a></li>
                             <li><a href="#mail" class="effect-3 scroll">Mail Us</a></li>
-                           
+
                         </ul>
                     </nav>
 
@@ -120,9 +121,9 @@ Project Guidence: Ms. Sonam Kaler
             <div class="col-md-5 wthree-about-grids">
                 <h1>Welcome to Yudaganawa Vidyalaya</h1>
                 <span class="hidemebk">
-                <hr>
-                <h3>මො/යුදගනාව විද්‍යාලය, බුත්තල</h3>
-                <h3>மொ/யுதகனாவ வித்தியாலயம்</h3>
+                    <hr>
+                    <h3>මො/යුදගනාව විද්‍යාලය, බුත්තල</h3>
+                    <h3>மொ/யுதகனாவ வித்தியாலயம்</h3>
                 </span>
                 <hr>
                 <a href="#" class="trend-w3l" data-toggle="modal" data-target="#myModal"><span>Read More</span></a>
@@ -140,8 +141,11 @@ Project Guidence: Ms. Sonam Kaler
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    <img src="images/g10.jpg" alt="">
-                    <p>Details about school to be added </p>
+                    <img src="images/about.jpg" alt="">
+                    <p>ඌව පළා‍‍තේ, මොණරාගල දිස්ත්‍රික්ක‍‍යේ, ‍බුත්තල ප්‍රාදේශීය ‍ලේකම් ‍කොට්ඨාශයේ, යුධගනාව ග්‍රාම‍‍‍‍‍යේ අප මො/යුදගනාව විද්‍යාලය පිහිටා ඇත.
+                        <br>සිසුන් 547 හා ගුරු කාර්ය මණ්ඩලය 33කින් සමන්විත අප පාසලේ 1 සිට 11 ශ්‍රේණිය දක්වා සිසුන්ට
+                        ඉගැන්වීම සිදු කෙරේ.
+                    </p>
                 </div>
             </div>
         </div>
@@ -185,10 +189,65 @@ Project Guidence: Ms. Sonam Kaler
         </div>
     </div>
     <!--//stats-->
+
+    <!-- news -->
+    <div class="news" id="news">
+        <br>
+        <?php 
+	    include "setting/config.php";
+        $got_news = $ravi->get_news('Public');
+        if( $got_news->num_rows>0){?>
+        <div class="container">
+            <h3 class="w3l-title">News & Updates <small class="hidemebk">| පුවත් | புதுப்பிப்புகள்</small></h3>
+            <div class="w3layouts_header">
+                <p><i class="fa fa-bullhorn"></i> </p>
+            </div>
+
+            <div class="team-w3l-grid">
+
+                <? while($news_item = $got_news->fetch_assoc())	{   ?>
+                <div class="col-md-4 col-xs-4 about-poleft t1">
+                    <div class="about_img"><img src="News-Img/<?php echo $news_item['n_image']; ?>" alt="">
+                        <h5><?php echo $news_item['n_head']; ?></h5>
+                        <div class="about_opa">
+                            <ul>
+                                <li><?php echo $news_item['n_details']; ?></li>
+                                <li>Published by:
+                                    <?php echo $news_item['n_author'] ." <br>on: ". $news_item['n_date']; ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <?php } ?>
+
+                <div class="clearfix"> </div>
+            </div>
+            <br>
+
+            <div class="team-w3l-grid">
+                <div class="col-sm-4 ">
+                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                    <div class="elfsight-app-a84416d8-b39f-4600-b352-7f523ea380d5"></div>
+                </div>
+                <div class="col-sm-8 ">
+                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                    <div class="elfsight-app-48a863c3-e775-4913-8ab8-2f097d382ca5"></div>
+                </div>
+            </div>
+
+
+        </div>
+        <?php } ?>
+    </div>
+    <!-- //news -->
+
+
     <!-- services -->
     <div class="services" id="services">
         <div class="container">
-            <h3 class="w3l-title">Our Services <small class="hidemebk">| අපගේ සේවාවන් | எங்களுடைய சேவைகள்</small></h3>
+            <h3 class="w3l-title">Our Goals <small class="hidemebk">| අපේ අරමුණු | எங்கள் இலக்குகள்</small></h3>
             <div class="w3layouts_header">
                 <p><i class="fa fa-cog fa-spin fa-fw"></i>
                     <span class="sr-only">Loading...</span>
@@ -197,131 +256,161 @@ Project Guidence: Ms. Sonam Kaler
             <div class="services-w3ls-row">
                 <div class="col-xs-4 services-grid agileits-w3layouts">
                     <span class="fa fa-graduation-cap" aria-hidden="true"></span>
-                    <h6>01</h6>
-                    <h5>service 1</h5>
-                    <p>service 1 details to add</p>
+                    <h6>Basic Skills</h6>
+                    <h5>
+                        <ul>
+                            <li>Communication Skills</li>
+                            <li>Envirionmental Skills</li>
+                            <li>Personality Development</li>
+                            <li>Work World Preparation</li>
+                            <li>Verse and Ethics Skills</li>
+                            <li>Sports and Leisure</li>
+                            <li>Proficiency in "Learning to Learn"</li>
+                        </ul>
+                    </h5>
                 </div>
-                <div class="col-xs-4 services-grid agileits-w3layouts">
-                    <h6>02</h6>
-                    <h5>service 2</h5>
-                    <p>details about lecturers in brief to add</p>
+                <div class="col-xs-4 services-grid agileits-w3layouts tamil hidemebk">
+                    <h6>මූලික නිපුණතා</h6>
+                    <h5>
+                        <ul>
+                            <li>සන්නිවේදන නුපුණතාව</li>
+                            <li>පරිසර නිපුණතාව</li>
+                            <li>පෞරුෂත්ව වර්ධනය</li>
+                            <li>වැඩ ලෝකයට සූදානම</li>
+                            <li>ආයාව සහ ආචාර ධර්මයන්</li>
+                            <li>ක්‍රීඩාව සහ විවේකය</li>
+                            <li>"ඉගෙනීමට ඉගෙනුම" පිළිබඳ නිපුණතාව</li>
+                        </ul>
+                    </h5>
+                </div>
+                <div class="col-xs-4 services-grid agileits-w3layouts tamil hidemebk">
+                    <h6>அடிப்படை திறன்</h6>
+                    <h5>
+                        <ul>
+                            <li>தொடர்பு திறன்</li>
+                            <li>ஆர்வமுள்ள திறன்கள்</li>
+                            <li>ஆளுமை மேம்பாடு</li>
+                            <li>வேலை உலக தயாரிப்பு</li>
+                            <li>வசனம் மற்றும் நெறிமுறைகள்</li>
+                            <li>விளையாட்டு மற்றும் ஓய்வு</li>
+                            <li>"கற்றுக்கொள்ள கற்றுக்கொள்வதில்" தேர்ச்சி</li>
+                        </ul>
+                    </h5>
                     <span class="fa fa-user-o grid-w3l-ser" aria-hidden="true"></span>
-                </div>
-                <div class="col-xs-4 services-grid agileits-w3layouts">
-                    <span class="fa fa-book" aria-hidden="true"></span>
-                    <h6>03</h6>
-                    <h5>service 3</h5>
-                    <p>service 3 details</p>
                 </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
     </div>
+    <br><br>
     <!-- //services -->
     <!-- Gallery -->
-    <section class="portfolio-w3ls" id="gallery">
-        <h3 class="w3l-title">Our Gallery <small class="hidemebk">| අපේ ඡායාරූප | எங்களுடைய புகைப்படங்கள்</small></h3>
-        <div class="w3layouts_header">
-            <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g1.jpg" class="swipebox"><img src="images/g1.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g2.jpg" class="swipebox"><img src="images/g2.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g3.jpg" class="swipebox"><img src="images/g3.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g7.jpg" class="swipebox"><img src="images/g7.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g5.jpg" class="swipebox"><img src="images/g5.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g6.jpg" class="swipebox"><img src="images/g6.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g11.jpg" class="swipebox"><img src="images/g11.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g8.jpg" class="swipebox"><img src="images/g8.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g9.jpg" class="swipebox"><img src="images/g9.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g10.jpg" class="swipebox"><img src="images/g10.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g4.jpg" class="swipebox"><img src="images/g4.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
-            <a href="images/g12.jpg" class="swipebox"><img src="images/g12.jpg" class="img-responsive" alt="/">
-                <div class="textbox">
-                    <h4>view</h4>
-                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                </div>
-            </a>
-        </div>
-        <div class="clearfix"> </div>
-    </section>
+    <div class="mygallery">
+        <section class="portfolio-w3ls" id="gallery">
+            <h3 class="w3l-title">Our Gallery <small class="hidemebk">| අපේ ඡායාරූප | எங்களுடைய புகைப்படங்கள்</small>
+            </h3>
+            <div class="w3layouts_header">
+                <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g1.jpg" class="swipebox"><img src="images/g1.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g2.jpg" class="swipebox"><img src="images/g2.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g3.jpg" class="swipebox"><img src="images/g3.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g7.jpg" class="swipebox"><img src="images/g4.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g5.jpg" class="swipebox"><img src="images/g5.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g6.jpg" class="swipebox"><img src="images/g6.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g11.jpg" class="swipebox"><img src="images/g7.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g8.jpg" class="swipebox"><img src="images/g8.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g9.jpg" class="swipebox"><img src="images/g9.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g10.jpg" class="swipebox"><img src="images/g10.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g4.jpg" class="swipebox"><img src="images/g11.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+                <a href="images/g12.jpg" class="swipebox"><img src="images/g12.jpg" class="img-responsive" alt="/">
+                    <div class="textbox">
+                        <h4>view</h4>
+                        <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="clearfix"> </div>
+        </section>
+    </div>
     <!-- //gallery -->
     <!-- team -->
     <div class="team-w3l" id="team">
@@ -333,81 +422,47 @@ Project Guidence: Ms. Sonam Kaler
             <div class="team-w3l-grid">
                 <div class="col-md-4 col-xs-4 about-poleft t1">
                     <div class="about_img"><img src="images/t1.jpg" alt="">
-                        <h5>T-1</h5>
+                        <h5>Principle</h5>
                         <div class="about_opa">
-                            <p>Principle</p>
-                            <ul class="fb_icons2 text-center">
-                                <li><a class="fa fa-linkedin" href="#"></a></li>
-                            </ul>
+                            <p>Mr. R.P. Senadheera</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-4 about-poleft t2">
                     <div class="about_img"><img src="images/t2.jpg" alt="">
-                        <h5>T2</h5>
+                        <h5>Vice Principle</h5>
                         <div class="about_opa">
-                            <p>Vice Principle</p>
-                            <ul class="fb_icons2 text-center">
-                                <li><a class="fa fa-linkedin" href="#"></a></li>
-                            </ul>
+                            <p>Ms. R.M. Dayawathi</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-4 about-poleft t3">
                     <div class="about_img"><img src="images/t3.jpg" alt="">
-                        <h5>T3</h5>
+                        <h5>Faculty</h5>
                         <div class="about_opa">
-                            <p>Teacher</p>
                             <ul class="fb_icons2 text-center">
-                                <li><a class="fa fa-linkedin" href="#"></a></li>
+                                <li>Hon. W. Sudhamma Thero</li>
+                                <li>Mr. H.M Wasantha Wijesuriya</li>
+                                <li>Mr. K.H.W.M. Malindha Udayakumara</li>
+                                <li>Ms. A.K.G.P.C. Malkanthi</li>
+                                <li>Ms. A.P.R. Sajeevani</li>
+                                <li>Ms. S.M. Premalatha</li>
+                                <li>Ms. W.M.D. Samanlatha</li>
+                                <li>Mr. R.T. Liyanagamage</li>
+                                <li>Ms. S.H. Siriyawathi</li>
+                                <li>Ms. Chandani Jayalath</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="team-w3l-grid grid-2-team">
-                <div class="col-md-4 col-xs-4 about-poleft t1">
-                    <div class="about_img"><img src="images/t4.jpg" alt="">
-                        <h5>T4</h5>
-                        <div class="about_opa">
-                            <p>Teacher</p>
-                            <ul class="fb_icons2 text-center">
-                                <li><a class="fa fa-linkedin" href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-4 about-poleft t2">
-                    <div class="about_img"><img src="images/t5.jpg" alt="">
-                        <h5>T5</h5>
-                        <div class="about_opa">
-                            <p>Teacher</p>
-                            <ul class="fb_icons2 text-center">
-                                <li><a class="fa fa-linkedin" href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-4 about-poleft t3">
-                    <div class="about_img"><img src="images/t6.jpg" alt="">
-                        <h5>T6</h5>
-                        <div class="about_opa">
-                            <p>Teacher</p>
-                            <ul class="fb_icons2 text-center">
-                                <li><a class="fa fa-linkedin" href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+
         </div>
     </div>
     <!-- //team -->
     <!-- contact -->
     <?php
-	include "setting/config.php";
 
     //handle contact form
     if (isset($_POST['btn_send'])) {
@@ -469,7 +524,8 @@ Project Guidence: Ms. Sonam Kaler
                     <div class="agile_contact_grid_right agileits_w3layouts_right">
                         <h4>Phone</h4>
                         <p><?php echo $general_fetch['website_phone1']; ?>
-                            <span><?php echo $general_fetch['website_phone2']; ?></span></p>
+                            <span><?php echo $general_fetch['website_phone2']; ?></span>
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-4 w3_agile_contact_grid">
@@ -489,7 +545,8 @@ Project Guidence: Ms. Sonam Kaler
                 <div class="clearfix"> </div>
             </div>
             <div class="w3l-form">
-                <h3 class="w3l-title">Write to us <small class="hidemebk">| අපට ලියන්න | எங்களுக்கு எழுதுங்கள்</small></h3>
+                <h3 class="w3l-title">Write to us <small class="hidemebk">| අපට ලියන්න | எங்களுக்கு எழுதுங்கள்</small>
+                </h3>
                 <div class="w3layouts_header">
                     <p><i class="fa fa-commenting" aria-hidden="true"></i></p>
                 </div>
@@ -505,13 +562,17 @@ Project Guidence: Ms. Sonam Kaler
                             </div>
                             <div class="col-md-6 col-xs-6 wthree_contact_left_grid">
                                 <label>Phone Number*</label>
-                                <input type="text" name="cn_phone" placeholder="Phone Number" required="" pattern="^[0-9]{1,12}$" title="Enter Number under 12 length">
+                                <input type="text" name="cn_phone" placeholder="Phone Number" required=""
+                                    pattern="^[0-9]{1,12}$" title="Enter Number under 12 length">
                                 <label>Subject*</label>
-                                <input type="text" name="cn_subject" placeholder="Subject" required="" maxlength="30" pattern="^[A-Za-z ,-.'@]{1,30}$" title="Special Characters Not Allowed">
+                                <input type="text" name="cn_subject" placeholder="Subject" required="" maxlength="30"
+                                    pattern="^[A-Za-z ,-.'@]{1,30}$" title="Special Characters Not Allowed">
                             </div>
                             <div class="form-group">
                                 <label>Message*</label>
-                                <textarea placeholder="Message" name="cn_msg" required="" pattern="^[A-Za-z ,-.'!£$%&?@#]{1,100}$" title="Special Characters Not Allowed"></textarea>
+                                <textarea placeholder="Message" name="cn_msg" required=""
+                                    pattern="^[A-Za-z ,-.'!£$%&?@#]{1,100}$"
+                                    title="Special Characters Not Allowed"></textarea>
                             </div>
                             <input type="submit" name="btn_send" value="Send">
                         </form>
@@ -555,7 +616,9 @@ Project Guidence: Ms. Sonam Kaler
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="index.html">About Us</a>
                         </li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#services"
-                                class="scroll">Services</a></li>
+                                class="scroll">Our Goals</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#news"
+                                class="scroll">News</a></li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#team"
                                 class="scroll">Team</a></li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#gallery"
@@ -589,15 +652,17 @@ Project Guidence: Ms. Sonam Kaler
             </div>
         </div>
     </div>
+
+    <?php } ?>
     <div class="custom_copy_right">
         <div class="container">
-            <p>© <?php echo $general_fetch['website_start']; ?> Developed by W3layouts | Ravi Khadka | & <big>Students
+            <p>© 2021 Developed by <a href="https://w3layouts.com/education/" title="Prior development by: Ravi Khadka">
+                    W3layouts</a> | <big>Students
                     of <a href="https://www.lpu.in/"
                         title="Capstone development by: Banuka | Checki | Samrin | Sanduni | Kavindu">Lovely
                         Professional University</a></big></p>
         </div>
     </div>
-    <?php } ?>
 
     <!-- //footer -->
 
@@ -662,7 +727,6 @@ Project Guidence: Ms. Sonam Kaler
     });
     </script>
     <!-- //Calendar -->
-
     <!-- //js-scripts -->
 </body>
 

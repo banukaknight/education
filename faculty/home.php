@@ -59,7 +59,6 @@ Project Guidence: Ms. Sonam Kaler
     <script src="js/serial.js"></script>
     <script src="js/light.js"></script>
     <script src="js/radar.js"></script>
-    <link href="css/barChart.css" rel='stylesheet' type='text/css' />
     <link href="css/fabochart.css" rel='stylesheet' type='text/css' />
 
     <!--clock init-->
@@ -162,7 +161,6 @@ Project Guidence: Ms. Sonam Kaler
             <div class="menu ">
 
                 <ul id="menu">
-                    <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
 
                     <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span>Assignments</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
@@ -191,39 +189,10 @@ Project Guidence: Ms. Sonam Kaler
                     <li><a href="home.php?at=news-portal"><i class="lnr lnr-bullhorn"></i>
                             <span>News Portal</span></a></li>
 
-                    <li><span>
-                            <div class="dark ">
-                                <div class="calendar ">
-                                    <div class="calendar-header">
-                                        <span class="month-picker" id="month-picker">February</span>
-                                        <div class="year-picker">
-                                            <span class="year-change" id="prev-year">
-                                                <pre><</pre>
-                                            </span>
-                                            <span id="year">2021</span>
-                                            <span class="year-change" id="next-year">
-                                                <pre>></pre>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="calendar-body">
-                                        <div class="calendar-week-day">
-                                            <div>Sun</div>
-                                            <div>Mon</div>
-                                            <div>Tue</div>
-                                            <div>Wed</div>
-                                            <div>Thu</div>
-                                            <div>Fri</div>
-                                            <div>Sat</div>
-                                        </div>
-                                        <div class="calendar-days"></div>
-                                    </div>
+                    <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
 
-                                    <div class="month-list"></div>
-                                </div>
 
-                            </div>
-                        </span></li>
+
                 </ul>
             </div>
         </div>

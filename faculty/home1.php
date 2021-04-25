@@ -13,7 +13,7 @@
         <div class="tab-inner">
             <div id="tabs" class="tabs">
                 <h2 class="inner-tittle">Welcome,
-                    <?php echo ucfirst($faculty_display['t_fullname']); ?> </h2>
+                    <?php echo $faculty_display['t_gender'] == "Male" ? "Mr. " : "Ms. "; echo ucfirst($faculty_display['t_fullname']); ?> </h2>
 
 
                 <div class="graph">
@@ -37,7 +37,41 @@
                                 <?php 
                                 $got_news = $ravi->get_news('Faculty');
                                 if( $got_news->num_rows>0){
-                                    echo "<h3>NEWS & UPDATES</h3>";
+                                    echo "<h3>NEWS & UPDATES</h3>"; ?>
+
+                                <div class="card col-md-6 col-lg-4">
+                                    <div class="dark ">
+                                        <div class="calendar ">
+                                            <div class="calendar-header">
+                                                <span class="month-picker" id="month-picker">February</span>
+                                                <div class="year-picker">
+                                                    <span class="year-change" id="prev-year">
+                                                        <pre><</pre>
+                                                    </span>
+                                                    <span id="year">2021</span>
+                                                    <span class="year-change" id="next-year">
+                                                        <pre>></pre>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="calendar-body">
+                                                <div class="calendar-week-day">
+                                                    <div>Sun</div>
+                                                    <div>Mon</div>
+                                                    <div>Tue</div>
+                                                    <div>Wed</div>
+                                                    <div>Thu</div>
+                                                    <div>Fri</div>
+                                                    <div>Sat</div>
+                                                </div>
+                                                <div class="calendar-days"></div>
+                                            </div>
+                                            <div class="month-list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <?
                                     while($news_item = $got_news->fetch_assoc())	{
                                 ?>
                                         <div class="card col-md-6 col-lg-4">
@@ -55,9 +89,41 @@
                                     }//end while
 
                                 }else{
-                                    echo "<h3>No Announcements!</h3>";
-                                }
-                                ?>
+                                    echo "<h3>No Announcements!</h3>"; ?>
+                                    
+                                <div class="card col-md-6 col-lg-4">
+                                    <div class="dark ">
+                                        <div class="calendar ">
+                                            <div class="calendar-header">
+                                                <span class="month-picker" id="month-picker">February</span>
+                                                <div class="year-picker">
+                                                    <span class="year-change" id="prev-year">
+                                                        <pre><</pre>
+                                                    </span>
+                                                    <span id="year">2021</span>
+                                                    <span class="year-change" id="next-year">
+                                                        <pre>></pre>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="calendar-body">
+                                                <div class="calendar-week-day">
+                                                    <div>Sun</div>
+                                                    <div>Mon</div>
+                                                    <div>Tue</div>
+                                                    <div>Wed</div>
+                                                    <div>Thu</div>
+                                                    <div>Fri</div>
+                                                    <div>Sat</div>
+                                                </div>
+                                                <div class="calendar-days"></div>
+                                            </div>
+                                            <div class="month-list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <?php }   ?>
                             </div>
                         </section>
 
@@ -159,7 +225,7 @@
                             <div class="graph">
                                 <div class="tables">
 
-                                    <h2 class="inner-tittle ">Gradevise Subjects Assigned to Faculty</h2>
+                                    <h2 class="inner-tittle ">Gradevise Subjects Allocated to Faculty</h2>
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
@@ -172,7 +238,7 @@
                                             <?php 
 															//$t_username;
 															$sn = 1;
-															$subject_info_in_faculty = $ravi->fc_sub_info($t_username);
+															$subject_info_in_faculty = $ravi->get_allocations($t_username);
 																while($t_info = $subject_info_in_faculty->fetch_assoc())		{ 
 																		?>
 

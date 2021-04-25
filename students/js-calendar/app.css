@@ -4,18 +4,14 @@
     --dark-second: #79788c;
     --dark-hover: #323048;
     --dark-text: #f8fbff;
-
     --light-body: #f3f8fe;
     --light-main: #fdfdfd;
     --light-second: #c3c2c8;
     --light-hover: #edf0f5;
     --light-text: #151426;
-
     --blue: #0000ff;
     --white: #fff;
-
     --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
     --font-family: cursive;
 }
 
@@ -72,7 +68,6 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     font-weight: 600;
-    
 }
 
 .calendar-week-day div {
@@ -80,7 +75,6 @@
     place-items: center;
     color: var(--bg-second);
     writing-mode: vertical-rl;
-    
 }
 
 .calendar-days {
@@ -181,7 +175,7 @@
 .month-picker {
     padding: 5px 10px;
     border-radius: 10px;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .month-picker:hover {
@@ -223,8 +217,6 @@
     color: var(--color-txt);
 }
 
-
-
 .month-list {
     position: absolute;
     width: 100%;
@@ -240,7 +232,6 @@
     visibility: hidden;
     pointer-events: none;
     font-size: 10px;
-    
 }
 
 .month-list.show {
@@ -250,12 +241,12 @@
     transition: all 0.2s ease-in-out;
 }
 
-.month-list > div {
+.month-list>div {
     display: grid;
     place-items: center;
 }
 
-.month-list > div > div {
+.month-list>div>div {
     width: 100%;
     padding: 5px 20px;
     border-radius: 10px;
@@ -264,7 +255,7 @@
     color: var(--color-txt);
 }
 
-.month-list > div > div:hover {
+.month-list>div>div:hover {
     background-color: var(--color-hover);
 }
 

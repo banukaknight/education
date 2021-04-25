@@ -97,7 +97,7 @@
 
                 <div class="col-md-6 ">
                     <label class="form-label">Password*</label>
-                    <input type="password" placeholder="Password" name="add_t_pass" value="Samplepw1"
+                    <input type="password" placeholder="Password" name="add_t_pass" value="pw1"
                         class="form-control" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@£$!%*#?&_]{2,30}$"
                         title="Accept: AlphaNumeric & @£$!%*#?&_ length(2-30)">
                     <div class="invalid-feedback"> Passowrd must contain letters and numbers! </div>
@@ -105,7 +105,7 @@
 
                 <div class="col-md-6 ">
                     <label class="form-label">Address*</label>
-                    <input type="text" placeholder="Address" name="add_t_address" value="3333" class="form-control"
+                    <input type="text" placeholder="Address" name="add_t_address" value="Sri Lanka" class="form-control"
                         required pattern="^[A-Za-z\d @-_/,.]{2,100}$" title="Address expected length(2-100)">
                     <div class="invalid-feedback"> Address Required! </div>
                 </div>
@@ -119,7 +119,7 @@
 
                 <div class="col-md-4 ">
                     <label class="form-label">E-Mail*</label>
-                    <input type="email" placeholder="E-Mail" name="add_t_email" value="bk@gmail.com"
+                    <input type="email" placeholder="E-Mail" name="add_t_email" value="sampleemail@gmail.com"
                         class="form-control" required maxlength="50" title="E-mail Address expected">
                     <div class="invalid-feedback"> E-Mail Address Required! </div>
                 </div>

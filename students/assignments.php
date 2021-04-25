@@ -148,8 +148,9 @@ if (isset($_POST['btn_submit'])) {
 
                             <form class="form-inline" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="sub_assi_id" value="<?php echo $row['assi_id'] ?>">
-
-                                <input type="file" name="myfile" class="form-control  form-control-sm" required>
+                                <div style="width:10em; display:inline-block">
+                                    <input type="file" name="myfile" class="form-control  form-control-sm" required>
+                                </div>
                                 <button type="submit" name="btn_submit" class="btn btn-success btn-sm"
                                     <?php if(!$overdue){echo "disabled";}?>><i class="fa fa-upload fw-fa"></i>
                                     Submit</button>

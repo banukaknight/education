@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 23, 2021 at 07:56 AM
+-- Generation Time: Apr 24, 2021 at 09:57 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -38,6 +38,13 @@ CREATE TABLE `at_g_1` (
   `10000001` tinyint(4) NOT NULL DEFAULT '2',
   `10000003` tinyint(4) NOT NULL DEFAULT '2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `at_g_1`
+--
+
+INSERT INTO `at_g_1` (`sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `10000000`, `10000001`, `10000003`) VALUES
+(1, 20000000, '2021-04-24', '2021-04-24 22:30:14', 'Maths 101', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -154,7 +161,9 @@ INSERT INTO `fc_assignments` (`assi_id`, `t_username`, `assi_dateup`, `assi_dead
 (37, 20000000, '2021-04-15 14:58:38', '2021-04-15', 'Science', 'a1 Science', 1, 'Uploaded/210415-092838-logo2.png', 19276),
 (38, 20000000, '2021-04-15 14:58:52', '2021-04-22', '-', 'a1-math del', 0, 'Uploaded/Removed.png', 0),
 (39, 20000000, '2021-04-15 14:59:35', '2021-04-22', 'Maths', 'a2 math', 2, 'Uploaded/210415-092935-photo_1.jpg', 49796),
-(40, 20000000, '2021-04-15 19:51:32', '2021-04-14', 'English', 'eng1', 1, 'Uploaded/210415-022132-photo_1.jpg', 49796);
+(40, 20000000, '2021-04-15 19:51:32', '2021-04-14', 'English', 'eng1', 1, 'Uploaded/210415-022132-photo_1.jpg', 49796),
+(41, 20000000, '2021-04-23 15:26:02', '2021-04-30', 'Maths', 'new asssignment', 1, 'Uploaded/210423-095602-50-507370_line-break-artistic-line-png-clipart.png', 44238),
+(42, 20000000, '2021-04-23 15:26:24', '2021-04-30', 'Maths', 'Assignment 2 grade 2', 2, 'Uploaded/210423-095624-50-507370_line-break-artistic-line-png-clipart.png', 44238);
 
 -- --------------------------------------------------------
 
@@ -286,7 +295,9 @@ CREATE TABLE `st_submissions` (
 --
 
 INSERT INTO `st_submissions` (`sub_id`, `assi_id`, `st_username`, `sub_dateup`, `sub_location`, `sub_size`, `initial_marks`, `final_marks`, `scrutiny_req`, `fc_response`) VALUES
-(13, 36, 10000000, '2021-04-23 01:50:49', 'Submitted/36_10000000.jpg', 441336, 59, 59, '-', 'Need improvment');
+(13, 36, 10000000, '2021-04-23 01:50:49', 'Submitted/36_10000000.jpg', 441336, 59, 59, '-', 'Need improvment'),
+(14, 42, 20000000, '2021-04-23 15:26:32', 'Submitted/42_20000000.jpg', 441336, NULL, NULL, '-', 'Pending Evaluation'),
+(15, 41, 10000001, '2021-04-24 22:13:07', 'Submitted/41_10000001.png', 2261, NULL, NULL, '-', 'Pending Evaluation');
 
 -- --------------------------------------------------------
 
@@ -296,52 +307,20 @@ INSERT INTO `st_submissions` (`sub_id`, `assi_id`, `st_username`, `sub_dateup`, 
 
 CREATE TABLE `sub_info` (
   `id` int(12) NOT NULL,
-  `sub_name` varchar(30) NOT NULL,
   `t_username` int(12) NOT NULL,
-  `st_grade` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `table_name`
---
-
-CREATE TABLE `table_name` (
-  `st_grade` double DEFAULT NULL,
-  `slot` double DEFAULT NULL,
-  `time` varchar(100) DEFAULT NULL,
-  `Monday` varchar(100) DEFAULT NULL,
-  `Tuesday` varchar(100) DEFAULT NULL,
-  `Wednesday` varchar(100) DEFAULT NULL,
-  `Thursday` varchar(100) DEFAULT NULL,
-  `Friday` varchar(100) DEFAULT NULL,
-  `column_8` varchar(100) DEFAULT NULL
+  `st_grade` int(5) NOT NULL,
+  `sub_name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `table_name`
+-- Dumping data for table `sub_info`
 --
 
-INSERT INTO `table_name` (`st_grade`, `slot`, `time`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `column_8`) VALUES
-(1, 1, '07:50-08:30', 'Scouting', 'Music', 'Music', 'Scouting', 'Sinhala', ''),
-(1, 2, '08:30-09:10', 'Science', 'Maths', 'Maths', 'Buddhism', 'Science', ''),
-(1, 3, '09:10-09:50', 'Buddhism', 'Science', 'Science', 'Science', 'Buddhism', ''),
-(1, 4, '09:50-10:30', 'Sinhala', 'Sinhala', 'Buddhism', 'English', 'English', ''),
-(1, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', ''),
-(1, 6, '10:50-11:30', 'English', 'English', 'English', 'Tamil', 'Tamil', ''),
-(1, 7, '11:30-12:10', 'Tamil', 'Tamil', 'Sinhala', 'Sinhala', 'Sinhala', ''),
-(1, 8, '12:10-12:50', 'Sports', 'Sports', 'Sports', 'Sports', 'Sports', ''),
-(1, 9, '12:50-13:30', 'Library', 'Library', 'Library', 'Library', 'Library', ''),
-(2, 1, '07:50-08:30', 'English', 'English', 'English', 'Tamil', 'Tamil', ''),
-(2, 2, '08:30-09:10', 'Tamil', 'Tamil', 'Sinhala', 'Sinhala', 'Sinhala', ''),
-(2, 3, '09:10-09:50', 'Sports', 'Sports', 'Sports', 'Sports', 'Sports', ''),
-(2, 4, '09:50-10:30', 'Buddhism', 'Science', 'Science', 'Science', 'Buddhism', ''),
-(2, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', ''),
-(2, 6, '10:50-11:30', 'Scouting', 'Music', 'Music', 'Scouting', 'Sinhala', ''),
-(2, 7, '11:30-12:10', 'Science', 'Maths', 'Maths', 'Buddhism', 'Science', ''),
-(2, 8, '12:10-12:50', 'Library', 'Library', 'Library', 'Library', 'Library', ''),
-(2, 9, '12:50-13:30', 'Scouting', 'Music', 'Music', 'Scouting', 'Sinhala', '');
+INSERT INTO `sub_info` (`id`, `t_username`, `st_grade`, `sub_name`) VALUES
+(1, 12345611, 2, 'English'),
+(4, 12345611, 1, 'Science'),
+(2, 20000000, 3, 'Science'),
+(3, 12345611, 1, 'Tamil');
 
 -- --------------------------------------------------------
 
@@ -371,6 +350,181 @@ INSERT INTO `teacher_info` (`t_id`, `t_fullname`, `t_address`, `t_email`, `t_use
 (2, 'Banuka Vidusanka', 'Sri Lanka', 'thebkrox@gmail.com', 10000000, 'pw1', '1993-09-22', '986840000', 'Admin', 'Male', '2021-04-13 11:42:45'),
 (17, 'Kumara Silva', 'Reredfsds', 'bk@gmail.com', 12345611, 'pw1', '1993-09-21', '123456789', 'Teacher', 'Male', '2021-04-13 11:42:45'),
 (19, 'Gayan Perera', '3333', 'bk@gmail.com', 20000000, 'pw2', '1993-09-21', '123456789', 'Teacher', 'Male', '2021-04-13 11:42:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `text_books`
+--
+
+CREATE TABLE `text_books` (
+  `b_id` int(12) NOT NULL,
+  `b_grade` int(5) NOT NULL,
+  `b_subject` varchar(30) NOT NULL,
+  `b_url` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `text_books`
+--
+
+INSERT INTO `text_books` (`b_id`, `b_grade`, `b_subject`, `b_url`) VALUES
+(1, 1, 'Buddhism', 'http://www.edupub.gov.lk/Administrator/Sinhala/1/budda%20g-1%20S/budda%20g-1%20S.pdf'),
+(2, 1, 'Catholicism', 'http://www.edupub.gov.lk/Administrator/Sinhala/1/catho%20g1%20S/catholic%20g1%20S.pdf'),
+(3, 1, 'Christianity', 'http://www.edupub.gov.lk/Administrator/Sinhala/1/kristhu%20g1%20S/kristhu%20g1%20S.pdf'),
+(4, 1, 'Ismailism', 'http://www.edupub.gov.lk/Administrator/Sinhala/1/islam%20gi%20S/islam%20gi%20S.pdf'),
+(5, 1, 'Maths', 'http://www.edupub.gov.lk/Administrator/Sinhala/1/maths%20g-1%20s/maths%20g-1%20s.pdf'),
+(6, 1, 'Sinhala', 'http://www.edupub.gov.lk/Administrator/Sinhala/1/sin%20pb%20g-1/sin%20pb%20g-1.pdf'),
+(8, 2, 'Buddhism', 'http://www.edupub.gov.lk/Administrator/Sinhala/2/budda%20g-2/budda%20g-2.pdf'),
+(10, 2, 'Ismailism', 'http://www.edupub.gov.lk/Administrator/Sinhala/2/islam%20g-2%20S/islam%20g-2%20S.pdf'),
+(11, 2, 'Christianity', 'http://www.edupub.gov.lk/Administrator/Sinhala/2/kristhu%20G-2%20S/kristhu%20G-2%20S.pdf'),
+(12, 2, 'Catholicism', 'http://www.edupub.gov.lk/Administrator/Sinhala/2/catho%20g2%20S/catho%20g2%20S.pdf'),
+(13, 2, 'Sinhala', 'http://www.edupub.gov.lk/Administrator/Sinhala/2/sin%20pb%20g-2/sin%20pb%20g-2.pdf'),
+(14, 2, 'Maths', 'http://www.edupub.gov.lk/Administrator/Sinhala/2/maths%20g-2%20S/A104348%20Maths%20Grade%202%20Sinhala%202020.pdf'),
+(15, 3, 'Buddhism', 'http://www.edupub.gov.lk/Administrator/Sinhala/3/budda%20g-3/budi%20g-3.pdf'),
+(16, 3, 'Catholicism', 'http://www.edupub.gov.lk/Administrator/Sinhala/3/kath%20g-3%20S/3%20Catholic%20Final_Neo.pdf'),
+(17, 3, 'Ismailism', 'http://www.edupub.gov.lk/Administrator/Sinhala/3/islam%20g-3%20S/islam%20g3%20S.pdf'),
+(18, 3, 'Christianity', 'http://www.edupub.gov.lk/Administrator/Sinhala/3/kristhu%203%20S/kristhu%20%203%20S.pdf'),
+(19, 3, 'Sinhala', 'http://www.edupub.gov.lk/Administrator/Sinhala/3/sin%20pb%20g-3/si%20pb%20g-3.pdf'),
+(20, 3, 'Maths', 'http://www.edupub.gov.lk/SelectSyllabuss.php#Syllabuss'),
+(21, 3, 'Maths P2', 'http://www.edupub.gov.lk/Administrator/Sinhala/3/maths%20g3%20p-II%20S/maths%20g%203%20p-II%20S.pdf'),
+(22, 4, 'Buddhism', 'http://www.edupub.gov.lk/Administrator/Sinhala/4/budda%20g4%20S%20new/budda%20g-4.pdf'),
+(23, 4, 'Christianity', 'http://www.edupub.gov.lk/Administrator/Sinhala/4/kristhu%20g4%20S/kristhu%20g4%20S.pdf'),
+(24, 4, 'Catholicism', 'http://www.edupub.gov.lk/Administrator/Sinhala/4/katholika%20g4%20S/katholika%204%20S.pdf'),
+(25, 4, 'Ismailism', 'http://www.edupub.gov.lk/Administrator/Sinhala/4/islam%20G-4%20S/islam%20G-4%20S.pdf'),
+(26, 4, 'Maths', 'http://www.edupub.gov.lk/Administrator/Sinhala/4/maths%20g-4%20S/Maths%20Grade%2004%20-%20(S)%20Binder..pdf'),
+(27, 4, 'Sinhala', 'http://www.edupub.gov.lk/Administrator/Sinhala/4/sinhala%20pb%20g-4/sinhala%20pb%20g-4.pdf'),
+(28, 5, 'Buddhism', 'http://www.edupub.gov.lk/Administrator/Sinhala/5/budfda%20g-5/budda%20g-5.pdf'),
+(29, 5, 'Ismailism', 'http://www.edupub.gov.lk/Administrator/Sinhala/5/islam%205%20S/islam5%20S.pdf'),
+(30, 5, 'Christianity', 'http://www.edupub.gov.lk/Administrator/Sinhala/5/kristhu%20g5%20S/kristhu%20g5%20S.pdf'),
+(31, 5, 'Catholicism', 'http://www.edupub.gov.lk/Administrator/Sinhala/5/katholika%20g5%20S/katholika%20g5%20S.pdf'),
+(32, 5, 'Maths', 'http://www.edupub.gov.lk/Administrator/Sinhala/5/maths%20g%205%20S/Grade%205%20-%20Maths%20(S).pdf'),
+(33, 5, 'Sinhala', 'http://www.edupub.gov.lk/Administrator/Sinhala/5/sinhala%20pb%20g5/sinhala%20pb%20g5.pdf'),
+(34, 5, 'English', 'http://www.edupub.gov.lk/Administrator/English/5/english%20pb%20G-5/English%20PB%20G-5.pdf'),
+(35, 4, 'English', 'http://www.edupub.gov.lk/Administrator/English/4/en%20pb%20G-4/english%20PB%20G-4.pdf'),
+(36, 3, 'English', 'http://www.edupub.gov.lk/Administrator/English/3/english%20PB%20G-3/english%20PB%20G-3.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetables`
+--
+
+CREATE TABLE `timetables` (
+  `st_grade` int(5) NOT NULL,
+  `slot` int(5) NOT NULL,
+  `time` varchar(20) DEFAULT NULL,
+  `Monday` varchar(50) DEFAULT NULL,
+  `Tuesday` varchar(50) DEFAULT NULL,
+  `Wednesday` varchar(50) DEFAULT NULL,
+  `Thursday` varchar(50) DEFAULT NULL,
+  `Friday` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `timetables`
+--
+
+INSERT INTO `timetables` (`st_grade`, `slot`, `time`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`) VALUES
+(1, 1, '07:50-08:30', 'Scouting', 'Music', 'Music', 'Scouting', 'Sinhala'),
+(1, 2, '08:30-09:10', 'Science', 'Maths', 'Maths', 'Buddhism', 'Science'),
+(1, 3, '09:10-09:50', 'Buddhism', 'Science', 'Science', 'Science', 'Buddhism'),
+(1, 4, '09:50-10:30', 'Sinhala', 'Sinhala', 'Buddhism', 'English', 'English'),
+(1, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(1, 6, '10:50-11:30', 'English', 'English', 'English', 'Tamil', 'Tamil'),
+(1, 7, '11:30-12:10', 'Tamil', 'Tamil', 'Sinhala', 'Sinhala', 'Sinhala'),
+(1, 8, '12:10-12:50', 'Sports', 'Sports', 'Sports', 'Sports', 'Sports'),
+(1, 9, '12:50-13:30', 'Library', 'Library', 'Library', 'Library', 'Library'),
+(2, 1, '07:50-08:30', 'English', 'English', 'English', 'Tamil', 'Tamil'),
+(2, 2, '08:30-09:10', 'Tamil', 'Tamil', 'Sinhala', 'Sinhala', 'Sinhala'),
+(2, 3, '09:10-09:50', 'Sports', 'Sports', 'Sports', 'Sports', 'Sports'),
+(2, 4, '09:50-10:30', 'Buddhism', 'Science', 'Science', 'Science', 'Buddhism'),
+(2, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(2, 6, '10:50-11:30', 'Scouting', 'Music', 'Music', 'Scouting', 'Sinhala'),
+(2, 7, '11:30-12:10', 'Science', 'Maths', 'Maths', 'Buddhism', 'Science'),
+(2, 8, '12:10-12:50', 'Library', 'Library', 'Library', 'Library', 'Library'),
+(2, 9, '12:50-13:30', 'Scouting', 'Music', 'Music', 'Scouting', 'Sinhala'),
+(3, 1, '07:50-08:30', 'Sinhala', 'Assembly', 'Library', 'Art', 'Art'),
+(3, 2, '08:30-09:10', 'Reading', 'Buddhism', 'Sports', 'Sports', 'Art'),
+(3, 3, '09:10-09:50', 'Music', 'Maths', 'English', 'English', 'Sinhala'),
+(3, 4, '09:50-10:30', 'English', 'Tamil', 'Art', 'Environmental studies', 'Buddhism'),
+(3, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(3, 6, '10:50-11:30', 'Maths', 'Environmental studies', 'Scouting', 'Buddhism', 'Scouting'),
+(3, 7, '11:30-12:10', 'Buddhism', 'Sinhala', 'Maths', 'Maths', 'Environmental studies'),
+(3, 8, '12:10-12:50', 'Library', 'English', 'Sinhala', 'Sinhala', 'Environmental studies'),
+(3, 9, '12:50-13:30', 'Library', 'Swimming', 'Buddhism', 'Sinhala', 'English'),
+(4, 1, '07:50-08:30', 'English', 'Maths', 'English', 'Maths', 'English'),
+(4, 2, '08:30-09:10', 'Maths', 'Sinhala', 'Sinhala', 'Sinhala', 'Maths'),
+(4, 3, '09:10-09:50', 'Maths', 'English', 'Maths', 'English', 'Sinhala'),
+(4, 4, '09:50-10:30', 'Environmental studies', 'Tamil', 'Buddhism', 'Buddhism', 'Environmental studies'),
+(4, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(4, 6, '10:50-11:30', 'Tamil', 'Environmental studies', 'Library', 'Sports', 'Buddhism'),
+(4, 7, '11:30-12:10', 'Buddhism', 'Environmental studies', 'Sports', 'Reading', 'Tamil'),
+(4, 8, '12:10-12:50', 'Scouting', 'Buddhism', 'Scouting', 'Music', 'Art'),
+(4, 9, '12:50-13:30', 'Swimming', 'Assembly', 'Art', 'Tamil', 'Swimming'),
+(5, 1, '07:50-08:30', 'Assembly', 'Sinhala', 'Music', 'Sinhala', 'Art'),
+(5, 2, '08:30-09:10', 'Buddhism', 'Reading', 'Maths', 'Environmental studies', 'Art'),
+(5, 3, '09:10-09:50', 'Maths', 'Music', 'Library', 'Library', 'Sinhala'),
+(5, 4, '09:50-10:30', 'Tamil', 'English', 'Music', 'Sinhala', 'Buddhism'),
+(5, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(5, 6, '10:50-11:30', 'Art', 'English', 'Buddhism', 'Maths', 'Library'),
+(5, 7, '11:30-12:10', 'Environmental studies', 'Maths', 'Sinhala', 'Music', 'Library'),
+(5, 8, '12:10-12:50', 'Sinhala', 'art', 'tamil', 'Tamil', 'English'),
+(5, 9, '12:50-13:30', 'Buddhism', 'Environmental studies', 'Art', 'Swimming', 'Maths'),
+(6, 1, '07:50-08:30', 'L.S', 'Science', 'Science', 'Science', 'Library'),
+(6, 2, '08:30-09:10', 'Geography', 'L.S', 'Maths', 'Sinhala', 'Geography'),
+(6, 3, '09:10-09:50', 'History', 'History', 'Maths', 'Maths', 'L.S'),
+(6, 4, '09:50-10:30', 'Sinhala', 'English', 'Basket Sub.', 'English', 'English'),
+(6, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(6, 6, '10:50-11:30', 'Science', 'Buddhism', 'History', 'English', 'Science'),
+(6, 7, '11:30-12:10', 'Basket Sub.', 'Sinhala', 'Sinhala', 'History', 'Sinhala'),
+(6, 8, '12:10-12:50', 'Basket Sub.', 'Sinhala', 'Library', 'Buddhism', 'Maths'),
+(6, 9, '12:50-13:30', 'Buddhism', 'Maths', 'Library', 'Geography', 'Basket Sub.'),
+(7, 1, '07:50-08:30', 'Science', 'L.S', 'Science', 'Science', 'History'),
+(7, 2, '08:30-09:10', 'Sinhala', 'Geography', 'Sinhala', 'Sinhala', 'Sinhala'),
+(7, 3, '09:10-09:50', 'Maths', 'History', 'Maths', 'Maths', 'Library'),
+(7, 4, '09:50-10:30', 'Basket Sub.', 'Sinhala', 'Basket Sub.', 'English', 'Library'),
+(7, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(7, 6, '10:50-11:30', 'Library', 'Science', 'Library', 'Buddhism', 'Science'),
+(7, 7, '11:30-12:10', 'Geography', 'Basket Sub.', 'Geography', 'History', 'Maths'),
+(7, 8, '12:10-12:50', 'L.S', 'Maths', 'L.S', 'History', 'Maths'),
+(7, 9, '12:50-13:30', 'English', 'Buddhism', 'English', 'Maths', 'Basket Sub.'),
+(8, 1, '07:50-08:30', 'English', 'Assembly', 'English', 'Assembly', 'English'),
+(8, 2, '08:30-09:10', 'Science', 'Library', 'Maths', 'Basket sub.', 'Sinhala'),
+(8, 3, '09:10-09:50', 'Science', 'English', 'History', 'Tamil', 'History'),
+(8, 4, '09:50-10:30', 'Maths', 'Maths', 'P.T', 'IT', 'Geography'),
+(8, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(8, 6, '10:50-11:30', 'Sinhala', 'Geography', 'IT', 'Science', 'Buddhism'),
+(8, 7, '11:30-12:10', 'History', 'Buddhism', 'IT', 'Sinhala', 'L.S'),
+(8, 8, '12:10-12:50', 'L.S', 'Tamil', 'Science', 'History', 'Maths'),
+(8, 9, '12:50-13:30', 'P.T', 'Sinhala', 'Library', 'Buddhism', 'Maths'),
+(9, 1, '07:50-08:30', 'Buddhism', 'Sinhala', 'Assembly', 'Basket sub.', 'L.S'),
+(9, 2, '08:30-09:10', 'L.S', 'History', 'Library', 'Basket sub.', 'Library'),
+(9, 3, '09:10-09:50', 'Maths', 'L.S', 'English', 'IT', 'English'),
+(9, 4, '09:50-10:30', 'Maths', 'P.T', 'Maths', 'Tamil', 'Science'),
+(9, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(9, 6, '10:50-11:30', 'English', 'English', 'Geography', 'Science', 'Maths'),
+(9, 7, '11:30-12:10', 'Sinhala', 'Science', 'Buddhism', 'Sinhala', 'Buddhism'),
+(9, 8, '12:10-12:50', 'History', 'Science', 'Sinhala', 'History', 'Basket Sub.'),
+(9, 9, '12:50-13:30', 'Geography', 'Maths', 'Sinhala', 'Buddhism', 'IT'),
+(10, 1, '07:50-08:30', 'Elective 01', 'English', 'Elective 03', 'Science', 'Science'),
+(10, 2, '08:30-09:10', 'Maths', 'Elective 02', 'Elective 01', 'English', 'English'),
+(10, 3, '09:10-09:50', 'Maths', 'Elective 02', 'English', 'Elective 03', 'Maths'),
+(10, 4, '09:50-10:30', 'Sinhala', 'Sinhala', 'Science', 'Sinhala', 'Sinhala'),
+(10, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(10, 6, '10:50-11:30', 'Science', 'Science', 'P.T', 'Buddhism', 'Buddhism'),
+(10, 7, '11:30-12:10', 'Buddhism', 'History', 'Sinhala', 'History', 'History'),
+(10, 8, '12:10-12:50', 'History', 'Maths', 'History', 'Maths', 'Library'),
+(10, 9, '12:50-13:30', 'Library', 'Science', 'Maths', 'Assembly', 'P.T'),
+(11, 1, '07:50-08:30', 'Assembly', 'English', 'Buddhism', 'Science', 'Elective 01'),
+(11, 2, '08:30-09:10', 'History', 'Elective 02', 'History', 'Sinhala', 'Maths'),
+(11, 3, '09:10-09:50', 'Maths', 'Elective 02', 'Library', 'Maths', 'Maths'),
+(11, 4, '09:50-10:30', 'Buddhism', 'Sinhala', 'P.T', 'Elective 03', 'Sinhala'),
+(11, 5, '10:30-10:50', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL', 'INTERVAL'),
+(11, 6, '10:50-11:30', 'Science', 'Science', 'Science', 'Elective 02', 'Science'),
+(11, 7, '11:30-12:10', 'English', 'History', 'English', 'Elective 03', 'Buddhism'),
+(11, 8, '12:10-12:50', 'Elective 03', 'Maths', 'Maths', 'History', 'History'),
+(11, 9, '12:50-13:30', 'Sinhala', 'Science', 'Sinhala', 'Buddhism', 'Library');
 
 --
 -- Indexes for dumped tables
@@ -480,6 +634,13 @@ ALTER TABLE `teacher_info`
   ADD UNIQUE KEY `t_id` (`t_id`) USING BTREE;
 
 --
+-- Indexes for table `text_books`
+--
+ALTER TABLE `text_books`
+  ADD PRIMARY KEY (`b_id`),
+  ADD UNIQUE KEY `UC_grade_subj` (`b_grade`,`b_subject`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -487,7 +648,7 @@ ALTER TABLE `teacher_info`
 -- AUTO_INCREMENT for table `at_g_1`
 --
 ALTER TABLE `at_g_1`
-  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `at_g_2`
@@ -523,7 +684,7 @@ ALTER TABLE `contact_us_data`
 -- AUTO_INCREMENT for table `fc_assignments`
 --
 ALTER TABLE `fc_assignments`
-  MODIFY `assi_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `assi_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `general_setting`
@@ -553,19 +714,25 @@ ALTER TABLE `st_info`
 -- AUTO_INCREMENT for table `st_submissions`
 --
 ALTER TABLE `st_submissions`
-  MODIFY `sub_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `sub_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sub_info`
 --
 ALTER TABLE `sub_info`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `teacher_info`
 --
 ALTER TABLE `teacher_info`
   MODIFY `t_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `text_books`
+--
+ALTER TABLE `text_books`
+  MODIFY `b_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Constraints for dumped tables
