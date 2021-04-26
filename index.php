@@ -87,9 +87,9 @@ Project Guidence: Ms. Sonam Kaler
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="index.html" class="effect-3">About Us</a></li>
                             <li><a href="#services" class="effect-3 scroll">Our Goals</a></li>
-                            <li><a href="#news" class="effect-3 scroll">News</a></li>
-                            <li><a href="#team" class="effect-3 scroll">Team</a></li>
                             <li><a href="#gallery" class="effect-3 scroll">Gallery</a></li>
+                            <li><a href="#team" class="effect-3 scroll">Team</a></li>
+                            <li><a href="#news" class="effect-3 scroll">News</a></li>
                             <li><a href="#mail" class="effect-3 scroll">Mail Us</a></li>
 
                         </ul>
@@ -190,70 +190,17 @@ Project Guidence: Ms. Sonam Kaler
     </div>
     <!--//stats-->
 
-    <!-- news -->
-    <div class="news" id="news">
-        <br>
-        <?php 
-	    include "setting/config.php";
-        $got_news = $ravi->get_news('Public');
-        if( $got_news->num_rows>0){?>
-        <div class="container">
-            <h3 class="w3l-title">News & Updates <small class="hidemebk">| පුවත් | புதுப்பிப்புகள்</small></h3>
-            <div class="w3layouts_header">
-                <p><i class="fa fa-bullhorn"></i> </p>
-            </div>
-
-            <div class="team-w3l-grid">
-
-                <? while($news_item = $got_news->fetch_assoc())	{   ?>
-                <div class="col-md-4 col-xs-4 about-poleft t1">
-                    <div class="about_img"><img src="News-Img/<?php echo $news_item['n_image']; ?>" alt="">
-                        <h5><?php echo $news_item['n_head']; ?></h5>
-                        <div class="about_opa">
-                            <ul>
-                                <li><?php echo $news_item['n_details']; ?></li>
-                                <li>Published by:
-                                    <?php echo $news_item['n_author'] ." <br>on: ". $news_item['n_date']; ?></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <?php } ?>
-
-                <div class="clearfix"> </div>
-            </div>
-            <br>
-
-            <div class="team-w3l-grid">
-                <div class="col-sm-4 ">
-                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-                    <div class="elfsight-app-a84416d8-b39f-4600-b352-7f523ea380d5"></div>
-                </div>
-                <div class="col-sm-8 ">
-                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-                    <div class="elfsight-app-48a863c3-e775-4913-8ab8-2f097d382ca5"></div>
-                </div>
-            </div>
-
-
-        </div>
-        <?php } ?>
-    </div>
-    <!-- //news -->
+   
 
 
     <!-- services -->
-    <div class="services" id="services">
-        <div class="container">
+    <div class="services" id="services" >
+        <div class="container" >
             <h3 class="w3l-title">Our Goals <small class="hidemebk">| අපේ අරමුණු | எங்கள் இலக்குகள்</small></h3>
             <div class="w3layouts_header">
-                <p><i class="fa fa-cog fa-spin fa-fw"></i>
-                    <span class="sr-only">Loading...</span>
-                </p>
+                <p><i class="fa fa-cog fa-spin fa-fw"></i></p>
             </div>
-            <div class="services-w3ls-row">
+            <div class="services-w3ls-row" style="min-height:20em;">
                 <div class="col-xs-4 services-grid agileits-w3layouts">
                     <span class="fa fa-graduation-cap" aria-hidden="true"></span>
                     <h6>Basic Skills</h6>
@@ -269,7 +216,7 @@ Project Guidence: Ms. Sonam Kaler
                         </ul>
                     </h5>
                 </div>
-                <div class="col-xs-4 services-grid agileits-w3layouts tamil hidemebk">
+                <div class="col-xs-4 services-grid agileits-w3layouts  hidemebk">
                     <h6>මූලික නිපුණතා</h6>
                     <h5>
                         <ul>
@@ -283,7 +230,7 @@ Project Guidence: Ms. Sonam Kaler
                         </ul>
                     </h5>
                 </div>
-                <div class="col-xs-4 services-grid agileits-w3layouts tamil hidemebk">
+                <div class="col-xs-4 services-grid agileits-w3layouts  hidemebk">
                     <h6>அடிப்படை திறன்</h6>
                     <h5>
                         <ul>
@@ -296,16 +243,14 @@ Project Guidence: Ms. Sonam Kaler
                             <li>"கற்றுக்கொள்ள கற்றுக்கொள்வதில்" தேர்ச்சி</li>
                         </ul>
                     </h5>
-                    <span class="fa fa-user-o grid-w3l-ser" aria-hidden="true"></span>
-                </div>
+                   </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
     </div>
-    <br><br>
     <!-- //services -->
     <!-- Gallery -->
-    <div class="mygallery">
+    <div class="mygallery" >
         <section class="portfolio-w3ls" id="gallery">
             <h3 class="w3l-title">Our Gallery <small class="hidemebk">| අපේ ඡායාරූප | எங்களுடைய புகைப்படங்கள்</small>
             </h3>
@@ -463,6 +408,7 @@ Project Guidence: Ms. Sonam Kaler
     <!-- //team -->
     <!-- contact -->
     <?php
+    include "setting/config.php"; //import backend php code
 
     //handle contact form
     if (isset($_POST['btn_send'])) {
@@ -491,7 +437,6 @@ Project Guidence: Ms. Sonam Kaler
     }
 
 
-
     //extract general info from db
 	$general = $ravi->general_setting_check();
 	
@@ -500,6 +445,62 @@ Project Guidence: Ms. Sonam Kaler
 	if($general_numss>0)
 	{
 	?>
+
+ <!-- news -->
+ <div class="news" id="news">
+        <br>
+        <?php 
+	    
+        $got_news = $ravi->get_news('Public');
+        if( $got_news->num_rows>0){ ?>
+        <div class="container">
+            <h3 class="w3l-title">News & Updates <small class="hidemebk">| පුවත් | புதுப்பிப்புகள்</small></h3>
+            <div class="w3layouts_header">
+                <p><i class="fa fa-bullhorn"></i> </p>
+            </div>
+
+            <div class="team-w3l-grid">
+
+                <?php while($news_item = $got_news->fetch_assoc())	{   ?>
+                <div class="col-md-4 col-xs-4 about-poleft t1">
+                    <div class="about_img"><img src="News-Img/<?php echo $news_item['n_image']; ?>" alt="">
+                        <h5><?php echo $news_item['n_head']; ?></h5>
+                        <div class="about_opa">
+                            <ul>
+                                <li><?php echo $news_item['n_details']; ?></li>
+                                <li>Published by:
+                                    <?php echo $news_item['n_author'] ." <br>on: ". $news_item['n_date']; ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <?php } ?>
+
+                <div class="clearfix"> </div>
+            </div>
+            <br>
+
+            <div class="team-w3l-grid">
+                <div class="col-sm-4 ">
+                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                    <div class="elfsight-app-a84416d8-b39f-4600-b352-7f523ea380d5"></div>
+                </div>
+                <div class="col-sm-8 ">
+                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                    <div class="elfsight-app-48a863c3-e775-4913-8ab8-2f097d382ca5"></div>
+                </div>
+            </div>
+
+
+        </div>
+        <?php } ?>
+    </div>
+    <!-- //news -->
+
+
+
     <div id="mail" class="contact">
         <div class="container">
             <h3 class="w3l-title">Contact Us <small class="hidemebk">| අප හා සම්බන්ධ වන්න | தொடர்பு கொள்ள</small></h3>
@@ -617,12 +618,12 @@ Project Guidence: Ms. Sonam Kaler
                         </li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#services"
                                 class="scroll">Our Goals</a></li>
-                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#news"
-                                class="scroll">News</a></li>
-                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#team"
-                                class="scroll">Team</a></li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#gallery"
                                 class="scroll">Gallery</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#team"
+                                class="scroll">Team</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#news"
+                                class="scroll">News</a></li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#mail"
                                 class="scroll">Mail Us</a></li>
                     </ul>
@@ -653,7 +654,6 @@ Project Guidence: Ms. Sonam Kaler
         </div>
     </div>
 
-    <?php } ?>
     <div class="custom_copy_right">
         <div class="container">
             <p>© 2021 Developed by <a href="https://w3layouts.com/education/" title="Prior development by: Ravi Khadka">
@@ -664,6 +664,7 @@ Project Guidence: Ms. Sonam Kaler
         </div>
     </div>
 
+    <?php } ?>
     <!-- //footer -->
 
     <!-- js-scripts -->

@@ -72,7 +72,7 @@
                                     </div>
                                 </div>
 
-                                <?
+                                <?php
                                     while($news_item = $got_news->fetch_assoc())	{
                                 ?>
                                 <div class="card col-md-6 col-lg-4">

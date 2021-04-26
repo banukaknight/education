@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 24, 2021 at 09:57 PM
+-- Generation Time: Apr 25, 2021 at 11:20 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -44,7 +44,8 @@ CREATE TABLE `at_g_1` (
 --
 
 INSERT INTO `at_g_1` (`sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `10000000`, `10000001`, `10000003`) VALUES
-(1, 20000000, '2021-04-24', '2021-04-24 22:30:14', 'Maths 101', 1, 1, 0);
+(1, 20000000, '2021-04-24', '2021-04-24 22:30:14', 'Maths 101', 1, 1, 0),
+(2, 20000000, '2021-04-25', '2021-04-26 03:37:42', 'Topic', 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -63,6 +64,13 @@ CREATE TABLE `at_g_2` (
   `20000003` tinyint(4) NOT NULL DEFAULT '2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `at_g_2`
+--
+
+INSERT INTO `at_g_2` (`sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `20000000`, `20000001`, `20000003`) VALUES
+(1, 20000000, '2021-04-25', '2021-04-26 03:38:01', 'Maths today', 1, 1, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -78,6 +86,13 @@ CREATE TABLE `at_g_3` (
   `30000000` tinyint(4) NOT NULL DEFAULT '2',
   `30000003` tinyint(4) NOT NULL DEFAULT '2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `at_g_3`
+--
+
+INSERT INTO `at_g_3` (`sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `30000000`, `30000003`) VALUES
+(1, 20000000, '2021-04-25', '2021-04-26 03:38:15', 'Sciecne stuff', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -101,6 +116,90 @@ CREATE TABLE `at_g_4` (
 --
 
 CREATE TABLE `at_g_5` (
+  `sesh_id` int(12) NOT NULL,
+  `t_username` int(12) NOT NULL,
+  `sesh_date` date NOT NULL,
+  `sesh_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `sesh_info` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `at_g_6`
+--
+
+CREATE TABLE `at_g_6` (
+  `sesh_id` int(12) NOT NULL,
+  `t_username` int(12) NOT NULL,
+  `sesh_date` date NOT NULL,
+  `sesh_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `sesh_info` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `at_g_7`
+--
+
+CREATE TABLE `at_g_7` (
+  `sesh_id` int(12) NOT NULL,
+  `t_username` int(12) NOT NULL,
+  `sesh_date` date NOT NULL,
+  `sesh_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `sesh_info` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `at_g_8`
+--
+
+CREATE TABLE `at_g_8` (
+  `sesh_id` int(12) NOT NULL,
+  `t_username` int(12) NOT NULL,
+  `sesh_date` date NOT NULL,
+  `sesh_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `sesh_info` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `at_g_9`
+--
+
+CREATE TABLE `at_g_9` (
+  `sesh_id` int(12) NOT NULL,
+  `t_username` int(12) NOT NULL,
+  `sesh_date` date NOT NULL,
+  `sesh_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `sesh_info` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `at_g_10`
+--
+
+CREATE TABLE `at_g_10` (
+  `sesh_id` int(12) NOT NULL,
+  `t_username` int(12) NOT NULL,
+  `sesh_date` date NOT NULL,
+  `sesh_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `sesh_info` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `at_g_11`
+--
+
+CREATE TABLE `at_g_11` (
   `sesh_id` int(12) NOT NULL,
   `t_username` int(12) NOT NULL,
   `sesh_date` date NOT NULL,
@@ -232,9 +331,12 @@ CREATE TABLE `news_data` (
 --
 
 INSERT INTO `news_data` (`n_id`, `n_date`, `n_head`, `n_shead`, `n_details`, `n_image`, `n_audience`, `n_author`) VALUES
-(5, '2021-04-23 00:41:25', 'Sample Headingsd', 'Sample Subheading', 'Sample Anfsdontent', '../News-Img/210422-071125_10000000.jpg', 'Public', 10000000),
-(6, '2021-04-23 00:41:53', 'Faculty Only', 'Sample Subheading', 'Safac', '../News-Img/210422-071153_10000000.png', 'Faculty', 10000000),
-(7, '2021-04-23 01:01:55', 'Test 6', 'Sample Subheading', 'Sample Announcement Content', '../News-Img/210422-073155_20000000.jpg', 'Student', 20000000);
+(5, '2021-04-26 03:55:13', 'BK release new website', 'New release', 'BK has released a new PHP project to market', '../News-Img/210422-071125_10000000.jpg', 'Public', 10000000),
+(6, '2021-04-26 03:56:11', 'Faculty Meeting', 'Mandatory Meeting Notice', 'All Faculty are expected to be at the main hall on 30th May 2pm', '../News-Img/210422-071153_10000000.png', 'Faculty', 10000000),
+(7, '2021-04-26 03:54:26', 'LPU make it to top 200', 'LPU Achivement', 'LPU has made it to top 200 universities worldwide', '../News-Img/210422-073155_20000000.jpg', 'Student', 20000000),
+(8, '2021-04-26 01:04:23', 'Western Music Band Intake', 'Tryouts Are Commencing On July 4th', 'Western Musical Team is looking for new Members. Tryouts are open for all age groups.', '../News-Img/210425-073423_10000000.jpg', 'Public', 10000000),
+(9, '2021-04-26 01:05:53', 'Annual School Sports Meet', 'August 2021', 'School Sports Meet scheduled for August 16th. All are Welcome', '../News-Img/210425-073553_10000000.jpg', 'Public', 10000000),
+(10, '2021-04-26 01:20:27', 'Vesak Bathi Gee', 'Bathi Gee Event Is Scheduled For May', 'Vesak Bathi Gee - Music Event is Scheduled along with Vesak Poya', '../News-Img/210425-075027_10000000.jpg', 'Public', 10000000);
 
 -- --------------------------------------------------------
 
@@ -296,7 +398,7 @@ CREATE TABLE `st_submissions` (
 
 INSERT INTO `st_submissions` (`sub_id`, `assi_id`, `st_username`, `sub_dateup`, `sub_location`, `sub_size`, `initial_marks`, `final_marks`, `scrutiny_req`, `fc_response`) VALUES
 (13, 36, 10000000, '2021-04-23 01:50:49', 'Submitted/36_10000000.jpg', 441336, 59, 59, '-', 'Need improvment'),
-(14, 42, 20000000, '2021-04-23 15:26:32', 'Submitted/42_20000000.jpg', 441336, NULL, NULL, '-', 'Pending Evaluation'),
+(14, 42, 20000000, '2021-04-26 04:14:18', 'Submitted/42_20000000.jpg', 74896, NULL, NULL, '-', 'Pending Evaluation'),
 (15, 41, 10000001, '2021-04-24 22:13:07', 'Submitted/41_10000001.png', 2261, NULL, NULL, '-', 'Pending Evaluation');
 
 -- --------------------------------------------------------
@@ -317,10 +419,20 @@ CREATE TABLE `sub_info` (
 --
 
 INSERT INTO `sub_info` (`id`, `t_username`, `st_grade`, `sub_name`) VALUES
+(6, 12345611, 1, 'Buddhism'),
+(7, 12345611, 2, 'Buddhism'),
+(9, 20000001, 1, 'Catholicism'),
+(13, 10000002, 1, 'English'),
 (1, 12345611, 2, 'English'),
+(14, 20000002, 3, 'Maths'),
 (4, 12345611, 1, 'Science'),
 (2, 20000000, 3, 'Science'),
-(3, 12345611, 1, 'Tamil');
+(12, 20000002, 1, 'Science'),
+(11, 20000002, 3, 'Science'),
+(15, 10000002, 2, 'Sinhala'),
+(3, 12345611, 1, 'Tamil'),
+(8, 20000001, 2, 'Tamil'),
+(10, 20000002, 2, 'Tamil');
 
 -- --------------------------------------------------------
 
@@ -348,8 +460,12 @@ CREATE TABLE `teacher_info` (
 
 INSERT INTO `teacher_info` (`t_id`, `t_fullname`, `t_address`, `t_email`, `t_username`, `t_pass`, `t_dob`, `t_contact`, `t_staff_type`, `t_gender`, `t_created`) VALUES
 (2, 'Banuka Vidusanka', 'Sri Lanka', 'thebkrox@gmail.com', 10000000, 'pw1', '1993-09-22', '986840000', 'Admin', 'Male', '2021-04-13 11:42:45'),
+(23, 'Admin Two', '3333', 'admin@gmail.com', 10000001, 'pw1', '1993-09-21', '123456789', 'Admin', 'Male', '2021-04-25 16:28:06'),
+(25, 'Disha Yohani', 'Sri Lanka', 'disha@gmail.com', 10000002, 'pw1', '1993-09-21', '123456789', 'Teacher', 'Female', '2021-04-26 03:22:11'),
 (17, 'Kumara Silva', 'Reredfsds', 'bk@gmail.com', 12345611, 'pw1', '1993-09-21', '123456789', 'Teacher', 'Male', '2021-04-13 11:42:45'),
-(19, 'Gayan Perera', '3333', 'bk@gmail.com', 20000000, 'pw2', '1993-09-21', '123456789', 'Teacher', 'Male', '2021-04-13 11:42:45');
+(19, 'Gayan Perera', '3333', 'bk@gmail.com', 20000000, 'pw2', '1993-09-21', '123456789', 'Teacher', 'Male', '2021-04-13 11:42:45'),
+(24, 'Katherine Dias', 'Sri Lnka', 'bk@gmail.com', 20000001, 'pw2', '1993-09-21', '123456789', 'Teacher', 'Female', '2021-04-25 16:45:12'),
+(26, 'Rishab Kumar', 'Sri Lanka', 'rishab@gmail.com', 20000002, 'pw2', '1993-09-21', '123456789', 'Teacher', 'Male', '2021-04-26 03:22:44');
 
 -- --------------------------------------------------------
 
@@ -571,6 +687,54 @@ ALTER TABLE `at_g_5`
   ADD KEY `FK_t_username5` (`t_username`);
 
 --
+-- Indexes for table `at_g_6`
+--
+ALTER TABLE `at_g_6`
+  ADD PRIMARY KEY (`sesh_id`),
+  ADD UNIQUE KEY `UC_sesh_g_6` (`sesh_date`,`t_username`),
+  ADD KEY `FK_t_username_g_6` (`t_username`);
+
+--
+-- Indexes for table `at_g_7`
+--
+ALTER TABLE `at_g_7`
+  ADD PRIMARY KEY (`sesh_id`),
+  ADD UNIQUE KEY `UC_sesh_g_7` (`sesh_date`,`t_username`),
+  ADD KEY `FK_t_username_g_7` (`t_username`);
+
+--
+-- Indexes for table `at_g_8`
+--
+ALTER TABLE `at_g_8`
+  ADD PRIMARY KEY (`sesh_id`),
+  ADD UNIQUE KEY `UC_sesh_g_8` (`sesh_date`,`t_username`),
+  ADD KEY `FK_t_username_g_8` (`t_username`);
+
+--
+-- Indexes for table `at_g_9`
+--
+ALTER TABLE `at_g_9`
+  ADD PRIMARY KEY (`sesh_id`),
+  ADD UNIQUE KEY `UC_sesh_g_9` (`sesh_date`,`t_username`),
+  ADD KEY `FK_t_username_g_9` (`t_username`);
+
+--
+-- Indexes for table `at_g_10`
+--
+ALTER TABLE `at_g_10`
+  ADD PRIMARY KEY (`sesh_id`),
+  ADD UNIQUE KEY `UC_sesh_g_10` (`sesh_date`,`t_username`),
+  ADD KEY `FK_t_username_g_10` (`t_username`);
+
+--
+-- Indexes for table `at_g_11`
+--
+ALTER TABLE `at_g_11`
+  ADD PRIMARY KEY (`sesh_id`),
+  ADD UNIQUE KEY `UC_sesh_g_11` (`sesh_date`,`t_username`),
+  ADD KEY `FK_t_username_g_11` (`t_username`);
+
+--
 -- Indexes for table `contact_us_data`
 --
 ALTER TABLE `contact_us_data`
@@ -648,19 +812,19 @@ ALTER TABLE `text_books`
 -- AUTO_INCREMENT for table `at_g_1`
 --
 ALTER TABLE `at_g_1`
-  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `at_g_2`
 --
 ALTER TABLE `at_g_2`
-  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `at_g_3`
 --
 ALTER TABLE `at_g_3`
-  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `at_g_4`
@@ -672,6 +836,42 @@ ALTER TABLE `at_g_4`
 -- AUTO_INCREMENT for table `at_g_5`
 --
 ALTER TABLE `at_g_5`
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `at_g_6`
+--
+ALTER TABLE `at_g_6`
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `at_g_7`
+--
+ALTER TABLE `at_g_7`
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `at_g_8`
+--
+ALTER TABLE `at_g_8`
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `at_g_9`
+--
+ALTER TABLE `at_g_9`
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `at_g_10`
+--
+ALTER TABLE `at_g_10`
+  MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `at_g_11`
+--
+ALTER TABLE `at_g_11`
   MODIFY `sesh_id` int(12) NOT NULL AUTO_INCREMENT;
 
 --
@@ -702,7 +902,7 @@ ALTER TABLE `meadmin`
 -- AUTO_INCREMENT for table `news_data`
 --
 ALTER TABLE `news_data`
-  MODIFY `n_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `n_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `st_info`
@@ -714,19 +914,19 @@ ALTER TABLE `st_info`
 -- AUTO_INCREMENT for table `st_submissions`
 --
 ALTER TABLE `st_submissions`
-  MODIFY `sub_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `sub_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `sub_info`
 --
 ALTER TABLE `sub_info`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `teacher_info`
 --
 ALTER TABLE `teacher_info`
-  MODIFY `t_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `t_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `text_books`
@@ -767,6 +967,42 @@ ALTER TABLE `at_g_4`
 --
 ALTER TABLE `at_g_5`
   ADD CONSTRAINT `FK_t_username5` FOREIGN KEY (`t_username`) REFERENCES `teacher_info` (`t_username`);
+
+--
+-- Constraints for table `at_g_6`
+--
+ALTER TABLE `at_g_6`
+  ADD CONSTRAINT `FK_t_username_g_6` FOREIGN KEY (`t_username`) REFERENCES `teacher_info` (`t_username`);
+
+--
+-- Constraints for table `at_g_7`
+--
+ALTER TABLE `at_g_7`
+  ADD CONSTRAINT `FK_t_username_g_7` FOREIGN KEY (`t_username`) REFERENCES `teacher_info` (`t_username`);
+
+--
+-- Constraints for table `at_g_8`
+--
+ALTER TABLE `at_g_8`
+  ADD CONSTRAINT `FK_t_username_g_8` FOREIGN KEY (`t_username`) REFERENCES `teacher_info` (`t_username`);
+
+--
+-- Constraints for table `at_g_9`
+--
+ALTER TABLE `at_g_9`
+  ADD CONSTRAINT `FK_t_username_g_9` FOREIGN KEY (`t_username`) REFERENCES `teacher_info` (`t_username`);
+
+--
+-- Constraints for table `at_g_10`
+--
+ALTER TABLE `at_g_10`
+  ADD CONSTRAINT `FK_t_username_g_10` FOREIGN KEY (`t_username`) REFERENCES `teacher_info` (`t_username`);
+
+--
+-- Constraints for table `at_g_11`
+--
+ALTER TABLE `at_g_11`
+  ADD CONSTRAINT `FK_t_username_g_11` FOREIGN KEY (`t_username`) REFERENCES `teacher_info` (`t_username`);
 
 --
 -- Constraints for table `fc_assignments`

@@ -1,9 +1,9 @@
 <?php 
 session_start();
-//if(!$_SESSION['meadmin'])
-//{
-//	header("location:home.php");
-//}
+if(!$_SESSION['meadmin'])
+{
+	header("location:home.php");
+}
  include "../setting/config.php";
 
 if(isset($_POST['admin_signin']))
