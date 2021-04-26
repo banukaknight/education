@@ -78,7 +78,7 @@
                         <td><?php echo $row['sub_dateup']?></td>
                         <td><a class="btn btn-warning btn-sm" href="<?php echo  '../students/'.$row['sub_location'] ?>"
                                 target="_blank">
-                                <i class="fa fa-download fw-fa"></i> Download</a>
+                                <i class="fa fa-download fw-fa"></i> </a>
                         </td>
 
                         <form class="form-inline" method="post">

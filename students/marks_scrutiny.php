@@ -112,7 +112,7 @@
                         <td><?php echo $row['assi_subject']?></td>
                         <td><?php echo $row['assi_title']?></td>
 
-                        <td><a class="btn btn-warning btn-sm" href="<?php echo $row['sub_location'] ?>"
+                        <td><a class="btn btn-success btn-sm" href="<?php echo $row['sub_location'] ?>"
                                 target="_blank">
                                 <i class="fa fa-download fw-fa"></i> </a></td>
 

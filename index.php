@@ -86,9 +86,9 @@ Project Guidence: Ms. Sonam Kaler
                     <nav class="link-effect-2" id="link-effect-2">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="index.html" class="effect-3">About Us</a></li>
-                            <li><a href="#services" class="effect-3 scroll">Our Goals</a></li>
-                            <li><a href="#gallery" class="effect-3 scroll">Gallery</a></li>
+                            <li><a href="#services" class="effect-3 scroll">Goals</a></li>
                             <li><a href="#team" class="effect-3 scroll">Team</a></li>
+                            <li><a href="#gallery" class="effect-3 scroll">Gallery</a></li>
                             <li><a href="#news" class="effect-3 scroll">News</a></li>
                             <li><a href="#mail" class="effect-3 scroll">Mail Us</a></li>
 
@@ -111,10 +111,10 @@ Project Guidence: Ms. Sonam Kaler
 
             <div class="col-md-7 wthree-services-bottom-grids">
                 <div class="wthree-services-left">
-                    <img src="images/ab1.jpg" alt="">
+                    <img src="images/ab1.jpg" alt="" style="border-radius:0em 6em;">
                 </div>
                 <div class="wthree-services-right">
-                    <img src="images/ab2.jpg" alt="">
+                    <img src="images/ab2.jpg" alt="" style="border-radius:0em 6em;">
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -249,6 +249,57 @@ Project Guidence: Ms. Sonam Kaler
         </div>
     </div>
     <!-- //services -->
+
+<!-- team -->
+<div class="team-w3l" id="team">
+        <div class="container">
+            <h3 class="w3l-title">Our Faculty <small class="hidemebk">| අපේ ගුරුවරු | எங்களுடைய ஆசிரியர்கள்</small></h3>
+            <div class="w3layouts_header">
+                <p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+            </div>
+            <div class="team-w3l-grid">
+                <div class="col-md-4 col-xs-4 about-poleft t1">
+                    <div class="about_img"><img src="images/t1.jpg" alt="">
+                        <h5>Principle</h5>
+                        <div class="about_opa">
+                            <p>Mr. R.P. Senadheera</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4 about-poleft t2">
+                    <div class="about_img"><img src="images/t2.jpg" alt="">
+                        <h5>Vice Principle</h5>
+                        <div class="about_opa">
+                            <p>Ms. R.M. Dayawathi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4 about-poleft t3">
+                    <div class="about_img"><img src="images/t3.jpg" alt="">
+                        <h5>Faculty</h5>
+                        <div class="about_opa">
+                            <ul class="fb_icons2 text-center">
+                                <li>Hon. W. Sudhamma Thero</li>
+                                <li>Mr. H.M Wasantha Wijesuriya</li>
+                                <li>Mr. K.H.W.M. Malindha Udayakumara</li>
+                                <li>Ms. A.K.G.P.C. Malkanthi</li>
+                                <li>Ms. A.P.R. Sajeevani</li>
+                                <li>Ms. S.M. Premalatha</li>
+                                <li>Ms. W.M.D. Samanlatha</li>
+                                <li>Mr. R.T. Liyanagamage</li>
+                                <li>Ms. S.H. Siriyawathi</li>
+                                <li>Ms. Chandani Jayalath</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </div>
+    <!-- //team -->
+
     <!-- Gallery -->
     <div class="mygallery" >
         <section class="portfolio-w3ls" id="gallery">
@@ -357,55 +408,7 @@ Project Guidence: Ms. Sonam Kaler
         </section>
     </div>
     <!-- //gallery -->
-    <!-- team -->
-    <div class="team-w3l" id="team">
-        <div class="container">
-            <h3 class="w3l-title">Our Faculty <small class="hidemebk">| අපේ ගුරුවරු | எங்களுடைய ஆசிரியர்கள்</small></h3>
-            <div class="w3layouts_header">
-                <p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
-            </div>
-            <div class="team-w3l-grid">
-                <div class="col-md-4 col-xs-4 about-poleft t1">
-                    <div class="about_img"><img src="images/t1.jpg" alt="">
-                        <h5>Principle</h5>
-                        <div class="about_opa">
-                            <p>Mr. R.P. Senadheera</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-4 about-poleft t2">
-                    <div class="about_img"><img src="images/t2.jpg" alt="">
-                        <h5>Vice Principle</h5>
-                        <div class="about_opa">
-                            <p>Ms. R.M. Dayawathi</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-4 about-poleft t3">
-                    <div class="about_img"><img src="images/t3.jpg" alt="">
-                        <h5>Faculty</h5>
-                        <div class="about_opa">
-                            <ul class="fb_icons2 text-center">
-                                <li>Hon. W. Sudhamma Thero</li>
-                                <li>Mr. H.M Wasantha Wijesuriya</li>
-                                <li>Mr. K.H.W.M. Malindha Udayakumara</li>
-                                <li>Ms. A.K.G.P.C. Malkanthi</li>
-                                <li>Ms. A.P.R. Sajeevani</li>
-                                <li>Ms. S.M. Premalatha</li>
-                                <li>Ms. W.M.D. Samanlatha</li>
-                                <li>Mr. R.T. Liyanagamage</li>
-                                <li>Ms. S.H. Siriyawathi</li>
-                                <li>Ms. Chandani Jayalath</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-
-        </div>
-    </div>
-    <!-- //team -->
+    
     <!-- contact -->
     <?php
     include "setting/config.php"; //import backend php code
@@ -617,11 +620,11 @@ Project Guidence: Ms. Sonam Kaler
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="index.html">About Us</a>
                         </li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#services"
-                                class="scroll">Our Goals</a></li>
-                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#gallery"
-                                class="scroll">Gallery</a></li>
+                                class="scroll">Goals</a></li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#team"
                                 class="scroll">Team</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#gallery"
+                                class="scroll">Gallery</a></li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#news"
                                 class="scroll">News</a></li>
                         <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#mail"
