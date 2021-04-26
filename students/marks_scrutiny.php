@@ -84,6 +84,7 @@
                         <th>Assi ID</th>
                         <th>Assi Subject</th>
                         <th>Assi Title</th>
+                        <th><i class="fa fa-download fw-fa"></i></th>
                         <th>Initial Marks</th>
                         <th>Feedback</th>
                         <th>Final Marks</th>
@@ -110,6 +111,10 @@
                         <td><?php echo $row['assi_id']?></td>
                         <td><?php echo $row['assi_subject']?></td>
                         <td><?php echo $row['assi_title']?></td>
+
+                        <td><a class="btn btn-warning btn-sm" href="<?php echo $row['sub_location'] ?>"
+                                target="_blank">
+                                <i class="fa fa-download fw-fa"></i> </a></td>
 
                         <td><input type="number" class="form-control"
                                 value="<?php echo $row['initial_marks']?>" readonly></td>
