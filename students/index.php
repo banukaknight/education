@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 if(@$_SESSION['st_user'])
 {
 	header("location:home.php");
