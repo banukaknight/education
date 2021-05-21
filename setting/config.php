@@ -23,10 +23,12 @@ class project2
 
 	//-- global variables for use
 	public $gradelist = array(1,2,3,4,5,6,7,8,9,10,11); //list of grades in school
-	public $stafflist = array("Teacher","Admin"); //list of faculty types
+	public $stafflist = array("Teacher"); //list of faculty types - new admins not allowed
 	public $subjectlist = array("Maths","Science", "English", "Tamil", "Sinhala", "Buddhism", "Catholicism", "Christianity", "Ismailism");
 	public $audiencelist = array("Public","Faculty","Student"); //for news visibility
 	
+	private $salt = 'XyZzy12*_'; //salt for hashing password
+
 	function __construct()
 	{
 		$this->connectdb = new mysqli($this->server,$this->username,$this->password,$this->dbname);
@@ -42,7 +44,7 @@ class project2
         return $this->connectdb;
     }
 	public function student_login_check($st_username,$st_password)
-	{ 
+	{
 		$st_login_check = "select  * from st_info where st_username = '$st_username' and st_password='$st_password'";
 		$st_login_run = $this->connectdb->query($st_login_check);
 		$st_login_num = $st_login_run->num_rows;
@@ -51,9 +53,11 @@ class project2
 
 	public function student_info_select($st_username)
 	{
-		$student_info_sel = "select * from st_info where st_username='$st_username'";
-		$student_info_run = $this->connectdb->query($student_info_sel);
-		// echo $student_info_run; //debug only
+		$sql = "SELECT * FROM st_info WHERE st_username = ?";
+		$stmt = $this->connectdb->prepare($sql);
+		$stmt->bind_param("s", $st_username); //s for string
+		$stmt->execute();
+		$student_info_run = $stmt->get_result();
 		return $student_info_run;
 	}
 	
@@ -130,7 +134,9 @@ class project2
 	
 	public function meadmin_check($admin_username,$admin_password)
 	{
-		$meadin_login_select = "select * from meadmin where admin_username='$admin_username' AND admin_password='$admin_password'";
+		$admin_password_hashed = hash('md5', $this->salt.$admin_password); //hash md5 used for password
+		//echo $admin_password_hashed; //debug only
+		$meadin_login_select = "select * from meadmin where admin_username='$admin_username' AND admin_password='$admin_password_hashed'";
 		$meadmin_login_run = $this->connectdb->query($meadin_login_select);
 		$meadmin_login_num = $meadmin_login_run->num_rows;
 		return $meadmin_login_num;

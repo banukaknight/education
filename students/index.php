@@ -7,6 +7,11 @@ if(@$_SESSION['st_user'])
  include "../setting/config.php";
 if(isset($_POST['student_signin']))
 {
+		// if attempted login, logout any previous user logged in
+		unset($_SESSION["st_user"]);
+		unset($_SESSION["meadmin"]);
+		unset($_SESSION["t_user"]);
+		
  	$st_username = $_POST['st_username'];
 	$st_password = $_POST['st_password']; 
 	$st_username = preg_replace("/[^A-Za-z0-9 .,'@£$!%*#?&_]/", '', $st_username);

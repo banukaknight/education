@@ -8,6 +8,11 @@ if(@$_SESSION['meadmin'])
 
 if(isset($_POST['admin_signin']))
 {
+		// if attempted login, logout any previous user logged in
+		unset($_SESSION["st_user"]);
+		unset($_SESSION["meadmin"]);
+		unset($_SESSION["t_user"]);
+		
 	$admin_username = mysqli_real_escape_string($ravi->hackme(),$_POST['admin_username']);
     $admin_password = mysqli_real_escape_string($ravi->hackme(),$_POST['admin_password']);
 	if($admin_username=="" AND $admin_password=="")

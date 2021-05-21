@@ -72,7 +72,7 @@ Project Guidence: Ms. Sonam Kaler
 
                 <div class="dropdown" style="float:right; margin-right:2em;">
                     <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown"
-                        style="border-radius: 2em;"><i class="fa fa-sign-in" aria-hidden="true"></i> LOGIN
+                        style="border-radius: 2em;" id="btn_login"><i class="fa fa-sign-in" aria-hidden="true"></i> LOGIN
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu pull-right">
                         <li class="bg-info"><a href="students/index.php">STUDENT LOGIN</a></li>
@@ -100,6 +100,7 @@ Project Guidence: Ms. Sonam Kaler
             <div class="clearfix"> </div>
         </div>
     </div>
+    <!-- //banner -->
 
     <!-- about -->
     <div class="about-top" id="about">
@@ -142,7 +143,8 @@ Project Guidence: Ms. Sonam Kaler
                 </div>
                 <div class="modal-body">
                     <img src="images/about.jpg" alt="">
-                    <p>ඌව පළා‍‍තේ, මොණරාගල දිස්ත්‍රික්ක‍‍යේ, ‍බුත්තල ප්‍රාදේශීය ‍ලේකම් ‍කොට්ඨාශයේ, යුධගනාව ග්‍රාම‍‍‍‍‍යේ අප මො/යුදගනාව විද්‍යාලය පිහිටා ඇත.
+                    <p>ඌව පළා‍‍තේ, මොණරාගල දිස්ත්‍රික්ක‍‍යේ, ‍බුත්තල ප්‍රාදේශීය ‍ලේකම් ‍කොට්ඨාශයේ, යුධගනාව ග්‍රාම‍‍‍‍‍යේ
+                        අප මො/යුදගනාව විද්‍යාලය පිහිටා ඇත.
                         <br>සිසුන් 547 හා ගුරු කාර්ය මණ්ඩලය 33කින් සමන්විත අප පාසලේ 1 සිට 11 ශ්‍රේණිය දක්වා සිසුන්ට
                         ඉගැන්වීම සිදු කෙරේ.
                     </p>
@@ -190,12 +192,12 @@ Project Guidence: Ms. Sonam Kaler
     </div>
     <!--//stats-->
 
-   
+
 
 
     <!-- services -->
-    <div class="services" id="services" >
-        <div class="container" >
+    <div class="services" id="services">
+        <div class="container">
             <h3 class="w3l-title">Our Goals <small class="hidemebk">| අපේ අරමුණු | எங்கள் இலக்குகள்</small></h3>
             <div class="w3layouts_header">
                 <p><i class="fa fa-cog fa-spin fa-fw"></i></p>
@@ -243,15 +245,15 @@ Project Guidence: Ms. Sonam Kaler
                             <li>"கற்றுக்கொள்ள கற்றுக்கொள்வதில்" தேர்ச்சி</li>
                         </ul>
                     </h5>
-                   </div>
+                </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
     </div>
     <!-- //services -->
 
-<!-- team -->
-<div class="team-w3l" id="team">
+    <!-- team -->
+    <div class="team-w3l" id="team">
         <div class="container">
             <h3 class="w3l-title">Our Faculty <small class="hidemebk">| අපේ ගුරුවරු | எங்களுடைய ஆசிரியர்கள்</small></h3>
             <div class="w3layouts_header">
@@ -301,7 +303,7 @@ Project Guidence: Ms. Sonam Kaler
     <!-- //team -->
 
     <!-- Gallery -->
-    <div class="mygallery" >
+    <div class="mygallery">
         <section class="portfolio-w3ls" id="gallery">
             <h3 class="w3l-title">Our Gallery <small class="hidemebk">| අපේ ඡායාරූප | எங்களுடைய புகைப்படங்கள்</small>
             </h3>
@@ -408,7 +410,7 @@ Project Guidence: Ms. Sonam Kaler
         </section>
     </div>
     <!-- //gallery -->
-    
+
     <!-- contact -->
     <?php
     include "setting/config.php"; //import backend php code
@@ -449,8 +451,8 @@ Project Guidence: Ms. Sonam Kaler
 	{
 	?>
 
- <!-- news -->
- <div class="news" id="news">
+    <!-- news -->
+    <div class="news" id="news">
         <br>
         <?php 
 	    
