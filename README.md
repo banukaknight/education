@@ -22,7 +22,7 @@
     Capstone Project by Lovely Professional University Students
     <br />
     <a href="https://yudaganawa.000webhostapp.com">
-    <img src="images/readme/lpu.jpg" alt="Logo" width="500" height="227">
+    <img src="images/readme/lpu.jpg" alt="Logo" width="300" height="136">
   </a>
   <br />
     <a href="https://github.com/banukaknight/education"><strong>Explore the docs »</strong></a>
