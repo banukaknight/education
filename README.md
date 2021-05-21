@@ -24,6 +24,7 @@
     <a href="https://yudaganawa.000webhostapp.com">
     <img src="images/readme/lpu.jpg" alt="Logo" width="500" height="227">
   </a>
+  <br />
     <a href="https://github.com/banukaknight/education"><strong>Explore the docs »</strong></a>
     <br />
     <br />
