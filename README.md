@@ -12,14 +12,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/banukaknight/education">
+  <a href="https://yudaganawa.000webhostapp.com">
     <img src="images/readme/2in1.png" alt="Logo" width="500" height="138">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">E-learning web app for Yudaganawa Vidyalaya</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Capstone Project by Lovely Professional University Students
     <br />
     <a href="https://github.com/banukaknight/education"><strong>Explore the docs »</strong></a>
     <br />
@@ -65,45 +65,73 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://yudaganawa.000webhostapp.com)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Developped by:
+* Banuka Vidusanka Paniyan Duwage
+* Cheki Wangchuk
+* Ihala Uswattage Kavindu Mohottala Gunawickrama
+* Palakatiya Hewage Sanduni Ishara
+* Samrin Kaur
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+During the past few months, much of the world has been heavily affected by the covid-19 pandemic. Everyone’s lifestyle has been disrupted and many organizations struggle to keep in business while ensuring public safety. So, the purpose of this project was to develop a product that can help the public stay safe while continuing regular operations.
+The project is developing a website with distance learning capabilities for a local school in Sri Lanka named “Mo/Yudaganawa Vidyalaya, Buttala”. Schools have been closed for a long time and many parents are reluctant to send kids back to school due to the danger. So, this project provides a platform that can help students continue education from the safety of their homes while maintaining social distance and other guidelines by the government.
+The website includes several modules aimed at aiding in academic and non-academic tasks. The timetable for scheduled classes will be provided for each student. Furthermore, the assignment module focuses on publishing and collecting assignments with timelines, and the marking process.
+Additionally, a scrutiny portal was added to help students engage in the evaluation of assignments and tests. Automated marking of assignments can also be done.
+Lecture content and all textbooks related to academics also accessible by the students so that students can easily prepare for their class tests, assignments and examinations. The system also features student attendance monitoring along with absent patterns and attendance targets.
+Students are informed and given chance to participate in extracurricular activities and non-academic functions prepared by the school. All the announcements are providing on a daily basis so that students can update themselves by reading those announcements. A way to contact faculty through the website implemented.
+The web site may include all the essential modules to make a good, functioning website that enables teachers and students to interact with each other and carry on their academic operations.
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+* PHP
+* SQL
+* MySQL
+* MAMP Server
+* Visual Studio Code
+* Google Chrome
+* GitHub
+* Ngrok
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
-
+SQL server running environment such as MAMP or XAMMP.
 
 
 ### Installation
 
-1. Clone the repo
+Clone the repo
    ```sh
    git clone https://github.com/banukaknight/education.git
    ```
-3. ---
+   
+To run this project you must have installed a virtual server i.e XAMPP on your PC. 
+
+After Starting Apache and MySQL in XAMPP, follow the following steps
+
+1st Step: Extract file
+2nd Step: Copy the main project folder
+3rd Step: Paste in xampp/htdocs/
+
+Now Connecting Database
+
+4th Step: Open a browser and go to URL “http://localhost/phpmyadmin/”
+5th Step: Then, click on the databases tab
+6th Step: Create a database naming “project2” and then click on the import tab
+7th Step: Click on browse file and select “project2.sql” file which is inside the “education” folder
+8th Step: Click on go.
+
+After Creating Database,
+
+9th Step: Open a browser and go to URL “http://localhost/education”
 
 
 
@@ -111,8 +139,6 @@ To get a local copy up and running follow these simple example steps.
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
@@ -146,7 +172,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@theBKrox](https://twitter.com/theBKrox) - thebkrox@gmail.com
+Banuka - [@theBKrox](https://twitter.com/theBKrox) - thebkrox@gmail.com
 
 Project Link: [https://github.com/banukaknight/education](https://github.com/banukaknight/education)
 
@@ -184,12 +210,4 @@ Project Link: [https://github.com/banukaknight/education](https://github.com/ban
 [license-url]: https://github.com/banukaknight/education/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/banuka
-[product-screenshot]: images/screenshot.png
-
-
-Developped by:
-Banuka Vidusanka Paniyan Duwage
-Cheki Wangchuk
-Ihala Uswattage Kavindu Mohottala Gunawickrama
-Palakatiya Hewage Sanduni Ishara
-Samrin Kaur
+[product-screenshot]: images/readme/scr.jpg
