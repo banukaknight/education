@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 25, 2021 at 11:20 PM
+-- Generation Time: May 21, 2021 at 02:54 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -36,16 +36,18 @@ CREATE TABLE `at_g_1` (
   `sesh_info` varchar(100) DEFAULT NULL,
   `10000000` tinyint(4) NOT NULL DEFAULT '2',
   `10000001` tinyint(4) NOT NULL DEFAULT '2',
-  `10000003` tinyint(4) NOT NULL DEFAULT '2'
+  `10000003` tinyint(4) NOT NULL DEFAULT '2',
+  `10001000` tinyint(4) NOT NULL DEFAULT '2',
+  `12345678` tinyint(4) NOT NULL DEFAULT '2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `at_g_1`
 --
 
-INSERT INTO `at_g_1` (`sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `10000000`, `10000001`, `10000003`) VALUES
-(1, 20000000, '2021-04-24', '2021-04-24 22:30:14', 'Maths 101', 1, 1, 0),
-(2, 20000000, '2021-04-25', '2021-04-26 03:37:42', 'Topic', 1, 0, 1);
+INSERT INTO `at_g_1` (`sesh_id`, `t_username`, `sesh_date`, `sesh_datetime`, `sesh_info`, `10000000`, `10000001`, `10000003`, `10001000`, `12345678`) VALUES
+(1, 20000000, '2021-04-24', '2021-04-24 22:30:14', 'Maths 101', 1, 1, 0, 2, 2),
+(2, 20000000, '2021-04-25', '2021-04-26 03:37:42', 'Topic', 1, 0, 1, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -298,7 +300,7 @@ INSERT INTO `general_setting` (`id`, `website_name`, `website_address`, `website
 CREATE TABLE `meadmin` (
   `id` int(12) NOT NULL,
   `admin_username` int(12) NOT NULL,
-  `admin_password` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `admin_password` varchar(128) CHARACTER SET utf8 NOT NULL,
   `t_staff_type` varchar(10) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -307,7 +309,8 @@ CREATE TABLE `meadmin` (
 --
 
 INSERT INTO `meadmin` (`id`, `admin_username`, `admin_password`, `t_staff_type`) VALUES
-(1, 10000000, 'pw1', 'Admin');
+(1, 10000000, '1a52e17fa899cf40fb04cfc42e6352f1', 'Admin'),
+(3, 10000001, '8660318fd8b801a28aa3800b51d5dda4', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -365,8 +368,10 @@ CREATE TABLE `st_info` (
 INSERT INTO `st_info` (`st_id`, `st_fullname`, `st_username`, `st_password`, `st_grade`, `roll_no`, `st_dob`, `st_address`, `st_gender`, `st_parents_contact`, `st_created`) VALUES
 (43, 'James Bond', 10000000, 'pw1', 1, 7, '1993-09-21', '25, Ally Road, Mason', 'Male', '123456789', '2021-04-23 01:39:28'),
 (44, 'Kate Vincelet', 10000001, 'pw1', 1, 3, '1993-09-01', '43, Terry Road, Gaha', 'Female', '123456789', '2021-04-23 01:40:16'),
-(45, 'Yolanda Fia', 10000003, 'pw1', 1, 32, '1993-09-21', '54, Heyaa', 'Female', '123456789', '2021-04-23 01:41:09'),
-(46, 'Terry Cruse', 20000000, 'pw2', 2, 22, '1998-09-21', 'Address Here', 'Male', '123456789', '2021-04-23 01:42:05'),
+(45, 'Yolanda Fiona', 10000003, 'pw1', 1, 32, '1993-09-21', '54, Heyaa', 'Female', '123456789', '2021-04-23 01:41:09'),
+(53, 'Samantha Soyza', 10001000, 'pw1', 1, 12, '1993-09-21', 'Sri Lanka', 'Female', '123456789', '2021-04-27 12:24:39'),
+(54, 'Yohan', 12345678, 'Samplepw1', 1, 15, '1993-09-21', 'Address Here', 'Male', '123456789', '2021-04-27 14:46:03'),
+(46, 'Terry Cruse', 20000000, 'pw2', 2, 19, '1998-09-21', 'Address Here', 'Male', '123456789', '2021-04-23 01:42:05'),
 (47, 'Grace Wandarwal', 20000001, 'pw2', 2, 6, '1993-09-21', 'Grace Home', 'Female', '11111111111', '2021-04-23 01:42:47'),
 (51, 'Amaradewa Jr', 20000003, 'pw2', 2, 22, '1993-09-21', 'Address Here', 'Male', '123456789', '2021-04-23 01:45:32'),
 (48, 'Sumal Perera', 30000000, 'pw3', 3, 15, '1993-09-21', 'Address Here', 'Male', '123456789', '2021-04-23 01:43:25'),
@@ -459,8 +464,8 @@ CREATE TABLE `teacher_info` (
 --
 
 INSERT INTO `teacher_info` (`t_id`, `t_fullname`, `t_address`, `t_email`, `t_username`, `t_pass`, `t_dob`, `t_contact`, `t_staff_type`, `t_gender`, `t_created`) VALUES
-(2, 'Banuka Vidusanka', 'Sri Lanka', 'thebkrox@gmail.com', 10000000, 'pw1', '1993-09-22', '986840000', 'Admin', 'Male', '2021-04-13 11:42:45'),
-(23, 'Admin Two', '3333', 'admin@gmail.com', 10000001, 'pw1', '1993-09-21', '123456789', 'Admin', 'Male', '2021-04-25 16:28:06'),
+(2, 'Banuka Vidusanka', 'Sri Lanka', 'thebkrox@gmail.com', 10000000, '-', '1993-09-22', '986840000', 'Admin', 'Male', '2021-04-13 11:42:45'),
+(23, 'Sonam K', 'India', 'admin@lpu123.com', 10000001, '-', '1993-09-21', '123456789', 'Admin', 'Female', '2021-04-25 16:28:06'),
 (25, 'Disha Yohani', 'Sri Lanka', 'disha@gmail.com', 10000002, 'pw1', '1993-09-21', '123456789', 'Teacher', 'Female', '2021-04-26 03:22:11'),
 (17, 'Kumara Silva', 'Reredfsds', 'bk@gmail.com', 12345611, 'pw1', '1993-09-21', '123456789', 'Teacher', 'Male', '2021-04-13 11:42:45'),
 (19, 'Gayan Perera', '3333', 'bk@gmail.com', 20000000, 'pw2', '1993-09-21', '123456789', 'Teacher', 'Male', '2021-04-13 11:42:45'),
@@ -780,7 +785,7 @@ ALTER TABLE `st_info`
 ALTER TABLE `st_submissions`
   ADD PRIMARY KEY (`sub_id`),
   ADD UNIQUE KEY `UC_SUBMISSION` (`assi_id`,`st_username`),
-  ADD KEY `FK_st_username` (`st_username`);
+  ADD KEY `FK_st_username_sub` (`st_username`);
 
 --
 -- Indexes for table `sub_info`
@@ -896,7 +901,7 @@ ALTER TABLE `general_setting`
 -- AUTO_INCREMENT for table `meadmin`
 --
 ALTER TABLE `meadmin`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `news_data`
@@ -908,13 +913,13 @@ ALTER TABLE `news_data`
 -- AUTO_INCREMENT for table `st_info`
 --
 ALTER TABLE `st_info`
-  MODIFY `st_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `st_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `st_submissions`
 --
 ALTER TABLE `st_submissions`
-  MODIFY `sub_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `sub_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `sub_info`
@@ -1011,6 +1016,14 @@ ALTER TABLE `fc_assignments`
   ADD CONSTRAINT `FKk_t_username` FOREIGN KEY (`t_username`) REFERENCES `teacher_info` (`t_username`);
 
 --
+-- Constraints for table `meadmin`
+--
+ALTER TABLE `meadmin`
+  ADD CONSTRAINT `FK_admin_username` FOREIGN KEY (`admin_username`) REFERENCES `teacher_info` (`t_username`),
+  ADD CONSTRAINT `FK_admin_username2` FOREIGN KEY (`admin_username`) REFERENCES `teacher_info` (`t_username`),
+  ADD CONSTRAINT `meadmin_ibfk_1` FOREIGN KEY (`admin_username`) REFERENCES `teacher_info` (`t_username`);
+
+--
 -- Constraints for table `news_data`
 --
 ALTER TABLE `news_data`
@@ -1021,6 +1034,7 @@ ALTER TABLE `news_data`
 --
 ALTER TABLE `st_submissions`
   ADD CONSTRAINT `FK_assi_id` FOREIGN KEY (`assi_id`) REFERENCES `fc_assignments` (`assi_id`),
+  ADD CONSTRAINT `FK_st_username_sub` FOREIGN KEY (`st_username`) REFERENCES `st_info` (`st_username`),
   ADD CONSTRAINT `FKk_assi_id` FOREIGN KEY (`assi_id`) REFERENCES `fc_assignments` (`assi_id`),
   ADD CONSTRAINT `st_submissions_ibfk_1` FOREIGN KEY (`assi_id`) REFERENCES `fc_assignments` (`assi_id`);
 
