@@ -13,7 +13,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/banukaknight/education">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/readme/2in1.png" alt="Logo" >
   </a>
 
   <h3 align="center">Best-README-Template</h3>
