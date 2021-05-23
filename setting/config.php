@@ -49,7 +49,7 @@ class project2
 	//----------------	STUDENT - Login	--
 	public function student_login_check($st_username,$st_password)
 	{
-		$st_login_check = "select * from st_info where st_username = '$st_username' and st_password='$st_password'";
+		$st_login_check = "SELECT * FROM st_info WHERE st_username = '$st_username' and st_password='$st_password'";
 		$st_login_run = $this->connectdb->query($st_login_check);
 		$st_login_num = $st_login_run->num_rows;
 		return $st_login_num;
@@ -67,7 +67,7 @@ class project2
 	//----------------	STUDENT - Password change	--
 	public function student_password_change($st_password_update,$st_username)
 	{
-		$student_password_update = "update st_info set st_password='$st_password_update' where st_username='$st_username'";
+		$student_password_update = "UPDATE st_info set st_password='$st_password_update' WHERE st_username='$st_username'";
 		$student_password_update_run = $this->connectdb->query($student_password_update);
 		return $student_password_update_run;
 	}
@@ -76,7 +76,7 @@ class project2
 	//////////////////	FACULTY Module	//////////////////
 	public function faculty_login_check($t_username,$t_password)
 	{ 
-		$t_login_check = "select  * from teacher_info where t_username = '$t_username' and t_pass='$t_password' and t_staff_type='Teacher'";
+		$t_login_check = "select  * from teacher_info WHERE t_username = '$t_username' and t_pass='$t_password' and t_staff_type='Teacher'";
 		$t_login_run = $this->connectdb->query($t_login_check);
 		$t_login_num = $t_login_run->num_rows;
 		return $t_login_num;
@@ -84,7 +84,7 @@ class project2
 	//----------------	FACULTY - Passowrd change	--
 	public function faculty_password_change($t_password_update,$t_username)
 	{
-		$faculty_password_update = "update teacher_info set t_pass='$t_password_update' where t_username='$t_username'";
+		$faculty_password_update = "UPDATE teacher_info set t_pass='$t_password_update' WHERE t_username='$t_username'";
 		$faculty_password_update_run = $this->connectdb->query($faculty_password_update);
 		return $faculty_password_update_run;
 	}
@@ -94,10 +94,10 @@ class project2
 		switch($t_staff_type)
 		{
 			case "Admin":
-				$teacher_info_select = "select * from teacher_info where t_staff_type='$t_staff_type' AND t_username='$adminname'";
+				$teacher_info_select = "SELECT * FROM teacher_info WHERE t_staff_type='$t_staff_type' AND t_username='$adminname'";
 				break;
 			case "Teacher":
-				$teacher_info_select = "select * from teacher_info where t_staff_type='$t_staff_type' AND t_username='$adminname'";
+				$teacher_info_select = "SELECT * FROM teacher_info WHERE t_staff_type='$t_staff_type' AND t_username='$adminname'";
 				break;
 			default :
 				echo "no teacher found";
@@ -113,14 +113,14 @@ class project2
 	{
 		$admin_password_hashed = hash('md5', $this->salt.$admin_password); //hash md5 used for password
 		//echo $admin_password_hashed; //debug only
-		$meadin_login_select = "select * from meadmin where admin_username='$admin_username' AND admin_password='$admin_password_hashed'";
+		$meadin_login_select = "SELECT * FROM meadmin WHERE admin_username='$admin_username' AND admin_password='$admin_password_hashed'";
 		$meadmin_login_run = $this->connectdb->query($meadin_login_select);
 		$meadmin_login_num = $meadmin_login_run->num_rows;
 		return $meadmin_login_num;
 	}
 	public function meadmin_username($adminname)
 	{
-		$meadmin_username_select = "select * from meadmin where admin_username='$adminname'";
+		$meadmin_username_select = "SELECT * FROM meadmin WHERE admin_username='$adminname'";
 		$meadmin_username_run = $this->connectdb->query($meadmin_username_select);
 		return $meadmin_username_run;
 	}
@@ -130,7 +130,7 @@ class project2
 	//----------------	ADMIN - Add New Student	--
 	public function add_student($std_fullname,$std_username,$std_password,$std_grade,$std_roll,$std_dob,$std_address,$std_gender,$std_parent_contact)
 	{
-		$add_student_insert = "insert into st_info(st_fullname,st_username,st_password,st_grade,roll_no,st_dob,st_address,st_gender,st_parents_contact) value('$std_fullname','$std_username','$std_password','$std_grade','$std_roll','$std_dob','$std_address','$std_gender','$std_parent_contact')";
+		$add_student_insert = "INSERT INTO st_info(st_fullname,st_username,st_password,st_grade,roll_no,st_dob,st_address,st_gender,st_parents_contact) value('$std_fullname','$std_username','$std_password','$std_grade','$std_roll','$std_dob','$std_address','$std_gender','$std_parent_contact')";
 		//echo $add_student_insert; //debugging purpose only
 		$add_student_run = $this->connectdb->query($add_student_insert);
 		
@@ -149,21 +149,21 @@ class project2
 	//----------------	ADMIN - View Student Info by grade	--
 	public function student_info_display_admin($class_students_data)
 	{
-		$student_info_display_admin_select = "select * from st_info where st_grade='$class_students_data'";
+		$student_info_display_admin_select = "SELECT * FROM st_info WHERE st_grade='$class_students_data'";
 		$student_info_display_admin_run = $this->connectdb->query($student_info_display_admin_select);
 		return $student_info_display_admin_run;
 	}
 	//----------------	ADMIN - View Student Info All	--
 	public function all_student_info_display_admin()
 	{
-		$student_info_display_admin_select = "select * from st_info";
+		$student_info_display_admin_select = "SELECT * FROM st_info";
 		$student_info_display_admin_run = $this->connectdb->query($student_info_display_admin_select);
 		return $student_info_display_admin_run;
 	}
 	//----------------	ADMIN - Update Student Info	--
 	public function update_student_adm($std_fullname,$std_username,$std_password,$std_roll,$std_dob,$std_address,$std_gender,$std_parent_contact)
 	{
-		$add_student_insert = "update st_info set st_fullname='$std_fullname', st_password='$std_password', 
+		$add_student_insert = "UPDATE st_info SET st_fullname='$std_fullname', st_password='$std_password', 
 		roll_no='$std_roll', st_dob='$std_dob', st_address='$std_address', st_gender='$std_gender', st_parents_contact='$std_parent_contact' 
 		where st_username='$std_username' ";
 		//echo $add_student_insert; //debugging purpose only
@@ -173,7 +173,7 @@ class project2
 	//----------------	ADMIN - Delete Student	--
 	public function delete_student($del_st)
 	{
-	$delete_st_info = " delete from st_info where st_username='$del_st'";
+	$delete_st_info = "DELETE FROM st_info WHERE st_username='$del_st'";
 	$delete_st_info_run = $this->connectdb->query($delete_st_info);
 	return $delete_st_info_run;
 	}	
@@ -183,7 +183,7 @@ class project2
 	//----------------	ADMIN - Add New Faculty	--
 	public function add_teacher($add_t_fullname,$add_t_address,$add_t_email,$add_t_username,$add_t_pass,$add_t_dob,$add_t_contact,$add_t_staff,$add_t_gender)
 	{
-	$add_teacher = "insert into teacher_info(t_fullname,t_address,t_email,t_username,t_pass,t_dob,t_contact,t_staff_type,t_gender) value('$add_t_fullname','$add_t_address','$add_t_email','$add_t_username','$add_t_pass','$add_t_dob','$add_t_contact','$add_t_staff','$add_t_gender')";
+	$add_teacher = "INSERT INTO teacher_info(t_fullname,t_address,t_email,t_username,t_pass,t_dob,t_contact,t_staff_type,t_gender) value('$add_t_fullname','$add_t_address','$add_t_email','$add_t_username','$add_t_pass','$add_t_dob','$add_t_contact','$add_t_staff','$add_t_gender')";
 	//echo $add_teacher; //debugging purpose only
 	$add_teacher_run = $this->connectdb->query($add_teacher);
 		return $add_teacher_run;
@@ -191,20 +191,20 @@ class project2
 	//----------------	ADMIN - View Faculty info	--
 	public function teacher_info_display_admin()
 	{
-		$teacher_info_admin = "select * from teacher_info where t_staff_type='Teacher'";
+		$teacher_info_admin = "SELECT * FROM teacher_info WHERE t_staff_type='Teacher'";
 		$teacher_info_admin_run = $this->connectdb->query($teacher_info_admin);
 		return $teacher_info_admin_run;
 	}
 	//----------------	ADMIN - Update Faculty info	--
 	public function edit_teacherid($teacher_id)
 	{
-		$edit_teacherid = "select * from teacher_info where t_id='$teacher_id'";
+		$edit_teacherid = "SELECT * FROM teacher_info WHERE t_id='$teacher_id'";
 		$edit_teacherid_run = $this->connectdb->query($edit_teacherid);
 		return $edit_teacherid_run;
 	}
 	public function update_teacher_info($up_fullname,$up_address,$up_email,$up_dob,$up_contact,$up_gender,$teacher_id)
 	{
-		$update_teacher_info_select = "update teacher_info set t_fullname='$up_fullname',t_address='$up_address',t_email='$up_email',t_dob='$up_dob',t_contact='$up_contact',t_gender='$up_gender' where t_id='$teacher_id'";
+		$update_teacher_info_select = "UPDATE teacher_info SET t_fullname='$up_fullname',t_address='$up_address',t_email='$up_email',t_dob='$up_dob',t_contact='$up_contact',t_gender='$up_gender' WHERE t_id='$teacher_id'";
 		//echo $update_teacher_info_select; //for debugigng only
 		$update_teacher_info_run = $this->connectdb->query($update_teacher_info_select);
 		return $update_teacher_info_run;
@@ -212,7 +212,7 @@ class project2
 	//----------------	ADMIN - Delete Faculty	--
 	public function delete_teacher($del_teacher)
 	{
-	$delete_teacher_info = " delete from teacher_info where t_id='$del_teacher'";
+	$delete_teacher_info = "DELETE FROM teacher_info WHERE t_id='$del_teacher'";
 	$delete_teacher_info_run = $this->connectdb->query($delete_teacher_info);
 	return $delete_teacher_info_run;
 	}
@@ -243,19 +243,19 @@ class project2
 	//////////////////	General Info on website - ADMIN	//////////////////
 	public function general_setting($web_name,$web_address,$web_phone1,$web_phone2,$web_email1,$web_email2,$web_start,$web_about)
 	{
-		$general_setting_insert = "insert into general_setting(website_name,website_address,website_phone1,website_phone2,website_email1,website_email2,website_start,web_about) values('$web_name','$web_address','$web_phone1','$web_phone2','$web_email1','$web_email2','$web_start','$web_about')";
+		$general_setting_insert = "INSERT INTO general_setting(website_name,website_address,website_phone1,website_phone2,website_email1,website_email2,website_start,web_about) values('$web_name','$web_address','$web_phone1','$web_phone2','$web_email1','$web_email2','$web_start','$web_about')";
 		$general_setting_run = $this->connectdb->query($general_setting_insert);
 		return $general_setting_run;
 	}
 	public function general_setting_check()
 	{
-		$general_setting_check = "select * from general_setting";
+		$general_setting_check = "SELECT * FROM general_setting";
 		$general_setting_run = $this->connectdb->query($general_setting_check);
 		return $general_setting_run;
 	}
 	public function general_setting_update($upweb_name,$upweb_address,$upweb_phone1,$upweb_phone2,$upweb_email1,$upweb_email2,$upweb_start,$upweb_about)
 	{
-		$update_general_setting = "update general_setting set website_name='$upweb_name',website_address='$upweb_address',website_phone1='$upweb_phone1',website_phone2='$upweb_phone2',website_email1='$upweb_email1',website_email2='$upweb_email2',website_start='$upweb_start',web_about='$upweb_about'";
+		$update_general_setting = "UPDATE general_setting SET website_name='$upweb_name',website_address='$upweb_address',website_phone1='$upweb_phone1',website_phone2='$upweb_phone2',website_email1='$upweb_email1',website_email2='$upweb_email2',website_start='$upweb_start',web_about='$upweb_about'";
 	 $update_general_run = $this->connectdb->query($update_general_setting);
 		return $update_general_run;
 	}
@@ -428,7 +428,7 @@ class project2
 			$attendence_keys = $attendence_keys . ",`". $key ."`" ;
 			$attendence_vals =  $attendence_vals .",'". $val . "'" ;
 		}
-		$mark_attendence = "insert into $tb_name(t_username,sesh_date,sesh_info $attendence_keys ) value ('$t_username','$sesh_date','$sesh_info'  $attendence_vals  )";
+		$mark_attendence = "INSERT INTO $tb_name(t_username,sesh_date,sesh_info $attendence_keys ) value ('$t_username','$sesh_date','$sesh_info'  $attendence_vals  )";
 		//echo $mark_attendence; //debugging purpose only
 		$mark_attendence_run = $this->connectdb->query($mark_attendence);
 		//echo $this->connectdb -> error;
@@ -485,7 +485,7 @@ class project2
 	//////////////////	Timetable Module - STUDENT	//////////////////
 	public function get_timetable($st_grade)
 	{
-		$st_timetable = "SELECT * from timetables where st_grade='$st_grade' LIMIT 9";
+		$st_timetable = "SELECT * FROM timetables WHERE st_grade='$st_grade' LIMIT 9";
 		$st_timetable_run = $this->connectdb->query($st_timetable);
 		return $st_timetable_run;
 	}
