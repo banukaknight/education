@@ -45,7 +45,7 @@ class project2
     }
 	public function student_login_check($st_username,$st_password)
 	{
-		$st_login_check = "select  * from st_info where st_username = '$st_username' and st_password='$st_password'";
+		$st_login_check = "select * from st_info where st_username = '$st_username' and st_password='$st_password'";
 		$st_login_run = $this->connectdb->query($st_login_check);
 		$st_login_num = $st_login_run->num_rows;
 		return $st_login_num;
