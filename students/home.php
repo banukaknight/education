@@ -103,13 +103,17 @@ Project Guidence: Ms. Sonam Kaler
                     <p>
                         <?php $ip = $_SERVER['REMOTE_ADDR'];
 					if ($ip != '127.0.0.1' && $ip != '::1'){
-					$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+					    $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+                        if(isset($details->city)){    
                         //code for getting location of user using ip address
-					echo "User ID: $st_username | Logged in from: "; 
-					echo "$details->city, $details->region, $details->country with IP address: $details->ip" ;
-										}else{
-											echo "Student ID: $st_username";
-                                       }
+                        echo "User ID: $st_username | Logged in from: "; 
+                        echo "$details->city, $details->region, $details->country with IP address: $details->ip" ;
+                        }else{
+                            echo "Student ID: $st_username";
+                        }
+                    }else{
+                        echo "Student ID: $st_username";
+                    }
 					?>
                         <a class=" btn-danger btn-sm float-right " href="logouts.php"><span> Log out </span><i
                                 class="lnr lnr-power-switch"></i></a>
@@ -162,7 +166,7 @@ Project Guidence: Ms. Sonam Kaler
                 <ul id="menu">
                     <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span>Assignments</span> <span
                                 class="fa fa-angle-right" style="float: right"></span></a>
-                        
+
                         <ul id="menu-academico-sub">
                             <li id="menu-academico-avaliacoes"><a href="home.php?at=assignments">
                                     Download | Upload</a></li>
@@ -175,11 +179,11 @@ Project Guidence: Ms. Sonam Kaler
 
                     <li><a href="home.php?at=attendence"><i class="fa fa-check-circle"></i>
                             <span>Attendence</span></a></li>
-                     
-                            <li><a href="home.php?at=text-books"><i class="fa fa-book"></i>
+
+                    <li><a href="home.php?at=text-books"><i class="fa fa-book"></i>
                             <span>Text Books</span></a></li>
-                   
-                            
+
+
                     <li><a href="home.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
 
                 </ul>

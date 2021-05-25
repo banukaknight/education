@@ -104,13 +104,17 @@ Project Guidence: Ms. Sonam Kaler
                     <p>
                         <?php $ip = $_SERVER['REMOTE_ADDR'];
 					if ($ip != '127.0.0.1' && $ip != '::1'){
-					$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
-                        //code for getting location of user using ip address
-					echo "User ID: $t_username | Logged in from: "; 
-					echo "$details->city, $details->region, $details->country with IP address: $details->ip" ;
-										}else{
-											echo "Faculty ID: $t_username";
-                                       }
+					    $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+                        if(isset($details->city)){    
+                            //code for getting location of user using ip address
+                            echo "User ID: $t_username | Logged in from: "; 
+                            echo "$details->city, $details->region, $details->country with IP address: $details->ip" ;
+                        }else{
+                            echo "Faculty ID: $t_username";
+                        }
+                    }else{
+                        echo "Faculty ID: $t_username";
+                    }                   
 					?>
                         <a class=" btn-danger btn-sm float-right " href="logouts.php"><span> Log out </span><i
                                 class="lnr lnr-power-switch"></i></a>
