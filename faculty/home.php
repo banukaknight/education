@@ -103,7 +103,7 @@ Project Guidence: Ms. Sonam Kaler
                 <footer>
                     <p>
                         <?php $ip = $_SERVER['REMOTE_ADDR'];
-					if ($ip != '127.0.0.1'){
+					if ($ip != '127.0.0.1' && $ip != '::1'){
 					$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
                         //code for getting location of user using ip address
 					echo "User ID: $t_username | Logged in from: "; 

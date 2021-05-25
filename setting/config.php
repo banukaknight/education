@@ -76,7 +76,7 @@ class project2
 	//////////////////	FACULTY Module	//////////////////
 	public function faculty_login_check($t_username,$t_password)
 	{ 
-		$t_login_check = "select  * from teacher_info WHERE t_username = '$t_username' and t_pass='$t_password' and t_staff_type='Teacher'";
+		$t_login_check = "SELECT * from teacher_info WHERE t_username = '$t_username' and t_pass='$t_password' and t_staff_type='Teacher'";
 		$t_login_run = $this->connectdb->query($t_login_check);
 		$t_login_num = $t_login_run->num_rows;
 		return $t_login_num;
