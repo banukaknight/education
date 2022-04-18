@@ -45,6 +45,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#developed-by">Developed by</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -71,7 +72,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://yudaganawa.000webhostapp.com)
 
-Developped by:
+### Developed by
 * Banuka Vidusanka Paniyan Duwage
 * Cheki Wangchuk
 * Ihala Uswattage Kavindu Mohottala Gunawickrama
